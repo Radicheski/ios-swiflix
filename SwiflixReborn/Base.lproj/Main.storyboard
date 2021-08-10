@@ -168,6 +168,9 @@
                             <constraint firstItem="ck0-nR-K9t" firstAttribute="centerY" secondItem="DP2-m5-k0L" secondAttribute="centerY" id="jMR-pf-663"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="NOc-DI-MkX" kind="presentation" identifier="LoginToMain" modalPresentationStyle="fullScreen" id="M6h-2A-P96"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9Q-DX-sod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,13 +239,127 @@
                             <constraint firstItem="6NH-uM-DIU" firstAttribute="top" secondItem="ng7-54-5na" secondAttribute="top" constant="50" id="veW-Qe-pG9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="NOc-DI-MkX" kind="presentation" identifier="SignupToMain" modalPresentationStyle="fullScreen" id="ClP-2h-Qec"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwY-hw-Nn8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="648" y="819"/>
         </scene>
+        <!--Pessoas-->
+        <scene sceneID="fFJ-vi-8Dd">
+            <objects>
+                <viewController title="Pessoas" id="JFt-fW-40x" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1iX-BJ-7K1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rmi-wA-3Wk"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pessoas" image="person.fill" catalog="system" id="sI1-wk-89R"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="797-EP-zAb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="-426"/>
+        </scene>
+        <!--Séries-->
+        <scene sceneID="tB5-BL-c6C">
+            <objects>
+                <viewController title="Séries" id="bDe-bK-mDB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yk9-sX-IxP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="w02-ry-C2Y"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Séries" image="list.and.film" catalog="system" id="Z5Y-83-lHa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9E-vs-ZbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="258"/>
+        </scene>
+        <!--Em cartaz-->
+        <scene sceneID="bXQ-xm-swV">
+            <objects>
+                <viewController title="Em cartaz" id="9JT-zG-uWF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3At-j2-4Ud">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XqC-az-Q5C"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Em cartaz" image="video" catalog="system" id="YD7-Ed-PX4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2c-20-eKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="946"/>
+        </scene>
+        <!--Filmes-->
+        <scene sceneID="8Qu-mO-0NF">
+            <objects>
+                <viewController title="Filmes" id="Pal-IG-3NE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hRp-68-29l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="X42-QW-kjc"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Filmes" image="film.fill" catalog="system" id="aRg-Ly-HAS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uig-1M-SMM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="-1099"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Bjy-VG-Qka">
+            <objects>
+                <tabBarController id="NOc-DI-MkX" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hhg-Qu-q4n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemRedColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Pal-IG-3NE" kind="relationship" relationship="viewControllers" id="gYa-O8-A0f"/>
+                        <segue destination="JFt-fW-40x" kind="relationship" relationship="viewControllers" id="dxq-BY-2T2"/>
+                        <segue destination="bDe-bK-mDB" kind="relationship" relationship="viewControllers" id="dfx-G8-S9C"/>
+                        <segue destination="9JT-zG-uWF" kind="relationship" relationship="viewControllers" id="dZF-nz-kOf"/>
+                        <segue destination="k3B-5u-4a7" kind="relationship" relationship="viewControllers" id="O4E-1Z-WeZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tbV-0D-1Q9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1507" y="258"/>
+        </scene>
+        <!--Lançamentos-->
+        <scene sceneID="QO4-aP-QXd">
+            <objects>
+                <viewController title="Lançamentos" id="k3B-5u-4a7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bxo-IA-vsm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0oV-aL-QOC"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Lançamentos" image="square.stack.3d.forward.dottedline" catalog="system" id="P3g-cV-mlx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbD-EV-1dk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445" y="1648"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="M6h-2A-P96"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="film.fill" catalog="system" width="128" height="93"/>
+        <image name="list.and.film" catalog="system" width="128" height="86"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="square.stack.3d.forward.dottedline" catalog="system" width="128" height="113"/>
+        <image name="video" catalog="system" width="128" height="83"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
