@@ -1,24 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BerkshireSwash-Regular.ttf">
+            <string>BerkshireSwash-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiflix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0K-IJ-PJO">
+                                <rect key="frame" x="63" y="386" width="288.5" height="124.5"/>
+                                <fontDescription key="fontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="100"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a2O-PK-8ai">
+                                <rect key="frame" x="20" y="594" width="374" height="218"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo(a)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPT-1w-BIn">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tenha informações de seus filmes e séries favoritos!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qna-0o-n8K">
+                                        <rect key="frame" x="0.0" y="68" width="374" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5S-wG-3ZX">
+                                        <rect key="frame" x="0.0" y="129" width="374" height="39"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Começar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqW-AW-qLt">
+                                        <rect key="frame" x="0.0" y="188" width="374" height="30"/>
+                                        <state key="normal" title="Não tem uma conta? Cadastre-se">
+                                            <color key="titleColor" systemColor="systemGrayColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Qna-0o-n8K" firstAttribute="leading" secondItem="a2O-PK-8ai" secondAttribute="leading" id="3OC-dd-K5m"/>
+                                    <constraint firstItem="A5S-wG-3ZX" firstAttribute="centerX" secondItem="a2O-PK-8ai" secondAttribute="centerX" id="BxJ-bg-vWY"/>
+                                    <constraint firstItem="Qna-0o-n8K" firstAttribute="centerX" secondItem="a2O-PK-8ai" secondAttribute="centerX" id="CWH-fC-Xrk"/>
+                                    <constraint firstAttribute="trailing" secondItem="OPT-1w-BIn" secondAttribute="trailing" id="Poc-IY-LGy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qna-0o-n8K" secondAttribute="trailing" id="Tu4-RY-cK9"/>
+                                    <constraint firstItem="OPT-1w-BIn" firstAttribute="leading" secondItem="a2O-PK-8ai" secondAttribute="leading" id="b0f-lI-NIC"/>
+                                    <constraint firstAttribute="trailing" secondItem="A5S-wG-3ZX" secondAttribute="trailing" id="eQJ-7h-cox"/>
+                                    <constraint firstItem="jqW-AW-qLt" firstAttribute="centerX" secondItem="a2O-PK-8ai" secondAttribute="centerX" id="fVG-dc-nZy"/>
+                                    <constraint firstItem="A5S-wG-3ZX" firstAttribute="leading" secondItem="a2O-PK-8ai" secondAttribute="leading" id="gQi-7A-XuC"/>
+                                    <constraint firstItem="OPT-1w-BIn" firstAttribute="centerX" secondItem="a2O-PK-8ai" secondAttribute="centerX" id="l9a-0U-VWp"/>
+                                    <constraint firstAttribute="trailing" secondItem="jqW-AW-qLt" secondAttribute="trailing" id="m1o-VD-THy"/>
+                                    <constraint firstItem="jqW-AW-qLt" firstAttribute="leading" secondItem="a2O-PK-8ai" secondAttribute="leading" id="mZK-SM-mIJ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a2O-PK-8ai" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3uL-cu-n9r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a2O-PK-8ai" secondAttribute="trailing" constant="20" id="Jjd-ac-WL0"/>
+                            <constraint firstItem="a2O-PK-8ai" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sk5-ra-U9y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a2O-PK-8ai" secondAttribute="bottom" constant="50" id="aEN-PU-ptB"/>
+                            <constraint firstItem="T0K-IJ-PJO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dhJ-U6-PgW"/>
+                            <constraint firstItem="T0K-IJ-PJO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t8R-7U-giJ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-104.34782608695653" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

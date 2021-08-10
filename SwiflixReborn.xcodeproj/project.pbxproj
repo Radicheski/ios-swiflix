@@ -13,6 +13,7 @@
 		ADB666AC26C2FE74008938D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AA26C2FE74008938D7 /* Main.storyboard */; };
 		ADB666AE26C2FE75008938D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AD26C2FE75008938D7 /* Assets.xcassets */; };
 		ADB666B126C2FE75008938D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AF26C2FE75008938D7 /* LaunchScreen.storyboard */; };
+		ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ADB666AD26C2FE75008938D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADB666B026C2FE75008938D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB666B226C2FE75008938D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		ADB666A326C2FE74008938D7 /* SwiflixReborn */ = {
 			isa = PBXGroup;
 			children = (
+				ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */,
 				ADB666A426C2FE74008938D7 /* AppDelegate.swift */,
 				ADB666A626C2FE74008938D7 /* SceneDelegate.swift */,
 				ADB666A826C2FE74008938D7 /* ViewController.swift */,
@@ -126,6 +129,7 @@
 			files = (
 				ADB666B126C2FE75008938D7 /* LaunchScreen.storyboard in Resources */,
 				ADB666AE26C2FE75008938D7 /* Assets.xcassets in Resources */,
+				ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */,
 				ADB666AC26C2FE74008938D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
