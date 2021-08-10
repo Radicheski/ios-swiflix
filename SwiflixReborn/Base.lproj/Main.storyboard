@@ -86,6 +86,7 @@
                     </view>
                     <connections>
                         <segue destination="uxG-0x-UF7" kind="presentation" identifier="WelcomeToLogin" modalPresentationStyle="fullScreen" id="3GQ-F2-pJI"/>
+                        <segue destination="8bQ-e2-bsn" kind="presentation" identifier="WelcomeToSignup" modalPresentationStyle="fullScreen" id="xOk-mg-0Ra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -106,8 +107,8 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="hqy-fi-SDB">
-                                <rect key="frame" x="20" y="638" width="374" height="174"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hqy-fi-SDB">
+                                <rect key="frame" x="20" y="611" width="374" height="201"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C86-fN-Zpb">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
@@ -115,10 +116,10 @@
                                         <color key="tintColor" systemColor="systemGrayColor"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bDY-3a-5Zh">
-                                        <rect key="frame" x="0.0" y="47" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="56" width="374" height="36"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" systemColor="systemGrayColor"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
@@ -126,7 +127,7 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1M-Lr-z4d">
-                                        <rect key="frame" x="0.0" y="94" width="374" height="39"/>
+                                        <rect key="frame" x="0.0" y="112" width="374" height="39"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Entrar">
@@ -134,7 +135,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayo-J6-YAs">
-                                        <rect key="frame" x="0.0" y="144" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="171" width="374" height="30"/>
                                         <state key="normal" title="Esqueci minha senha">
                                             <color key="titleColor" systemColor="systemGrayColor"/>
                                         </state>
@@ -171,6 +172,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9Q-DX-sod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="649" y="94"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WqC-el-4bE">
+            <objects>
+                <viewController id="8bQ-e2-bsn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Azw-Ao-dbj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiflix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NH-uM-DIU">
+                                <rect key="frame" x="63" y="94" width="288.5" height="124.5"/>
+                                <fontDescription key="fontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="100"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="e0e-Nj-7NK">
+                                <rect key="frame" x="20" y="268.5" width="374" height="142"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DF-uv-Yux">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLU-hT-kXk">
+                                        <rect key="frame" x="0.0" y="56" width="374" height="36"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nig-cI-k5j">
+                                        <rect key="frame" x="0.0" y="112" width="374" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Cadastrar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nig-cI-k5j" secondAttribute="trailing" id="67L-Dl-PIf"/>
+                                    <constraint firstItem="MLU-hT-kXk" firstAttribute="leading" secondItem="e0e-Nj-7NK" secondAttribute="leading" id="Eu0-zP-5ry"/>
+                                    <constraint firstAttribute="trailing" secondItem="0DF-uv-Yux" secondAttribute="trailing" id="Nh6-kU-TeV"/>
+                                    <constraint firstItem="MLU-hT-kXk" firstAttribute="centerX" secondItem="e0e-Nj-7NK" secondAttribute="centerX" id="TIq-v2-hYR"/>
+                                    <constraint firstItem="nig-cI-k5j" firstAttribute="centerX" secondItem="e0e-Nj-7NK" secondAttribute="centerX" id="bDV-QO-IS2"/>
+                                    <constraint firstItem="0DF-uv-Yux" firstAttribute="leading" secondItem="e0e-Nj-7NK" secondAttribute="leading" id="fMh-Gh-WHl"/>
+                                    <constraint firstItem="nig-cI-k5j" firstAttribute="leading" secondItem="e0e-Nj-7NK" secondAttribute="leading" id="g0f-n7-mpR"/>
+                                    <constraint firstItem="0DF-uv-Yux" firstAttribute="centerX" secondItem="e0e-Nj-7NK" secondAttribute="centerX" id="h5S-o3-CYG"/>
+                                    <constraint firstAttribute="trailing" secondItem="MLU-hT-kXk" secondAttribute="trailing" id="lfr-fy-1Yq"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ng7-54-5na"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ng7-54-5na" firstAttribute="trailing" secondItem="e0e-Nj-7NK" secondAttribute="trailing" constant="20" id="0Co-Zl-B6R"/>
+                            <constraint firstItem="e0e-Nj-7NK" firstAttribute="top" secondItem="6NH-uM-DIU" secondAttribute="bottom" constant="50" id="0Sh-VJ-d6B"/>
+                            <constraint firstItem="e0e-Nj-7NK" firstAttribute="centerX" secondItem="Azw-Ao-dbj" secondAttribute="centerX" id="F1C-Jw-bzd"/>
+                            <constraint firstItem="6NH-uM-DIU" firstAttribute="centerX" secondItem="Azw-Ao-dbj" secondAttribute="centerX" id="bnS-iK-7CE"/>
+                            <constraint firstItem="e0e-Nj-7NK" firstAttribute="leading" secondItem="ng7-54-5na" secondAttribute="leading" constant="20" id="gQk-67-NOV"/>
+                            <constraint firstItem="6NH-uM-DIU" firstAttribute="top" secondItem="ng7-54-5na" secondAttribute="top" constant="50" id="veW-Qe-pG9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HwY-hw-Nn8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="819"/>
         </scene>
     </scenes>
     <resources>
