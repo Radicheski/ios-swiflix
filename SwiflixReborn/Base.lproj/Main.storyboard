@@ -13,10 +13,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,12 +49,18 @@
                                         <state key="normal" title="Começar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Je-YP-7LH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqW-AW-qLt">
                                         <rect key="frame" x="0.0" y="188" width="374" height="30"/>
                                         <state key="normal" title="Não tem uma conta? Cadastre-se">
                                             <color key="titleColor" systemColor="systemGrayColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signupClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHu-Wu-Qa8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -85,6 +91,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="signupButton" destination="jqW-AW-qLt" id="eXY-bV-ccB"/>
+                        <outlet property="startButton" destination="A5S-wG-3ZX" id="0dZ-f3-ftL"/>
                         <segue destination="uxG-0x-UF7" kind="presentation" identifier="WelcomeToLogin" modalPresentationStyle="fullScreen" id="3GQ-F2-pJI"/>
                         <segue destination="8bQ-e2-bsn" kind="presentation" identifier="WelcomeToSignup" modalPresentationStyle="fullScreen" id="xOk-mg-0Ra"/>
                     </connections>
@@ -93,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="-587" y="106"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="kd0-v0-s62">
             <objects>
-                <viewController id="uxG-0x-UF7" sceneMemberID="viewController">
+                <viewController id="uxG-0x-UF7" customClass="LoginViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DP2-m5-k0L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,12 +141,18 @@
                                         <state key="normal" title="Entrar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="enterClicked:" destination="uxG-0x-UF7" eventType="touchUpInside" id="Sm7-fv-pXI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayo-J6-YAs">
                                         <rect key="frame" x="0.0" y="171" width="374" height="30"/>
                                         <state key="normal" title="Esqueci minha senha">
                                             <color key="titleColor" systemColor="systemGrayColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="forgetPasswordClicked:" destination="uxG-0x-UF7" eventType="touchUpInside" id="qDz-hF-gIf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -169,6 +183,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="C86-fN-Zpb" id="raO-o8-sY6"/>
+                        <outlet property="enterButton" destination="F1M-Lr-z4d" id="SUy-XD-ydt"/>
+                        <outlet property="forgetPasswordButton" destination="ayo-J6-YAs" id="Vbw-I9-IVc"/>
+                        <outlet property="passwordField" destination="bDY-3a-5Zh" id="uRV-w0-M2o"/>
                         <segue destination="NOc-DI-MkX" kind="presentation" identifier="LoginToMain" modalPresentationStyle="fullScreen" id="M6h-2A-P96"/>
                     </connections>
                 </viewController>
@@ -176,10 +194,10 @@
             </objects>
             <point key="canvasLocation" x="165" y="106"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="WqC-el-4bE">
             <objects>
-                <viewController id="8bQ-e2-bsn" sceneMemberID="viewController">
+                <viewController id="8bQ-e2-bsn" customClass="SignupViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Azw-Ao-dbj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,6 +231,9 @@
                                         <state key="normal" title="Cadastrar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signupClicked:" destination="8bQ-e2-bsn" eventType="touchUpInside" id="8mr-HG-ine"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -240,6 +261,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="0DF-uv-Yux" id="HTm-7V-cM1"/>
+                        <outlet property="passwordField" destination="MLU-hT-kXk" id="Rrg-5W-aLL"/>
+                        <outlet property="signupButton" destination="nig-cI-k5j" id="Ba9-3A-fxC"/>
                         <segue destination="NOc-DI-MkX" kind="presentation" identifier="SignupToMain" modalPresentationStyle="fullScreen" id="ClP-2h-Qec"/>
                     </connections>
                 </viewController>
@@ -397,7 +421,7 @@
                 <navigationController id="LWF-nh-fm8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pessoas" image="person.fill" catalog="system" id="Dp5-7A-O0Q"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="0bo-3r-ziI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

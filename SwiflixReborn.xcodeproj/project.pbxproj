@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB666A426C2FE74008938D7 /* AppDelegate.swift */; };
 		ADB666A726C2FE74008938D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB666A626C2FE74008938D7 /* SceneDelegate.swift */; };
-		ADB666A926C2FE74008938D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB666A826C2FE74008938D7 /* ViewController.swift */; };
 		ADB666AC26C2FE74008938D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AA26C2FE74008938D7 /* Main.storyboard */; };
 		ADB666AE26C2FE75008938D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AD26C2FE75008938D7 /* Assets.xcassets */; };
 		ADB666B126C2FE75008938D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AF26C2FE75008938D7 /* LaunchScreen.storyboard */; };
 		ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */; };
+		ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DA26C4672E00511E36 /* WelcomeViewController.swift */; };
+		ADF664DD26C4684500511E36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DC26C4684500511E36 /* LoginViewController.swift */; };
+		ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DE26C46A0200511E36 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ADB666A126C2FE74008938D7 /* SwiflixReborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiflixReborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB666A426C2FE74008938D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB666A626C2FE74008938D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ADB666A826C2FE74008938D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ADB666AB26C2FE74008938D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADB666AD26C2FE75008938D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADB666B026C2FE75008938D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB666B226C2FE75008938D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
+		ADF664DA26C4672E00511E36 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		ADF664DC26C4684500511E36 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ADF664DE26C46A0200511E36 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,26 @@
 		ADB666A326C2FE74008938D7 /* SwiflixReborn */ = {
 			isa = PBXGroup;
 			children = (
+				ADF664D926C4670600511E36 /* ViewController */,
 				ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */,
 				ADB666A426C2FE74008938D7 /* AppDelegate.swift */,
 				ADB666A626C2FE74008938D7 /* SceneDelegate.swift */,
-				ADB666A826C2FE74008938D7 /* ViewController.swift */,
 				ADB666AA26C2FE74008938D7 /* Main.storyboard */,
 				ADB666AD26C2FE75008938D7 /* Assets.xcassets */,
 				ADB666AF26C2FE75008938D7 /* LaunchScreen.storyboard */,
 				ADB666B226C2FE75008938D7 /* Info.plist */,
 			);
 			path = SwiflixReborn;
+			sourceTree = "<group>";
+		};
+		ADF664D926C4670600511E36 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ADF664DA26C4672E00511E36 /* WelcomeViewController.swift */,
+				ADF664DC26C4684500511E36 /* LoginViewController.swift */,
+				ADF664DE26C46A0200511E36 /* SignupViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADB666A926C2FE74008938D7 /* ViewController.swift in Sources */,
+				ADF664DD26C4684500511E36 /* LoginViewController.swift in Sources */,
+				ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */,
+				ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
 				ADB666A726C2FE74008938D7 /* SceneDelegate.swift in Sources */,
 			);
