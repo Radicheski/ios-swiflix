@@ -16,6 +16,8 @@
 		ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DA26C4672E00511E36 /* WelcomeViewController.swift */; };
 		ADF664DD26C4684500511E36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DC26C4684500511E36 /* LoginViewController.swift */; };
 		ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DE26C46A0200511E36 /* SignupViewController.swift */; };
+		ADF664E326C46F7000511E36 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664E126C46F7000511E36 /* MediaTableViewCell.swift */; };
+		ADF664E426C46F7000511E36 /* MediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF664E226C46F7000511E36 /* MediaTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		ADF664DA26C4672E00511E36 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		ADF664DC26C4684500511E36 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ADF664DE26C46A0200511E36 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		ADF664E126C46F7000511E36 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		ADF664E226C46F7000511E36 /* MediaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		ADB666A326C2FE74008938D7 /* SwiflixReborn */ = {
 			isa = PBXGroup;
 			children = (
+				ADF664E026C46F5300511E36 /* TableViewCells */,
 				ADF664D926C4670600511E36 /* ViewController */,
 				ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */,
 				ADB666A426C2FE74008938D7 /* AppDelegate.swift */,
@@ -82,6 +87,15 @@
 				ADF664DE26C46A0200511E36 /* SignupViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ADF664E026C46F5300511E36 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				ADF664E126C46F7000511E36 /* MediaTableViewCell.swift */,
+				ADF664E226C46F7000511E36 /* MediaTableViewCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +158,7 @@
 				ADB666B126C2FE75008938D7 /* LaunchScreen.storyboard in Resources */,
 				ADB666AE26C2FE75008938D7 /* Assets.xcassets in Resources */,
 				ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */,
+				ADF664E426C46F7000511E36 /* MediaTableViewCell.xib in Resources */,
 				ADB666AC26C2FE74008938D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +174,7 @@
 				ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */,
 				ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
+				ADF664E326C46F7000511E36 /* MediaTableViewCell.swift in Sources */,
 				ADB666A726C2FE74008938D7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
