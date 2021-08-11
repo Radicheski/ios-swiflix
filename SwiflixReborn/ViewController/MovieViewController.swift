@@ -26,6 +26,15 @@ class MovieViewController: UIViewController {
     func showMovieDetail(_ movie: (String?, UIImage?)) {
         self.performSegue(withIdentifier: "MovieToDetail", sender: movie)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        default:
+            guard let detail = segue.destination as? MovieDetailViewController,
+                  let movie = sender as? (String?, UIImage?) else { return }
+            detail.setup(with: movie)
+        }
+    }
 
 }
 

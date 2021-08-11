@@ -334,7 +334,7 @@
         <!--Detalhe-->
         <scene sceneID="LdQ-Wx-rKA">
             <objects>
-                <viewController id="AcF-kx-CVb" sceneMemberID="viewController">
+                <viewController id="AcF-kx-CVb" customClass="MovieDetailViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CQt-SI-1Tl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,6 +388,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detalhe" id="ppT-qH-GAI"/>
+                    <connections>
+                        <outlet property="backdropImage" destination="48j-wd-cgc" id="0Q8-od-ZX7"/>
+                        <outlet property="detailTableView" destination="oI6-1O-4Wc" id="G9T-18-RM3"/>
+                        <outlet property="rateLabel" destination="pKH-ZN-62c" id="QCl-Lm-hWc"/>
+                        <outlet property="tabSegment" destination="dnb-2f-QkT" id="FeY-ox-uKI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxC-yZ-p4F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
