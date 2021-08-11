@@ -18,6 +18,7 @@
 		ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DE26C46A0200511E36 /* SignupViewController.swift */; };
 		ADF664E326C46F7000511E36 /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664E126C46F7000511E36 /* MediaTableViewCell.swift */; };
 		ADF664E426C46F7000511E36 /* MediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF664E226C46F7000511E36 /* MediaTableViewCell.xib */; };
+		ADF664E626C474E200511E36 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664E526C474E100511E36 /* MovieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		ADF664DE26C46A0200511E36 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		ADF664E126C46F7000511E36 /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		ADF664E226C46F7000511E36 /* MediaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaTableViewCell.xib; sourceTree = "<group>"; };
+		ADF664E526C474E100511E36 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				ADF664DA26C4672E00511E36 /* WelcomeViewController.swift */,
 				ADF664DC26C4684500511E36 /* LoginViewController.swift */,
 				ADF664DE26C46A0200511E36 /* SignupViewController.swift */,
+				ADF664E526C474E100511E36 /* MovieViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADF664DD26C4684500511E36 /* LoginViewController.swift in Sources */,
+				ADF664E626C474E200511E36 /* MovieViewController.swift in Sources */,
 				ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */,
 				ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
