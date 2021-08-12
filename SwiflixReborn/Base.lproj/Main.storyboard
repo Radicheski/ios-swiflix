@@ -452,7 +452,7 @@
         <!--Pessoas-->
         <scene sceneID="Yek-U0-oap">
             <objects>
-                <viewController id="xXe-Z9-o94" sceneMemberID="viewController">
+                <viewController id="xXe-Z9-o94" customClass="PersonViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gWj-Nd-ssC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -473,6 +473,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pessoas" id="xuc-KS-zpP"/>
                     <connections>
+                        <outlet property="personTableView" destination="02R-gd-kbv" id="Bsy-eg-WdJ"/>
                         <segue destination="hL8-vO-sV8" kind="show" identifier="PeopleToDetail" id="95P-Uc-8hw"/>
                     </connections>
                 </viewController>
@@ -728,13 +729,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XAw-yz-fcT">
-                                <rect key="frame" x="0.0" y="163" width="414" height="233"/>
+                                <rect key="frame" x="0.0" y="153" width="414" height="233"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XAw-yz-fcT" secondAttribute="height" multiplier="414:233" id="h3K-W3-JKQ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssU-8W-xM0">
-                                <rect key="frame" x="354" y="356" width="50" height="30"/>
+                                <rect key="frame" x="354" y="346" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="csU-5x-ugW"/>
                                 </constraints>
@@ -743,7 +744,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PvV-cd-Ctb">
-                                <rect key="frame" x="10" y="406" width="394" height="32"/>
+                                <rect key="frame" x="10" y="396" width="394" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Geral"/>
@@ -753,7 +754,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-6S-TXT">
-                                <rect key="frame" x="0.0" y="447" width="414" height="366"/>
+                                <rect key="frame" x="0.0" y="437" width="414" height="376"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -790,7 +791,7 @@
         <!--Detalhe-->
         <scene sceneID="Ulx-fd-HG5">
             <objects>
-                <viewController id="hL8-vO-sV8" sceneMemberID="viewController">
+                <viewController id="hL8-vO-sV8" customClass="PersonDetailViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="haw-FR-cLM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -877,6 +878,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detalhe" id="yPw-DY-QZ6"/>
+                    <connections>
+                        <outlet property="birthdayLabel" destination="JN5-jX-WlI" id="JZb-dC-GhR"/>
+                        <outlet property="deathdayLabel" destination="Yqm-wN-SAY" id="nE6-px-RMP"/>
+                        <outlet property="departmentLabel" destination="QLC-w1-dHx" id="TQZ-MA-VwQ"/>
+                        <outlet property="detailTableView" destination="WXi-bk-d1I" id="nOZ-Kv-q9r"/>
+                        <outlet property="nameLabel" destination="lEf-v8-NfY" id="k3d-t5-sUc"/>
+                        <outlet property="posterImage" destination="cbO-MW-uzi" id="Xj5-Tu-1rU"/>
+                        <outlet property="tabSegment" destination="2gu-Iq-2NX" id="hu1-sc-rLi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFW-Xi-wG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
