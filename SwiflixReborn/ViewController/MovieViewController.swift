@@ -10,11 +10,14 @@ import UIKit
 class MovieViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
+
+    var controller = MovieController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupMovieTableView()
+        self.controller.loadMovieList(callback: self)
     }
 
     func setupMovieTableView() {
@@ -50,12 +53,13 @@ extension MovieViewController: UITableViewDelegate {
 extension MovieViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.controller.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
-        cell.setupWith(title: "Filme exemplo", poster: UIImage(systemName: "film"))
+        let media = self.controller.selectMovie(at: indexPath)
+        cell.setupWith(media: media)
         return cell
     }
     

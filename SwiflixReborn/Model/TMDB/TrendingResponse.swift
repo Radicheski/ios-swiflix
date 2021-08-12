@@ -60,3 +60,15 @@ struct Result: Codable {
     }
 
 }
+
+extension Result: Media {
+
+    var mediaTitle: String {
+        self.title ?? "(N/A)"
+    }
+
+    var poster: String {
+        self.posterPath
+    }
+
+}
