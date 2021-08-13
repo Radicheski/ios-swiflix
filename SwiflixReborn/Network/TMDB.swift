@@ -88,18 +88,6 @@ struct TMDB {
         
     }
     
-    static func getPopularPeople(onSuccess: ((PeopleResponse) -> Void)?, onError: ((Error) -> Void)?) {
-        
-        let stringUrl = "/person/popular"
-        
-        TMDB.request(string: stringUrl) { (response: PeopleResponse) in
-            onSuccess?(response)
-        } onError: { error in
-            onError?(error)
-        }
-        
-    }
-    
 }
 
 

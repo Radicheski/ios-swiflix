@@ -19,7 +19,7 @@ class PersonController {
 
     func loadPeopleList(onCompletion: (() -> Void)?) {
 
-        TMDB.getPopularPeople { response in
+        TMDB.getTrending(mediaType: .person, timeWindow: .day) { response in
             self.trendingPeople = response.results
             onCompletion?()
         } onError: { error in
