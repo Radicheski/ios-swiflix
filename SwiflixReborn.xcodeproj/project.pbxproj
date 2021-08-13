@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD0484BB26C704E800318AAD /* SerieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0484BA26C704E800318AAD /* SerieController.swift */; };
+		AD0484BD26C709F300318AAD /* PeopleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0484BC26C709F300318AAD /* PeopleResponse.swift */; };
 		AD0756A826C5B96800A53202 /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD0756A726C5B96800A53202 /* apikey.plist */; };
 		AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */; };
 		AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB126C4824200C501B8 /* ComingViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		AD0484BA26C704E800318AAD /* SerieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieController.swift; sourceTree = "<group>"; };
+		AD0484BC26C709F300318AAD /* PeopleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResponse.swift; sourceTree = "<group>"; };
 		AD0756A726C5B96800A53202 /* apikey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
 		AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheatersViewController.swift; sourceTree = "<group>"; };
 		AD60AAB126C4824200C501B8 /* ComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				EBDF3FD11B597EAB3F9B4D64 /* MediaType.swift */,
 				EBDF334C6D7E45B64FF3A262 /* TimeWindow.swift */,
 				EBDF3DF712C1E07755C8D4CF /* TrendingResponse.swift */,
+				AD0484BC26C709F300318AAD /* PeopleResponse.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */,
 				AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */,
 				AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */,
+				AD0484BD26C709F300318AAD /* PeopleResponse.swift in Sources */,
 				ADF664E826C4790400511E36 /* MovieDetailViewController.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
 				ADF664E326C46F7000511E36 /* MediaTableViewCell.swift in Sources */,
