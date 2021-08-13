@@ -20,14 +20,15 @@ struct TrendingResponse: Codable {
 
 struct Result: Codable {
 
-    let voteAverage: Double
-    let overview: String
-    let voteCount: Int
-    let backdropPath, posterPath: String
+    let voteAverage: Double?
+    let overview: String?
+    let voteCount: Int?
+    let backdropPath: String?
+    let posterPath: String?
     let id: Int
     let name: String?
-    let originalLanguage: String
-    let genreIDS: [Int]
+    let originalLanguage: String?
+    let genreIDS: [Int]?
     let originalName: String?
     let originCountry: [String]?
     let firstAirDate: String?
@@ -64,11 +65,11 @@ struct Result: Codable {
 extension Result: Media {
 
     var mediaTitle: String {
-        self.title ?? "(N/A)"
+        self.title ?? self.name ?? "(N/A)"
     }
 
     var poster: String {
-        self.posterPath
+        self.posterPath ?? ""
     }
 
 }

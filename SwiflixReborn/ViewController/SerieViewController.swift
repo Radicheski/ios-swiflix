@@ -11,10 +11,18 @@ class SerieViewController: UIViewController {
 
     @IBOutlet weak var serieTableView: UITableView!
     
+    var controller = SerieController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupSerieTableView()
+        
+        self.controller.loadSerieList {
+            DispatchQueue.main.async {
+                self.serieTableView.reloadData()
+            }
+        }
 
     }
     
@@ -51,12 +59,16 @@ extension SerieViewController: UITableViewDelegate {
 
 extension SerieViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.controller.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
-        cell.setupWith(title: "Serie Exemplo", poster: UIImage(systemName: "chevron.right"))
+        
+        let media = self.controller.selectSerie(at: indexPath)
+        
+        cell.setupWith(media: media)
         return cell
     }
     
