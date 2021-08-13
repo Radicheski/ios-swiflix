@@ -161,7 +161,6 @@
 				EBDF3FD11B597EAB3F9B4D64 /* MediaType.swift */,
 				EBDF334C6D7E45B64FF3A262 /* TimeWindow.swift */,
 				EBDF3DF712C1E07755C8D4CF /* TrendingResponse.swift */,
-				AD0484C026C71C3900318AAD /* Person.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -177,6 +176,7 @@
 		EBDF37EA1D82BC320A24BAC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD0484C026C71C3900318AAD /* Person.swift */,
 				EBDF32D3D0594E35F7B187DE /* TMDB */,
 				EBDF31787088983ADD3134B1 /* Media.swift */,
 			);
