@@ -14,13 +14,11 @@ class MovieController {
         }
     }
 
-    func loadMovieList(callback: MovieViewController) {
+    func loadMovieList(onCompletion: (() -> Void)?) {
 
         TMDB.getTrending(mediaType: .movie, timeWindow: .day) { response in
             self.trendingMovies = response.results
-            DispatchQueue.main.async {
-                callback.movieTableView.reloadData()
-            }
+            onCompletion?()
         } onError: { error in
             #warning("Handle error")
             print(error)

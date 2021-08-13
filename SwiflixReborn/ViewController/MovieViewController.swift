@@ -14,29 +14,46 @@ class MovieViewController: UIViewController {
     var controller = MovieController()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.setupMovieTableView()
-        self.controller.loadMovieList(callback: self)
+        
+        self.controller.loadMovieList {
+            DispatchQueue.main.async {
+                self.movieTableView.reloadData()
+            }
+        }
+        
     }
 
     func setupMovieTableView() {
+        
         self.movieTableView.register(UINib(nibName: "MediaTableViewCell", bundle: nil), forCellReuseIdentifier: MediaTableViewCell.customIdentifier)
+        
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self
+        
     }
     
     func showMovieDetail(_ movie: (String?, UIImage?)) {
+        
         self.performSegue(withIdentifier: "MovieToDetail", sender: movie)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         switch segue.identifier {
+        
         default:
+            
             guard let detail = segue.destination as? MovieDetailViewController,
                   let movie = sender as? (String?, UIImage?) else { return }
             detail.setup(with: movie)
+            
         }
+        
     }
 
 }
@@ -44,8 +61,11 @@ class MovieViewController: UIViewController {
 extension MovieViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         guard let cell = tableView.cellForRow(at: indexPath) as? MediaTableViewCell else { return }
+        
         self.showMovieDetail((cell.titleLabel.text, cell.posterImage.image))
+        
     }
     
 }
@@ -53,12 +73,17 @@ extension MovieViewController: UITableViewDelegate {
 extension MovieViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return self.controller.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
+        
         let media = self.controller.selectMovie(at: indexPath)
+        
         cell.setupWith(media: media)
         return cell
     }
