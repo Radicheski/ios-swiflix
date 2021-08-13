@@ -19,10 +19,9 @@ struct TMDB {
         }
     }
     
-    static func getTrending(mediaType: MediaType, timeWindow: TimeWindow,
-                            onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
+    static func request<T: Codable>(string: String, onSuccess: ((T) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let stringUrl = "\(Self.baseUrl)/trending/\(mediaType.rawValue)/\(timeWindow)?api_key=\(Self.apiKey)"
+        let stringUrl = "\(Self.baseUrl)\(string)?api_key=\(Self.apiKey)"
         
         if let url = URL(string: stringUrl) {
             
@@ -36,7 +35,7 @@ struct TMDB {
                     if response.statusCode == 200,
                        let data = _data {
                         do {
-                            let object = try JSONDecoder().decode(TrendingResponse.self, from: data)
+                            let object = try JSONDecoder().decode(T.self, from: data)
                             onSuccess?(object)
                         } catch {
                             print(error)
@@ -48,6 +47,20 @@ struct TMDB {
             
             dataTask.resume()
         }
+        
+    }
+    
+    static func getTrending(mediaType: MediaType, timeWindow: TimeWindow,
+                            onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
+        
+        let stringUrl = "/trending/\(mediaType.rawValue)/\(timeWindow)"
+        
+        TMDB.request(string: stringUrl) { (response: TrendingResponse) in
+            onSuccess?(response)
+        } onError: { error in
+            onError?(error)
+        }
+
         
     }
     
@@ -77,31 +90,12 @@ struct TMDB {
     
     static func getPopularPeople(onSuccess: ((PeopleResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let stringUrl = "\(Self.baseUrl)/person/popular?api_key=\(Self.apiKey)"
+        let stringUrl = "/person/popular"
         
-        if let url = URL(string: stringUrl) {
-            
-            let dataTask = Self.urlSession.dataTask(with: url) { _data, _response, _error in
-                
-                if let error = _error {
-                    onError?(error)
-                }
-                
-                if let response = _response as? HTTPURLResponse {
-                    if response.statusCode == 200,
-                       let data = _data {
-                        do {
-                            let object = try JSONDecoder().decode(PeopleResponse.self, from: data)
-                            onSuccess?(object)
-                        } catch {
-                            print(error)
-                        }
-                    }
-                }
-                
-            }
-            
-            dataTask.resume()
+        TMDB.request(string: stringUrl) { (response: PeopleResponse) in
+            onSuccess?(response)
+        } onError: { error in
+            onError?(error)
         }
         
     }
