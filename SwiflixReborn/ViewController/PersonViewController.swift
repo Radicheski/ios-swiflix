@@ -11,10 +11,18 @@ class PersonViewController: UIViewController {
 
     @IBOutlet weak var personTableView: UITableView!
     
+    var controller = PersonController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupPersonTableView()
+        
+        self.controller.loadPeopleList {
+            DispatchQueue.main.async {
+                self.personTableView.reloadData()
+            }
+        }
     }
     
     func setupPersonTableView() {
@@ -50,12 +58,14 @@ extension PersonViewController: UITableViewDelegate {
 
 extension PersonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.controller.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.customIdentifier) as? PersonTableViewCell else { return UITableViewCell() }
-        cell.setupWith(name: "Famoso anônimo", poster: UIImage(systemName: "person.fill"))
+        
+        let person = self.controller.selectPerson(at: indexPath)
+        cell.setupWith(person: person)
         return cell
         
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD0484BB26C704E800318AAD /* SerieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0484BA26C704E800318AAD /* SerieController.swift */; };
 		AD0484BD26C709F300318AAD /* PeopleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0484BC26C709F300318AAD /* PeopleResponse.swift */; };
+		AD0484BF26C70B2D00318AAD /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0484BE26C70B2D00318AAD /* PersonController.swift */; };
 		AD0756A826C5B96800A53202 /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD0756A726C5B96800A53202 /* apikey.plist */; };
 		AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */; };
 		AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB126C4824200C501B8 /* ComingViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		AD0484BA26C704E800318AAD /* SerieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieController.swift; sourceTree = "<group>"; };
 		AD0484BC26C709F300318AAD /* PeopleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResponse.swift; sourceTree = "<group>"; };
+		AD0484BE26C70B2D00318AAD /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		AD0756A726C5B96800A53202 /* apikey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
 		AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheatersViewController.swift; sourceTree = "<group>"; };
 		AD60AAB126C4824200C501B8 /* ComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				EBDF34F4593BEAC7477CF1C1 /* MovieController.swift */,
 				AD0484BA26C704E800318AAD /* SerieController.swift */,
+				AD0484BE26C70B2D00318AAD /* PersonController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */,
 				ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */,
 				AD60AAB626C5966800C501B8 /* SerieDetailViewController.swift in Sources */,
+				AD0484BF26C70B2D00318AAD /* PersonController.swift in Sources */,
 				AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */,
 				AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */,
 				AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */,

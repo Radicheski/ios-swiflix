@@ -27,4 +27,17 @@ class PersonTableViewCell: UITableViewCell {
         self.posterImage.image = poster
     }
     
+    func setupWith(person: Person) {
+        self.nameLabel.text = person.name
+        self.posterImage.image = UIImage(systemName: "person")
+        TMDB.getImage(string: person.profilePath ?? "") { _data in
+            if let data = _data,
+               let image = UIImage(data: data){
+                DispatchQueue.main.async {
+                    self.posterImage.image = image
+                }
+            }
+        }
+    }
+    
 }

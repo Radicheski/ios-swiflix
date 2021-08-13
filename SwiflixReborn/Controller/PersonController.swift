@@ -1,5 +1,5 @@
 //
-//  SerieController.swift
+//  PersonController.swift
 //  SwiflixReborn
 //
 //  Created by Erik Radicheski da Silva on 13/08/21.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-class SerieController {
+class PersonController {
     
-    var trendingPeople = [Media]()
+    var trendingPeople = [Person]()
     
     var count: Int {
         get {
@@ -17,9 +17,9 @@ class SerieController {
         }
     }
 
-    func loadSerieList(onCompletion: (() -> Void)?) {
+    func loadPeopleList(onCompletion: (() -> Void)?) {
 
-        TMDB.getTrending(mediaType: .tv, timeWindow: .day) { response in
+        TMDB.getPopularPeople { response in
             self.trendingPeople = response.results
             onCompletion?()
         } onError: { error in
@@ -29,10 +29,11 @@ class SerieController {
         
     }
     
-    func selectSerie(at indexPath: IndexPath) -> Media {
+    func selectPerson(at indexPath: IndexPath) -> Person {
         
         return self.trendingPeople[indexPath.row]
         
     }
 
 }
+
