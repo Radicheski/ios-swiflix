@@ -15,11 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        if let path = Bundle.main.path(forResource: "apikey", ofType: "plist"),
-           let keys = NSDictionary(contentsOfFile: path),
-           let key = keys.value(forKey: "TMDBKey") as? String {
-            TMDB.apiKey = key
-        }
+        TMDB.setApiKey(plist: "apikey", plistKey: "TMDBKey")
 
         return true
     }

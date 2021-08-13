@@ -19,6 +19,14 @@ struct TMDB {
         }
     }
     
+    static func setApiKey(plist: String, plistKey: String) {
+        if let path = Bundle.main.path(forResource: plist, ofType: "plist"),
+           let keys = NSDictionary(contentsOfFile: path),
+           let key = keys.value(forKey: plistKey) as? String {
+            TMDB.apiKey = key
+        }
+    }
+    
     static func request<T: Codable>(string: String, onSuccess: ((T) -> Void)?, onError: ((Error) -> Void)?) {
         
         let stringUrl = "\(Self.baseUrl)\(string)?api_key=\(Self.apiKey)"
