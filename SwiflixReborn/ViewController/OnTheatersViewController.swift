@@ -11,10 +11,17 @@ class OnTheatersViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
     
+    var controller = NowPlayingController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupMovieTableView()
+        self.controller.loadNowPlayingList {
+            DispatchQueue.main.async {
+                self.movieTableView.reloadData()
+            }
+        }
     }
     
     func setupMovieTableView() {
@@ -50,12 +57,15 @@ extension OnTheatersViewController: UITableViewDelegate {
 
 extension OnTheatersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.controller.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
-        cell.setupWith(title: "Cinema exemplo", poster: UIImage(systemName: "person"))
+        
+        let media = self.controller.selectPerson(at: indexPath)
+        cell.setupWith(media: media)
+        
         return cell
     }
     

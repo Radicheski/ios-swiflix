@@ -29,7 +29,12 @@ struct TMDB {
     
     static func request<T: Codable>(string: String, onSuccess: ((T) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let stringUrl = "\(Self.baseUrl)\(string)?api_key=\(Self.apiKey)"
+        let stringUrl: String
+        if string.contains("?") {
+            stringUrl = "\(Self.baseUrl)\(string)&api_key=\(Self.apiKey)"
+        } else {
+            stringUrl = "\(Self.baseUrl)\(string)?api_key=\(Self.apiKey)"
+        }
         
         if let url = URL(string: stringUrl) {
             
@@ -92,6 +97,18 @@ struct TMDB {
                 }
                 dataTask.resume()
             }
+        }
+        
+    }
+    
+    static func getNowPlaying(language: String = "en-US", page: Int = 1, region: String = "US",
+                              onSuccess: ((NowPlayingResponse) -> Void)?, onError: ((Error) -> Void)?) {
+        
+        let urlString = "/movie/now_playing?language=\(language)&page=\(page)&region=\(region)"
+        TMDB.request(string: urlString) { (response: NowPlayingResponse) in
+            onSuccess?(response)
+        } onError: { error in
+            onError?(error)
         }
         
     }
