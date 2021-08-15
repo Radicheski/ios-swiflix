@@ -11,10 +11,18 @@ class ComingViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
     
+    var controller = UpcomingController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupMovieTableView()
+        
+        self.controller.loadUpcomingList {
+            DispatchQueue.main.async {
+                self.movieTableView.reloadData()
+            }
+        }
     }
     
     func setupMovieTableView() {
@@ -50,12 +58,15 @@ extension ComingViewController: UITableViewDelegate {
 
 extension ComingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.controller.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
-        cell.setupWith(title: "Lancamento exemplo", poster: UIImage(systemName: "video"))
+        
+        let media = self.controller.selectUpcomingMovie(at: indexPath)
+        cell.setupWith(media: media)
+        
         return cell
     }
     

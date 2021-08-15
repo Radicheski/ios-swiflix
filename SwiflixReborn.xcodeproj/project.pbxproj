@@ -27,6 +27,8 @@
 		ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */; };
 		ADF0DC3F26C9ADDC00080AE6 /* NowPlayingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0DC3E26C9ADDC00080AE6 /* NowPlayingResponse.swift */; };
 		ADF0DC4126C9AF3E00080AE6 /* NowPlayingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0DC4026C9AF3E00080AE6 /* NowPlayingController.swift */; };
+		ADF0DC4326C9B21100080AE6 /* UpcomingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0DC4226C9B21100080AE6 /* UpcomingResponse.swift */; };
+		ADF0DC4526C9B27500080AE6 /* UpcomingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0DC4426C9B27500080AE6 /* UpcomingController.swift */; };
 		ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DA26C4672E00511E36 /* WelcomeViewController.swift */; };
 		ADF664DD26C4684500511E36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DC26C4684500511E36 /* LoginViewController.swift */; };
 		ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF664DE26C46A0200511E36 /* SignupViewController.swift */; };
@@ -66,6 +68,8 @@
 		ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
 		ADF0DC3E26C9ADDC00080AE6 /* NowPlayingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingResponse.swift; sourceTree = "<group>"; };
 		ADF0DC4026C9AF3E00080AE6 /* NowPlayingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingController.swift; sourceTree = "<group>"; };
+		ADF0DC4226C9B21100080AE6 /* UpcomingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingResponse.swift; sourceTree = "<group>"; };
+		ADF0DC4426C9B27500080AE6 /* UpcomingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingController.swift; sourceTree = "<group>"; };
 		ADF664DA26C4672E00511E36 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		ADF664DC26C4684500511E36 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ADF664DE26C46A0200511E36 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				EBDF334C6D7E45B64FF3A262 /* TimeWindow.swift */,
 				EBDF3DF712C1E07755C8D4CF /* TrendingResponse.swift */,
 				ADF0DC3E26C9ADDC00080AE6 /* NowPlayingResponse.swift */,
+				ADF0DC4226C9B21100080AE6 /* UpcomingResponse.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				AD0484BA26C704E800318AAD /* SerieController.swift */,
 				AD0484BE26C70B2D00318AAD /* PersonController.swift */,
 				ADF0DC4026C9AF3E00080AE6 /* NowPlayingController.swift */,
+				ADF0DC4426C9B27500080AE6 /* UpcomingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				AD0484BB26C704E800318AAD /* SerieController.swift in Sources */,
 				AD60AAB826C5994D00C501B8 /* PersonViewController.swift in Sources */,
 				ADF664E626C474E200511E36 /* MovieViewController.swift in Sources */,
+				ADF0DC4526C9B27500080AE6 /* UpcomingController.swift in Sources */,
 				AD60AABD26C59CC200C501B8 /* PersonTableViewCell.swift in Sources */,
 				ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */,
 				ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */,
@@ -295,6 +302,7 @@
 				AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */,
 				AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */,
 				ADF664E826C4790400511E36 /* MovieDetailViewController.swift in Sources */,
+				ADF0DC4326C9B21100080AE6 /* UpcomingResponse.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
 				ADF664E326C46F7000511E36 /* MediaTableViewCell.swift in Sources */,
 				ADF0DC4126C9AF3E00080AE6 /* NowPlayingController.swift in Sources */,

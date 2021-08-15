@@ -113,6 +113,18 @@ struct TMDB {
         
     }
     
+    static func getUpcoming(language: String = "en-US", page: Int = 1, region: String = "US",
+                              onSuccess: ((UpcomingResponse) -> Void)?, onError: ((Error) -> Void)?) {
+        
+        let urlString = "/movie/upcoming?language=\(language)&page=\(page)&region=\(region)"
+        TMDB.request(string: urlString) { (response: UpcomingResponse) in
+            onSuccess?(response)
+        } onError: { error in
+            onError?(error)
+        }
+        
+    }
+    
 }
 
 
