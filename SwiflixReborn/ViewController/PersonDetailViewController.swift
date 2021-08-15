@@ -17,26 +17,35 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var tabSegment: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
     
-    var name: String?
-    var poster: UIImage?
+    var person: Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupDetailTableView()
         
-        self.navigationItem.title = self.name
-        self.posterImage.image = self.poster
+        self.navigationItem.title = self.person?.name ?? "(Unknown name)"
+        
+        TMDB.getImage(string: person?.profile ?? "") { _data in
+            if let data = _data,
+               let image = UIImage(data: data){
+                DispatchQueue.main.async {
+                    self.posterImage.image = image
+                }
+            }
+        }
+        
     }
     
     func setupDetailTableView() {
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
     }
-    
-    func setup(with person: (String?, UIImage?)) {
-        self.name = person.0
-        self.poster = person.1
+
+    func setup(with person: Person) {
+        
+        self.person = person
+        
     }
 
 }

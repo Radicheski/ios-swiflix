@@ -32,7 +32,7 @@ class PersonViewController: UIViewController {
         self.personTableView.dataSource = self
     }
 
-    func showDetail(_ person: (String?, UIImage?)) {
+    func showDetail(_ person: Person?) {
         self.performSegue(withIdentifier: "PeopleToDetail", sender: person)
     }
     
@@ -40,8 +40,8 @@ class PersonViewController: UIViewController {
         switch segue.identifier {
         default:
             guard let detail = segue.destination as? PersonDetailViewController,
-                  let serie = sender as? (String?, UIImage?) else { return }
-            detail.setup(with: serie)
+                  let person = sender as? Person else { return }
+            detail.setup(with: person)
         }
     }
 
@@ -51,7 +51,7 @@ extension PersonViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? PersonTableViewCell else { return }
-        self.showDetail((cell.nameLabel.text, cell.posterImage.image))
+        self.showDetail(cell.person)
     }
     
 }

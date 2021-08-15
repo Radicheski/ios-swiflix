@@ -14,6 +14,8 @@ class PersonTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var posterImage: UIImageView!
     
+    var person: Person?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -22,12 +24,8 @@ class PersonTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupWith(name: String, poster: UIImage?) {
-        self.nameLabel.text = name
-        self.posterImage.image = poster
-    }
-    
     func setupWith(person: Person) {
+        self.person = person
         self.nameLabel.text = person.name
         self.posterImage.image = UIImage(systemName: "person")
         TMDB.getImage(string: person.profile ?? "") { _data in
