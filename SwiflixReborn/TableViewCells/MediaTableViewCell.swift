@@ -14,17 +14,14 @@ class MediaTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var posterImage: UIImageView!
     
+    var media: Media?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    
-    func setupWith(title: String, poster: UIImage?) {
-        self.titleLabel.text = title
-        self.posterImage.image = poster
     }
     
     func setupWith(media: Media) {

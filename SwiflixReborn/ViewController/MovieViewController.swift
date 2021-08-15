@@ -36,7 +36,7 @@ class MovieViewController: UIViewController {
         
     }
     
-    func showMovieDetail(_ movie: (String?, UIImage?)) {
+    func showMovieDetail(_ movie: Media?) {
         
         self.performSegue(withIdentifier: "MovieToDetail", sender: movie)
         
@@ -49,7 +49,7 @@ class MovieViewController: UIViewController {
         default:
             
             guard let detail = segue.destination as? MovieDetailViewController,
-                  let movie = sender as? (String?, UIImage?) else { return }
+                  let movie = sender as? Media else { return }
             detail.setup(with: movie)
             
         }
@@ -64,7 +64,7 @@ extension MovieViewController: UITableViewDelegate {
         
         guard let cell = tableView.cellForRow(at: indexPath) as? MediaTableViewCell else { return }
         
-        self.showMovieDetail((cell.titleLabel.text, cell.posterImage.image))
+        self.showMovieDetail(cell.media)
         
     }
     

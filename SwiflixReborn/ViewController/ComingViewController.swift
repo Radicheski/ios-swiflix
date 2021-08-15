@@ -32,7 +32,7 @@ class ComingViewController: UIViewController {
         self.movieTableView.dataSource = self
     }
     
-    func showMovieDetail(_ movie: (String?, UIImage?)) {
+    func showMovieDetail(_ movie: Media?) {
         self.performSegue(withIdentifier: "ComingToDetail", sender: movie)
     }
     
@@ -40,7 +40,7 @@ class ComingViewController: UIViewController {
         switch segue.identifier {
         default:
             guard let detail = segue.destination as? MovieDetailViewController,
-                  let movie = sender as? (String?, UIImage?) else { return }
+                  let movie = sender as? Media else { return }
             detail.setup(with: movie)
         }
     }
@@ -51,7 +51,7 @@ extension ComingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? MediaTableViewCell else { return }
-        self.showMovieDetail((cell.titleLabel.text, cell.posterImage.image))
+        self.showMovieDetail(cell.media)
     }
     
 }

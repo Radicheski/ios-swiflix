@@ -14,16 +14,24 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var tabSegment: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
     
-    var movieTitle: String?
-    var backdrop: UIImage?
+    var media: Media?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupDetailTableView()
         
-        self.navigationItem.title = self.movieTitle
-        self.backdropImage.image = self.backdrop
+        self.navigationItem.title = self.media?.mediaTitle ?? "(Unknown title)"
+        
+        TMDB.getImage(string: self.media?.poster ?? "") { _data in
+            if let data = _data,
+               let image = UIImage(data: data){
+                DispatchQueue.main.async {
+                    self.backdropImage.image = image
+                }
+            }
+        }
+        
     }
     
     func setupDetailTableView() {
@@ -31,9 +39,8 @@ class MovieDetailViewController: UIViewController {
         self.detailTableView.dataSource = self
     }
     
-    func setup(with movie: (String?, UIImage?)) {
-        self.movieTitle = movie.0
-        self.backdrop = movie.1
+    func setup(with movie: Media) {
+        self.media = movie
     }
 
 }
