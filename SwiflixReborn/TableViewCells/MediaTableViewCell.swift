@@ -25,6 +25,7 @@ class MediaTableViewCell: UITableViewCell {
     }
     
     func setupWith(media: Media) {
+        self.media = media
         self.titleLabel.text = media.mediaTitle
         self.posterImage.image = UIImage(systemName: "film")
         TMDB.getImage(string: media.poster) { _data in

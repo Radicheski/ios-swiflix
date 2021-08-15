@@ -33,7 +33,7 @@ class SerieViewController: UIViewController {
         self.serieTableView.dataSource = self
     }
     
-    func showSerieDetails(_ serie: (String?, UIImage?)) {
+    func showSerieDetails(_ serie: Media?) {
         self.performSegue(withIdentifier: "SeriesToDetail", sender: serie)
     }
     
@@ -41,7 +41,7 @@ class SerieViewController: UIViewController {
         switch segue.identifier {
         default:
             guard let detail = segue.destination as? SerieDetailViewController,
-                  let serie = sender as? (String?, UIImage?) else { return }
+                  let serie = sender as? Media else { return }
             detail.setup(with: serie)
         }
     }
@@ -52,7 +52,7 @@ extension SerieViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? MediaTableViewCell else { return }
-        self.showSerieDetails((cell.titleLabel.text, cell.posterImage.image))
+        self.showSerieDetails(cell.media)
     }
     
 }

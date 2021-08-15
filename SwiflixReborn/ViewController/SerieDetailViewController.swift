@@ -14,16 +14,22 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var tabSegment: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
     
-    var serieTitle: String?
-    var image: UIImage?
+    var serie: Media?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupDetailTableView()
         
-        self.backdropImage.image = self.image
-        self.navigationItem.title = self.serieTitle
+        self.navigationItem.title = self.serie?.mediaTitle ?? "(Unknown title)"
+        TMDB.getImage(string: self.serie?.poster ?? "") { _data in
+            if let data = _data,
+               let image = UIImage(data: data){
+                DispatchQueue.main.async {
+                    self.backdropImage.image = image
+                }
+            }
+        }
     }
     
     func setupDetailTableView() {
@@ -31,9 +37,8 @@ class SerieDetailViewController: UIViewController {
         self.detailTableView.dataSource = self
     }
     
-    func setup(with serie: (String?, UIImage?)) {
-        self.serieTitle = serie.0
-        self.image = serie.1
+    func setup(with serie: Media) {
+        self.serie = serie
     }
 
 }
