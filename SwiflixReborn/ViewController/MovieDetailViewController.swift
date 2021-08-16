@@ -15,6 +15,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var detailTableView: UITableView!
     
     var media: Media?
+    var detail: MovieDetailResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class MovieDetailViewController: UIViewController {
         
         self.navigationItem.title = self.media?.mediaTitle ?? "(Unknown title)"
         
-        TMDB.getImage(string: self.media?.poster ?? "") { _data in
+        TMDB.getImage(size: "w780", string: self.detail?.backdropPath ?? "") { _data in
             if let data = _data,
                let image = UIImage(data: data){
                 DispatchQueue.main.async {
@@ -31,6 +32,8 @@ class MovieDetailViewController: UIViewController {
                 }
             }
         }
+        
+        self.rateLabel.text = "\(self.detail?.voteAverage ?? 0.0)"
         
     }
     
@@ -41,6 +44,15 @@ class MovieDetailViewController: UIViewController {
     
     func setup(with movie: Media) {
         self.media = movie
+        TMDB.getMovieDetails(id: movie.id) { response in
+            self.detail = response
+            DispatchQueue.main.async {
+                self.viewDidLoad()
+            }
+        } onError: { error in
+            #warning("Handle this error")
+        }
+
     }
 
 }

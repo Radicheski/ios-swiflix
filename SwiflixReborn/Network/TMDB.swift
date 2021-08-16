@@ -79,7 +79,15 @@ struct TMDB {
     
     static func getImage(string path: String, onCompletion: @escaping (Data?) -> Void)  {
         
-        let stringUrl = "https://image.tmdb.org/t/p/w92/\(path)"
+        Self.getImage(size: "w92", string: path) { data in
+            onCompletion(data)
+        }
+        
+    }
+    
+    static func getImage(size: String, string path: String, onCompletion: @escaping (Data?) -> Void)  {
+        
+        let stringUrl = "https://image.tmdb.org/t/p/\(size)/\(path)"
         if let url = URL(string: stringUrl) {
             let request = URLRequest(url: url)
             
@@ -123,6 +131,17 @@ struct TMDB {
             onError?(error)
         }
         
+    }
+    
+    static func getMovieDetails(id: Int, language: String = "en-US",
+                                onSuccess: ((MovieDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
+        let urlString = "/movie/\(id)"
+        TMDB.request(string: urlString) { movie in
+            onSuccess?(movie)
+        } onError: { error in
+            onError?(error)
+        }
+
     }
     
 }

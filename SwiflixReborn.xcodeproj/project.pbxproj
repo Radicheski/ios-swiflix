@@ -11,6 +11,7 @@
 		AD0484BF26C70B2D00318AAD /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0484BE26C70B2D00318AAD /* PersonController.swift */; };
 		AD0484C126C71C3900318AAD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0484C026C71C3900318AAD /* Person.swift */; };
 		AD0756A826C5B96800A53202 /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD0756A726C5B96800A53202 /* apikey.plist */; };
+		AD20626C26CB1140006CB33F /* MovieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */; };
 		AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */; };
 		AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB126C4824200C501B8 /* ComingViewController.swift */; };
 		AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB326C5949000C501B8 /* SerieViewController.swift */; };
@@ -50,6 +51,7 @@
 		AD0484BE26C70B2D00318AAD /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		AD0484C026C71C3900318AAD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AD0756A726C5B96800A53202 /* apikey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
+		AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailResponse.swift; sourceTree = "<group>"; };
 		AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheatersViewController.swift; sourceTree = "<group>"; };
 		AD60AAB126C4824200C501B8 /* ComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewController.swift; sourceTree = "<group>"; };
 		AD60AAB326C5949000C501B8 /* SerieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				EBDF3DF712C1E07755C8D4CF /* TrendingResponse.swift */,
 				ADF0DC3E26C9ADDC00080AE6 /* NowPlayingResponse.swift */,
 				ADF0DC4226C9B21100080AE6 /* UpcomingResponse.swift */,
+				AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				ADF664E326C46F7000511E36 /* MediaTableViewCell.swift in Sources */,
 				ADF0DC4126C9AF3E00080AE6 /* NowPlayingController.swift in Sources */,
 				AD60AABA26C5996C00C501B8 /* PersonDetailViewController.swift in Sources */,
+				AD20626C26CB1140006CB33F /* MovieDetailResponse.swift in Sources */,
 				ADB666A726C2FE74008938D7 /* SceneDelegate.swift in Sources */,
 				EBDF3D9711AA1EC1A2241790 /* TMDBError.swift in Sources */,
 				EBDF349D23FACAF28B8F77C4 /* MediaType.swift in Sources */,
