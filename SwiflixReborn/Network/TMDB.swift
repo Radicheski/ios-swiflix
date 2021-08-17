@@ -148,8 +148,8 @@ struct TMDB {
                                 onSuccess: ((SerieDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
         let urlString = "/tv/\(id)"
-        TMDB.request(string: urlString) { movie in
-            onSuccess?(movie)
+        TMDB.request(string: urlString) { serie in
+            onSuccess?(serie)
         } onError: { error in
             onError?(error)
         }
@@ -160,13 +160,25 @@ struct TMDB {
                                 onSuccess: ((PersonDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
         let urlString = "/person/\(id)"
-        TMDB.request(string: urlString) { movie in
-            onSuccess?(movie)
+        TMDB.request(string: urlString) { person in
+            onSuccess?(person)
         } onError: { error in
             onError?(error)
         }
         
     }
+    
+    static func getPersonCredits(id: Int, language: String = "en-US",
+                                 onSuccess: ((PersonCreditResponse) -> Void)?, onError: ((Error) -> Void)?) {
+         
+         let urlString = "/person/\(id)/combined_credits"
+         TMDB.request(string: urlString) { credits in
+             onSuccess?(credits)
+         } onError: { error in
+             onError?(error)
+         }
+         
+     }
     
 }
 

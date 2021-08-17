@@ -19,14 +19,15 @@ class PersonDetailViewController: UIViewController {
     
     var person: Person?
     var detail: PersonDetailResponse?
-
+    var credits: [Media] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupDetailTableView()
         
         self.navigationItem.title = self.person?.name ?? "(Unknown name)"
-
+        
         if let name = self.detail?.name,
            let birthday = self.detail?.birthday,
            let department = self.detail?.knownForDepartment {
@@ -55,10 +56,11 @@ class PersonDetailViewController: UIViewController {
     
     func setupDetailTableView() {
         self.detailTableView.register(UINib(nibName: "PersonBiographyTableViewCell", bundle: nil), forCellReuseIdentifier: PersonBiographyTableViewCell.customIdentifier)
+        self.detailTableView.register(UINib(nibName: "MediaTableViewCell", bundle: nil), forCellReuseIdentifier: MediaTableViewCell.customIdentifier)
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
     }
-
+    
     func setup(with person: Person) {
         
         self.person = person
@@ -72,8 +74,19 @@ class PersonDetailViewController: UIViewController {
             #warning("Handle this error")
         }
         
+        TMDB.getPersonCredits(id: person.id) { response in
+            self.credits = response.cast
+            self.credits.append(contentsOf: response.crew)
+        } onError: { error in
+            #warning("Handle this error")
+        }
+        
+        
     }
-
+    @IBAction func segmentDidSelect(_ sender: UISegmentedControl) {
+        self.detailTableView.reloadData()
+    }
+    
 }
 
 extension PersonDetailViewController: UITableViewDelegate {
@@ -82,12 +95,23 @@ extension PersonDetailViewController: UITableViewDelegate {
 
 extension PersonDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch (self.tabSegment.selectedSegmentIndex) {
+        case 0:
+            return 1
+        case 1:
+            return self.credits.count
+        default:
+            return 0
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if self.tabSegment.selectedSegmentIndex == 0 { return 2 }
-        return 0
+        switch self.tabSegment.selectedSegmentIndex {
+        case 0:
+            return 2
+        default:
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -106,13 +130,19 @@ extension PersonDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell else { return UITableViewCell() }
+        
         
         if self.tabSegment.selectedSegmentIndex == 0 {
-            return self.setBiographyViewCell(cell, at: indexPath)
+            if let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell {
+                return self.setBiographyViewCell(cell, at: indexPath)
+            }
+        } else if self.tabSegment.selectedSegmentIndex == 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell {
+                return self.setCreditsViewCell(cell, at: indexPath)
+            }
         }
         
-        return cell
+        return UITableViewCell()
     }
     
     func setBiographyViewCell(_ cell: PersonBiographyTableViewCell, at indexPath: IndexPath) -> PersonBiographyTableViewCell {
@@ -132,6 +162,14 @@ extension PersonDetailViewController: UITableViewDataSource {
         
         return cell
         
+    }
+    
+    func setCreditsViewCell(_ cell: MediaTableViewCell, at indexPath: IndexPath) -> MediaTableViewCell {
+        
+        let media = self.credits[indexPath.row]
+        cell.setupWith(media: media)
+        
+        return cell
     }
     
 }

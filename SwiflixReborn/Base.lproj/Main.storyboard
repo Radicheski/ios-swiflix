@@ -811,6 +811,9 @@
                                     <segment title="Trabalhos"/>
                                     <segment title="Galeria"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentDidSelect:" destination="hL8-vO-sV8" eventType="valueChanged" id="Wiw-F7-kfW"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WXi-bk-d1I">
                                 <rect key="frame" x="0.0" y="437" width="414" height="376"/>

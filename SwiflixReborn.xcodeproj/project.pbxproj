@@ -16,6 +16,7 @@
 		AD36AF4226CC4DDE00C7EE44 /* PersonDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */; };
 		AD36AF4526CC51E400C7EE44 /* PersonBiographyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */; };
 		AD36AF4626CC51E400C7EE44 /* PersonBiographyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */; };
+		AD36AF4826CC5FA800C7EE44 /* PersonCreditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4726CC5FA800C7EE44 /* PersonCreditResponse.swift */; };
 		AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */; };
 		AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB126C4824200C501B8 /* ComingViewController.swift */; };
 		AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB326C5949000C501B8 /* SerieViewController.swift */; };
@@ -60,6 +61,7 @@
 		AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailResponse.swift; sourceTree = "<group>"; };
 		AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBiographyTableViewCell.swift; sourceTree = "<group>"; };
 		AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonBiographyTableViewCell.xib; sourceTree = "<group>"; };
+		AD36AF4726CC5FA800C7EE44 /* PersonCreditResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCreditResponse.swift; sourceTree = "<group>"; };
 		AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheatersViewController.swift; sourceTree = "<group>"; };
 		AD60AAB126C4824200C501B8 /* ComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewController.swift; sourceTree = "<group>"; };
 		AD60AAB326C5949000C501B8 /* SerieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */,
 				AD36AF3F26CC4A2F00C7EE44 /* SerieDetailResponse.swift */,
 				AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */,
+				AD36AF4726CC5FA800C7EE44 /* PersonCreditResponse.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */,
 				ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */,
 				AD60AAB626C5966800C501B8 /* SerieDetailViewController.swift in Sources */,
+				AD36AF4826CC5FA800C7EE44 /* PersonCreditResponse.swift in Sources */,
 				AD0484BF26C70B2D00318AAD /* PersonController.swift in Sources */,
 				AD36AF4026CC4A2F00C7EE44 /* SerieDetailResponse.swift in Sources */,
 				AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */,
