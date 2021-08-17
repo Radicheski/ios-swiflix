@@ -14,6 +14,8 @@
 		AD20626C26CB1140006CB33F /* MovieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */; };
 		AD36AF4026CC4A2F00C7EE44 /* SerieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF3F26CC4A2F00C7EE44 /* SerieDetailResponse.swift */; };
 		AD36AF4226CC4DDE00C7EE44 /* PersonDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */; };
+		AD36AF4526CC51E400C7EE44 /* PersonBiographyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */; };
+		AD36AF4626CC51E400C7EE44 /* PersonBiographyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */; };
 		AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */; };
 		AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB126C4824200C501B8 /* ComingViewController.swift */; };
 		AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB326C5949000C501B8 /* SerieViewController.swift */; };
@@ -56,6 +58,8 @@
 		AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailResponse.swift; sourceTree = "<group>"; };
 		AD36AF3F26CC4A2F00C7EE44 /* SerieDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailResponse.swift; sourceTree = "<group>"; };
 		AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailResponse.swift; sourceTree = "<group>"; };
+		AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBiographyTableViewCell.swift; sourceTree = "<group>"; };
+		AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonBiographyTableViewCell.xib; sourceTree = "<group>"; };
 		AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheatersViewController.swift; sourceTree = "<group>"; };
 		AD60AAB126C4824200C501B8 /* ComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewController.swift; sourceTree = "<group>"; };
 		AD60AAB326C5949000C501B8 /* SerieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				ADF664E226C46F7000511E36 /* MediaTableViewCell.xib */,
 				AD60AABB26C59CC200C501B8 /* PersonTableViewCell.swift */,
 				AD60AABC26C59CC200C501B8 /* PersonTableViewCell.xib */,
+				AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */,
+				AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD36AF4626CC51E400C7EE44 /* PersonBiographyTableViewCell.xib in Resources */,
 				ADB666B126C2FE75008938D7 /* LaunchScreen.storyboard in Resources */,
 				AD0756A826C5B96800A53202 /* apikey.plist in Resources */,
 				ADB666AE26C2FE75008938D7 /* Assets.xcassets in Resources */,
@@ -312,6 +319,7 @@
 				AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */,
 				AD36AF4226CC4DDE00C7EE44 /* PersonDetailResponse.swift in Sources */,
 				AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */,
+				AD36AF4526CC51E400C7EE44 /* PersonBiographyTableViewCell.swift in Sources */,
 				ADF664E826C4790400511E36 /* MovieDetailViewController.swift in Sources */,
 				ADF0DC4326C9B21100080AE6 /* UpcomingResponse.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
