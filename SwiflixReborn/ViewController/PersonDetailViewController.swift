@@ -18,6 +18,7 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var detailTableView: UITableView!
     
     var person: Person?
+    var detail: PersonDetailResponse?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,23 @@ class PersonDetailViewController: UIViewController {
         self.setupDetailTableView()
         
         self.navigationItem.title = self.person?.name ?? "(Unknown name)"
+
+        if let name = self.detail?.name,
+           let birthday = self.detail?.birthday,
+           let department = self.detail?.knownForDepartment {
+            self.nameLabel.text = name
+            self.birthdayLabel.text = birthday
+            self.departmentLabel.text = department
+        }
         
-        TMDB.getImage(string: person?.profile ?? "") { _data in
+        if let deathday = self.detail?.deathday {
+            self.deathdayLabel.text = deathday
+            self.deathdayLabel.isHidden = false
+        } else {
+            self.deathdayLabel.isHidden = true
+        }
+        
+        TMDB.getImage(size: "h632", string: person?.profile ?? "") { _data in
             if let data = _data,
                let image = UIImage(data: data){
                 DispatchQueue.main.async {
@@ -45,6 +61,15 @@ class PersonDetailViewController: UIViewController {
     func setup(with person: Person) {
         
         self.person = person
+        
+        TMDB.getPersonDetails(id: person.id) { response in
+            self.detail = response
+            DispatchQueue.main.async {
+                self.viewDidLoad()
+            }
+        } onError: { error in
+            #warning("Handle this error")
+        }
         
     }
 

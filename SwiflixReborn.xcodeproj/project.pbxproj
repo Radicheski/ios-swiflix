@@ -13,6 +13,7 @@
 		AD0756A826C5B96800A53202 /* apikey.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD0756A726C5B96800A53202 /* apikey.plist */; };
 		AD20626C26CB1140006CB33F /* MovieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */; };
 		AD36AF4026CC4A2F00C7EE44 /* SerieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF3F26CC4A2F00C7EE44 /* SerieDetailResponse.swift */; };
+		AD36AF4226CC4DDE00C7EE44 /* PersonDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */; };
 		AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */; };
 		AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB126C4824200C501B8 /* ComingViewController.swift */; };
 		AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB326C5949000C501B8 /* SerieViewController.swift */; };
@@ -54,6 +55,7 @@
 		AD0756A726C5B96800A53202 /* apikey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apikey.plist; sourceTree = "<group>"; };
 		AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailResponse.swift; sourceTree = "<group>"; };
 		AD36AF3F26CC4A2F00C7EE44 /* SerieDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailResponse.swift; sourceTree = "<group>"; };
+		AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailResponse.swift; sourceTree = "<group>"; };
 		AD60AAAF26C47F9500C501B8 /* OnTheatersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheatersViewController.swift; sourceTree = "<group>"; };
 		AD60AAB126C4824200C501B8 /* ComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingViewController.swift; sourceTree = "<group>"; };
 		AD60AAB326C5949000C501B8 /* SerieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				ADF0DC4226C9B21100080AE6 /* UpcomingResponse.swift */,
 				AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */,
 				AD36AF3F26CC4A2F00C7EE44 /* SerieDetailResponse.swift */,
+				AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				AD36AF4026CC4A2F00C7EE44 /* SerieDetailResponse.swift in Sources */,
 				AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */,
 				AD60AAB226C4824200C501B8 /* ComingViewController.swift in Sources */,
+				AD36AF4226CC4DDE00C7EE44 /* PersonDetailResponse.swift in Sources */,
 				AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */,
 				ADF664E826C4790400511E36 /* MovieDetailViewController.swift in Sources */,
 				ADF0DC4326C9B21100080AE6 /* UpcomingResponse.swift in Sources */,
