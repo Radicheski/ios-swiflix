@@ -54,6 +54,7 @@ class PersonDetailViewController: UIViewController {
     }
     
     func setupDetailTableView() {
+        self.detailTableView.register(UINib(nibName: "PersonBiographyTableViewCell", bundle: nil), forCellReuseIdentifier: PersonBiographyTableViewCell.customIdentifier)
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
     }
@@ -84,9 +85,60 @@ extension PersonDetailViewController: UITableViewDataSource {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if self.tabSegment.selectedSegmentIndex == 0 { return 2 }
+        return 0
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if self.tabSegment.selectedSegmentIndex == 0 {
+            switch section {
+            case BiographySection.biography.rawValue:
+                return "Biography"
+            case BiographySection.birthPlace.rawValue:
+                return "Place of birth"
+            default:
+                return nil
+            }
+        }
+        
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell else { return UITableViewCell() }
+        
+        if self.tabSegment.selectedSegmentIndex == 0 {
+            return self.setBiographyViewCell(cell, at: indexPath)
+        }
+        
+        return cell
+    }
+    
+    func setBiographyViewCell(_ cell: PersonBiographyTableViewCell, at indexPath: IndexPath) -> PersonBiographyTableViewCell {
+        
+        switch indexPath.section {
+        
+        case BiographySection.biography.rawValue:
+            cell.setup(with: self.detail?.biography ?? "No biography available")
+            
+        case BiographySection.birthPlace.rawValue:
+            cell.setup(with: self.detail?.placeOfBirth ?? "No place of birth available")
+            
+        default:
+            cell.setup(with: "")
+            
+        }
+        
+        return cell
+        
+    }
+    
+}
+
+enum BiographySection: Int {
+    
+    case biography = 0
+    case birthPlace = 1
     
 }

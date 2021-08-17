@@ -9,7 +9,7 @@ import UIKit
 
 class PersonBiographyTableViewCell: UITableViewCell {
     
-    let customIdentifier = "PersonBiographyTableViewCell"
+    static let customIdentifier = "PersonBiographyTableViewCell"
 
     @IBOutlet weak var descriptionLabel: UILabel!
     
