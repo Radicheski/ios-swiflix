@@ -144,6 +144,18 @@ struct TMDB {
 
     }
     
+    static func getSerieDetails(id: Int, language: String = "en-US",
+                                onSuccess: ((SerieDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
+        
+        let urlString = "/tv/\(id)"
+        TMDB.request(string: urlString) { movie in
+            onSuccess?(movie)
+        } onError: { error in
+            onError?(error)
+        }
+        
+    }
+    
 }
 
 

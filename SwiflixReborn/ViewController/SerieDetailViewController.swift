@@ -15,6 +15,7 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var detailTableView: UITableView!
     
     var serie: Media?
+    var detail: SerieDetailResponse?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,13 @@ class SerieDetailViewController: UIViewController {
         self.setupDetailTableView()
         
         self.navigationItem.title = self.serie?.mediaTitle ?? "(Unknown title)"
-        TMDB.getImage(string: self.serie?.poster ?? "") { _data in
+        if let rate = self.detail?.voteAverage {
+            self.rateLabel.text = "\(rate)"
+        } else {
+            self.rateLabel.isHidden = true
+        }
+        
+        TMDB.getImage(size: "w780", string: self.detail?.backdropPath ?? "") { _data in
             if let data = _data,
                let image = UIImage(data: data){
                 DispatchQueue.main.async {
@@ -39,6 +46,15 @@ class SerieDetailViewController: UIViewController {
     
     func setup(with serie: Media) {
         self.serie = serie
+        TMDB.getSerieDetails(id: serie.id) { response in
+            self.detail = response
+            DispatchQueue.main.async {
+                self.viewDidLoad()
+            }
+        } onError: { error in
+            #warning("Handle this error")
+        }
+
     }
 
 }
