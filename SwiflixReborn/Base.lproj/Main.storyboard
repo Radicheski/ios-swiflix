@@ -308,7 +308,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tfa-Io-yvf">
-                                <rect key="frame" x="0.0" y="163" width="414" height="650"/>
+                                <rect key="frame" x="0.0" y="153" width="414" height="660"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -356,13 +356,16 @@
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dnb-2f-QkT">
                                 <rect key="frame" x="10" y="396" width="394" height="32"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Geral"/>
                                     <segment title="Outros"/>
                                     <segment title="Trailers"/>
                                     <segment title="Crítica"/>
                                 </segments>
+                                <connections>
+                                    <action selector="tabDidSelect:" destination="AcF-kx-CVb" eventType="valueChanged" id="G8c-pe-4jj"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oI6-1O-4Wc">
                                 <rect key="frame" x="0.0" y="437" width="414" height="376"/>
@@ -487,7 +490,7 @@
                 <navigationController id="4n2-O6-LfR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Séries" image="list.and.film" catalog="system" id="fCJ-rO-AJ5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="4Vz-An-DTa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -605,7 +608,7 @@
                 <navigationController id="5Fe-Re-lbe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lançamentos" image="square.stack.3d.forward.dottedline" catalog="system" id="M3C-jq-Jbq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="wVI-5o-pxg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
