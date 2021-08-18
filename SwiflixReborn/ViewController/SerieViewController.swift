@@ -27,7 +27,8 @@ class SerieViewController: UIViewController {
     }
     
     func setupSerieTableView() {
-        self.serieTableView.register(UINib(nibName: "MediaTableViewCell", bundle: nil), forCellReuseIdentifier: MediaTableViewCell.customIdentifier)
+        
+        self.serieTableView.register(MediaTableViewCell.self)
         
         self.serieTableView.delegate = self
         self.serieTableView.dataSource = self

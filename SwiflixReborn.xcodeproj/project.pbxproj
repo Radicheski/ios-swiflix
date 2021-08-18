@@ -31,6 +31,8 @@
 		ADB666AE26C2FE75008938D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AD26C2FE75008938D7 /* Assets.xcassets */; };
 		ADB666B126C2FE75008938D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AF26C2FE75008938D7 /* LaunchScreen.storyboard */; };
 		ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */; };
+		ADD8205926CDB11C0097EDF5 /* Registrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8205826CDB11C0097EDF5 /* Registrable.swift */; };
+		ADD8205B26CDB2110097EDF5 /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */; };
 		ADF0DC3F26C9ADDC00080AE6 /* NowPlayingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0DC3E26C9ADDC00080AE6 /* NowPlayingResponse.swift */; };
 		ADF0DC4126C9AF3E00080AE6 /* NowPlayingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0DC4026C9AF3E00080AE6 /* NowPlayingController.swift */; };
 		ADF0DC4326C9B21100080AE6 /* UpcomingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0DC4226C9B21100080AE6 /* UpcomingResponse.swift */; };
@@ -78,6 +80,8 @@
 		ADB666B026C2FE75008938D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB666B226C2FE75008938D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
+		ADD8205826CDB11C0097EDF5 /* Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registrable.swift; sourceTree = "<group>"; };
+		ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		ADF0DC3E26C9ADDC00080AE6 /* NowPlayingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingResponse.swift; sourceTree = "<group>"; };
 		ADF0DC4026C9AF3E00080AE6 /* NowPlayingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingController.swift; sourceTree = "<group>"; };
 		ADF0DC4226C9B21100080AE6 /* UpcomingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingResponse.swift; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 				AD0484C026C71C3900318AAD /* Person.swift */,
 				EBDF32D3D0594E35F7B187DE /* TMDB */,
 				EBDF31787088983ADD3134B1 /* Media.swift */,
+				ADD8205826CDB11C0097EDF5 /* Registrable.swift */,
+				ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				AD36AF4226CC4DDE00C7EE44 /* PersonDetailResponse.swift in Sources */,
 				AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */,
 				AD36AF4526CC51E400C7EE44 /* PersonBiographyTableViewCell.swift in Sources */,
+				ADD8205926CDB11C0097EDF5 /* Registrable.swift in Sources */,
 				ADF664E826C4790400511E36 /* MovieDetailViewController.swift in Sources */,
 				ADF0DC4326C9B21100080AE6 /* UpcomingResponse.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
@@ -332,6 +339,7 @@
 				AD60AABA26C5996C00C501B8 /* PersonDetailViewController.swift in Sources */,
 				AD20626C26CB1140006CB33F /* MovieDetailResponse.swift in Sources */,
 				ADB666A726C2FE74008938D7 /* SceneDelegate.swift in Sources */,
+				ADD8205B26CDB2110097EDF5 /* UITableView+extension.swift in Sources */,
 				EBDF3D9711AA1EC1A2241790 /* TMDBError.swift in Sources */,
 				EBDF349D23FACAF28B8F77C4 /* MediaType.swift in Sources */,
 				EBDF3D1C4C7458F49686D95F /* TimeWindow.swift in Sources */,

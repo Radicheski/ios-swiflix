@@ -26,7 +26,8 @@ class PersonViewController: UIViewController {
     }
     
     func setupPersonTableView() {
-        self.personTableView.register(UINib(nibName: "PersonTableViewCell", bundle: nil), forCellReuseIdentifier: PersonTableViewCell.customIdentifier)
+
+        self.personTableView.register(PersonTableViewCell.self)
         
         self.personTableView.delegate = self
         self.personTableView.dataSource = self

@@ -55,8 +55,10 @@ class PersonDetailViewController: UIViewController {
     }
     
     func setupDetailTableView() {
-        self.detailTableView.register(UINib(nibName: "PersonBiographyTableViewCell", bundle: nil), forCellReuseIdentifier: PersonBiographyTableViewCell.customIdentifier)
-        self.detailTableView.register(UINib(nibName: "MediaTableViewCell", bundle: nil), forCellReuseIdentifier: MediaTableViewCell.customIdentifier)
+
+        self.detailTableView.register(PersonBiographyTableViewCell.self)
+        self.detailTableView.register(MediaTableViewCell.self)
+        
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
     }

@@ -26,7 +26,8 @@ class ComingViewController: UIViewController {
     }
     
     func setupMovieTableView() {
-        self.movieTableView.register(UINib(nibName: "MediaTableViewCell", bundle: nil), forCellReuseIdentifier: MediaTableViewCell.customIdentifier)
+
+        self.movieTableView.register(MediaTableViewCell.self)
         
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self

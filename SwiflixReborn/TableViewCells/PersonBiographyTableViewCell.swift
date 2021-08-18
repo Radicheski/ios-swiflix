@@ -9,7 +9,6 @@ import UIKit
 
 class PersonBiographyTableViewCell: UITableViewCell {
     
-    static let customIdentifier = "PersonBiographyTableViewCell"
 
     @IBOutlet weak var descriptionLabel: UILabel!
     
@@ -27,5 +26,12 @@ class PersonBiographyTableViewCell: UITableViewCell {
     func setup(with text: String) {
         self.descriptionLabel.text = text
     }
+    
+}
+
+extension PersonBiographyTableViewCell: Registrable {
+    
+    static var customIdentifier: String { "PersonBiographyTableViewCell" }
+    static var nib: UINib { UINib(nibName: "PersonBiographyTableViewCell", bundle: nil) }
     
 }

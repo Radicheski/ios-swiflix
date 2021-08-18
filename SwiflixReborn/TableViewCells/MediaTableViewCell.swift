@@ -8,8 +8,7 @@
 import UIKit
 
 class MediaTableViewCell: UITableViewCell {
-    
-    static let customIdentifier: String = "MediaTableViewCell"
+
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var posterImage: UIImageView!
@@ -37,5 +36,12 @@ class MediaTableViewCell: UITableViewCell {
             }
         }
     }
+    
+}
+
+extension MediaTableViewCell: Registrable {
+    
+    static var customIdentifier: String { "MediaTableViewCell" }
+    static var nib: UINib { UINib(nibName: "MediaTableViewCell", bundle: nil) }
     
 }

@@ -9,8 +9,6 @@ import UIKit
 
 class PersonTableViewCell: UITableViewCell {
 
-    static let customIdentifier: String = "PersonTableViewCell"
-
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var posterImage: UIImageView!
     
@@ -37,5 +35,12 @@ class PersonTableViewCell: UITableViewCell {
             }
         }
     }
+    
+}
+
+extension PersonTableViewCell: Registrable {
+    
+    static var customIdentifier: String { "PersonTableViewCell" }
+    static var nib: UINib { UINib(nibName: "PersonTableViewCell", bundle: nil) }
     
 }
