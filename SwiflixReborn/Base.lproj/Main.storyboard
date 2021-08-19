@@ -490,7 +490,7 @@
                 <navigationController id="4n2-O6-LfR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Séries" image="list.and.film" catalog="system" id="fCJ-rO-AJ5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="4Vz-An-DTa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -608,7 +608,7 @@
                 <navigationController id="5Fe-Re-lbe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lançamentos" image="square.stack.3d.forward.dottedline" catalog="system" id="M3C-jq-Jbq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="wVI-5o-pxg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -755,6 +755,9 @@
                                     <segment title="Similares"/>
                                     <segment title="Crítica"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentDidSelect:" destination="oNo-7T-EJb" eventType="valueChanged" id="iGo-jU-oNf"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-6S-TXT">
                                 <rect key="frame" x="0.0" y="437" width="414" height="376"/>

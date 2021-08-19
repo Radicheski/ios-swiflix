@@ -40,6 +40,7 @@ class SerieDetailViewController: UIViewController {
     }
     
     func setupDetailTableView() {
+        self.detailTableView.register(PersonBiographyTableViewCell.self)
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
     }
@@ -56,7 +57,10 @@ class SerieDetailViewController: UIViewController {
         }
 
     }
-
+    @IBAction func segmentDidSelect(_ sender: UISegmentedControl) {
+        self.detailTableView.reloadData()
+    }
+    
 }
 
 extension SerieDetailViewController: UITableViewDelegate {
@@ -65,12 +69,80 @@ extension SerieDetailViewController: UITableViewDelegate {
 
 extension SerieDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch self.tabSegment.selectedSegmentIndex {
+        case 0:
+            return 1
+        default:
+            return 0
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        switch self.tabSegment.selectedSegmentIndex {
+        case 0:
+            return 4
+        default:
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch self.tabSegment.selectedSegmentIndex {
+        case 0:
+            switch section {
+            case 0: return "First air date"
+            case 1: return "Last air date"
+            case 2: return "Number of seasons"
+            case 3: return "Number of episodes"
+            default: return nil
+            }
+        default:
+            return nil
+        }
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        switch tabSegment.selectedSegmentIndex {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell else { return UITableViewCell() }
+            self.setGeneralInformation(cell, for: indexPath)
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func setGeneralInformation(_ cell: PersonBiographyTableViewCell, for indexPath: IndexPath) {
+        switch indexPath.section {
+        case SerieGeneralTab.firstAirDate.rawValue:
+            cell.setup(with: self.detail?.firstAirDate ?? "No date available")
+        case SerieGeneralTab.lastAirDate.rawValue:
+            cell.setup(with: self.detail?.lastAirDate ?? "No date available")
+        case SerieGeneralTab.numberOfSeasons.rawValue:
+            if let seasons = self.detail?.numberOfSeasons {
+                cell.setup(with: "\(seasons)")
+            }else {
+                cell.setup(with: "No information available")
+            }
+        case SerieGeneralTab.numberOfEpisodes.rawValue:
+            if let episodes = self.detail?.numberOfEpisodes {
+                cell.setup(with: "\(episodes)")
+            }else {
+                cell.setup(with: "No information available")
+            }
+        default:
+            return
+        }
+
     }
     
     
+}
+
+enum SerieGeneralTab: Int {
+    case firstAirDate = 0
+    case lastAirDate = 1
+    case numberOfSeasons = 2
+    case numberOfEpisodes = 3
 }
