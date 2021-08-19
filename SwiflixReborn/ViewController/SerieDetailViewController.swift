@@ -16,6 +16,7 @@ class SerieDetailViewController: UIViewController {
     
     var serie: Media?
     var detail: SerieDetailResponse?
+    var similar: [Media]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,8 @@ class SerieDetailViewController: UIViewController {
     }
     
     func setupDetailTableView() {
-        self.detailTableView.register(PersonBiographyTableViewCell.self)
+        let cells: [Registrable.Type] = [PersonBiographyTableViewCell.self, MediaTableViewCell.self]
+        self.detailTableView.register(cells)
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
     }
@@ -55,6 +57,12 @@ class SerieDetailViewController: UIViewController {
         } onError: { error in
             #warning("Handle this error")
         }
+        TMDB.getTVSimilar(id: serie.id) { response in
+            self.similar = response.results as [Media]
+        } onError: { error in
+            #warning("Handle this error")
+        }
+
 
     }
     @IBAction func segmentDidSelect(_ sender: UISegmentedControl) {
@@ -72,6 +80,8 @@ extension SerieDetailViewController: UITableViewDataSource {
         switch self.tabSegment.selectedSegmentIndex {
         case 0:
             return 1
+        case 2:
+            return self.similar?.count ?? 0
         default:
             return 0
         }
@@ -107,6 +117,11 @@ extension SerieDetailViewController: UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell else { return UITableViewCell() }
             self.setGeneralInformation(cell, for: indexPath)
+            return cell
+        case 2:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell,
+                  let media = self.similar?[indexPath.row] else { return UITableViewCell() }
+            cell.setupWith(media: media)
             return cell
         default:
             return UITableViewCell()

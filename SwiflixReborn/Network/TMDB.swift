@@ -180,6 +180,18 @@ struct TMDB {
          
      }
     
+    static func getTVSimilar(id: Int, language: String = "en-US",
+                                 onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
+         
+         let urlString = "/tv/\(id)/similar"
+         TMDB.request(string: urlString) { credits in
+             onSuccess?(credits)
+         } onError: { error in
+             onError?(error)
+         }
+         
+     }
+    
 }
 
 

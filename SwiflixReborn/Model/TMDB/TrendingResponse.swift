@@ -33,7 +33,7 @@ struct Result: Codable {
     let genreIds: [Int]?
     let originalLanguage: String?
     let popularity: Double
-    let mediaType: MediaType
+    let mediaType: MediaType?
     let video: Bool?
     let releaseDate: String?
     let adult: Bool?
