@@ -56,8 +56,10 @@ class PersonDetailViewController: UIViewController {
     
     func setupDetailTableView() {
 
-        self.detailTableView.register(PersonBiographyTableViewCell.self)
-        self.detailTableView.register(MediaTableViewCell.self)
+//        self.detailTableView.register(PersonBiographyTableViewCell.self)
+//        self.detailTableView.register(MediaTableViewCell.self)
+        let cells: [Registrable.Type] = [PersonBiographyTableViewCell.self, MediaTableViewCell.self]
+        self.detailTableView.register(cells)
         
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
