@@ -30,6 +30,9 @@
 		ADB666AC26C2FE74008938D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AA26C2FE74008938D7 /* Main.storyboard */; };
 		ADB666AE26C2FE75008938D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AD26C2FE75008938D7 /* Assets.xcassets */; };
 		ADB666B126C2FE75008938D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AF26C2FE75008938D7 /* LaunchScreen.storyboard */; };
+		ADCD0B8626CF04E4002D8F52 /* SerieSeasonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0B8526CF04E4002D8F52 /* SerieSeasonResponse.swift */; };
+		ADCD0B8926CF053E002D8F52 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0B8726CF053E002D8F52 /* EpisodeTableViewCell.swift */; };
+		ADCD0B8A26CF053E002D8F52 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCD0B8826CF053E002D8F52 /* EpisodeTableViewCell.xib */; };
 		ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */; };
 		ADD8205926CDB11C0097EDF5 /* Registrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8205826CDB11C0097EDF5 /* Registrable.swift */; };
 		ADD8205B26CDB2110097EDF5 /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */; };
@@ -79,6 +82,9 @@
 		ADB666AD26C2FE75008938D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADB666B026C2FE75008938D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB666B226C2FE75008938D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADCD0B8526CF04E4002D8F52 /* SerieSeasonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieSeasonResponse.swift; sourceTree = "<group>"; };
+		ADCD0B8726CF053E002D8F52 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		ADCD0B8826CF053E002D8F52 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
 		ADD8205826CDB11C0097EDF5 /* Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registrable.swift; sourceTree = "<group>"; };
 		ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
@@ -176,6 +182,8 @@
 				AD60AABC26C59CC200C501B8 /* PersonTableViewCell.xib */,
 				AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */,
 				AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */,
+				ADCD0B8726CF053E002D8F52 /* EpisodeTableViewCell.swift */,
+				ADCD0B8826CF053E002D8F52 /* EpisodeTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 				AD36AF3F26CC4A2F00C7EE44 /* SerieDetailResponse.swift */,
 				AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */,
 				AD36AF4726CC5FA800C7EE44 /* PersonCreditResponse.swift */,
+				ADCD0B8526CF04E4002D8F52 /* SerieSeasonResponse.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -298,6 +307,7 @@
 				ADB666B126C2FE75008938D7 /* LaunchScreen.storyboard in Resources */,
 				AD0756A826C5B96800A53202 /* apikey.plist in Resources */,
 				ADB666AE26C2FE75008938D7 /* Assets.xcassets in Resources */,
+				ADCD0B8A26CF053E002D8F52 /* EpisodeTableViewCell.xib in Resources */,
 				AD60AABE26C59CC200C501B8 /* PersonTableViewCell.xib in Resources */,
 				ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */,
 				ADF664E426C46F7000511E36 /* MediaTableViewCell.xib in Resources */,
@@ -323,6 +333,7 @@
 				ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */,
 				AD60AAB626C5966800C501B8 /* SerieDetailViewController.swift in Sources */,
 				AD36AF4826CC5FA800C7EE44 /* PersonCreditResponse.swift in Sources */,
+				ADCD0B8926CF053E002D8F52 /* EpisodeTableViewCell.swift in Sources */,
 				AD0484BF26C70B2D00318AAD /* PersonController.swift in Sources */,
 				AD36AF4026CC4A2F00C7EE44 /* SerieDetailResponse.swift in Sources */,
 				AD60AAB026C47F9500C501B8 /* OnTheatersViewController.swift in Sources */,
@@ -337,6 +348,7 @@
 				ADF664E326C46F7000511E36 /* MediaTableViewCell.swift in Sources */,
 				ADF0DC4126C9AF3E00080AE6 /* NowPlayingController.swift in Sources */,
 				AD60AABA26C5996C00C501B8 /* PersonDetailViewController.swift in Sources */,
+				ADCD0B8626CF04E4002D8F52 /* SerieSeasonResponse.swift in Sources */,
 				AD20626C26CB1140006CB33F /* MovieDetailResponse.swift in Sources */,
 				ADB666A726C2FE74008938D7 /* SceneDelegate.swift in Sources */,
 				ADD8205B26CDB2110097EDF5 /* UITableView+extension.swift in Sources */,

@@ -17,7 +17,8 @@ class SerieDetailViewController: UIViewController {
     var serie: Media?
     var detail: SerieDetailResponse?
     var similar: [Media]?
-
+    var episodes: [Episode]? = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +42,7 @@ class SerieDetailViewController: UIViewController {
     }
     
     func setupDetailTableView() {
-        let cells: [Registrable.Type] = [PersonBiographyTableViewCell.self, MediaTableViewCell.self]
+        let cells: [Registrable.Type] = [PersonBiographyTableViewCell.self, MediaTableViewCell.self, EpisodeTableViewCell.self]
         self.detailTableView.register(cells)
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
@@ -51,6 +52,15 @@ class SerieDetailViewController: UIViewController {
         self.serie = serie
         TMDB.getSerieDetails(id: serie.id) { response in
             self.detail = response
+            if let seasons = self.detail?.numberOfSeasons, seasons > 0{
+                for season in 1...(self.detail?.numberOfSeasons ?? 0) {
+                    TMDB.getTVSeason(id: serie.id, season: season) { season in
+                        self.episodes?.append(contentsOf: season.episodes)
+                    } onError: { error in
+                        #warning("Handle this error")
+                    }
+                }
+            }
             DispatchQueue.main.async {
                 self.viewDidLoad()
             }
@@ -62,9 +72,10 @@ class SerieDetailViewController: UIViewController {
         } onError: { error in
             #warning("Handle this error")
         }
-
-
+        
+        
     }
+    
     @IBAction func segmentDidSelect(_ sender: UISegmentedControl) {
         self.detailTableView.reloadData()
     }
@@ -80,6 +91,8 @@ extension SerieDetailViewController: UITableViewDataSource {
         switch self.tabSegment.selectedSegmentIndex {
         case 0:
             return 1
+        case 1:
+            return self.episodes?.filter({ $0.seasonNumber == section + 1 }).count ?? 0
         case 2:
             return self.similar?.count ?? 0
         default:
@@ -91,6 +104,8 @@ extension SerieDetailViewController: UITableViewDataSource {
         switch self.tabSegment.selectedSegmentIndex {
         case 0:
             return 4
+        case 1:
+            return self.detail?.numberOfSeasons ?? 0
         default:
             return 1
         }
@@ -106,10 +121,12 @@ extension SerieDetailViewController: UITableViewDataSource {
             case 3: return "Number of episodes"
             default: return nil
             }
+        case 1:
+            return "Season \(section + 1)"
         default:
             return nil
         }
-
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,6 +134,10 @@ extension SerieDetailViewController: UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell else { return UITableViewCell() }
             self.setGeneralInformation(cell, for: indexPath)
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: EpisodeTableViewCell.customIdentifier) as? EpisodeTableViewCell else { return UITableViewCell() }
+            self.setEpisodeInformation(cell, for: indexPath)
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell,
@@ -149,7 +170,14 @@ extension SerieDetailViewController: UITableViewDataSource {
         default:
             return
         }
-
+        
+    }
+    
+    func setEpisodeInformation(_ cell: EpisodeTableViewCell, for indexPath: IndexPath) {
+        if let season = self.episodes?.filter({ $0.seasonNumber == indexPath.section + 1 }),
+           let episode = season.firstIndex(where: { $0.episodeNumber == indexPath.row + 1 }) {
+            cell.setup(with: season[episode])
+        }
     }
     
     
