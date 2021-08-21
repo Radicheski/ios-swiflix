@@ -16,6 +16,7 @@ class MovieDetailViewController: UIViewController {
     
     var media: Media?
     var detail: MovieDetailResponse?
+    var similar: [Media]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,8 @@ class MovieDetailViewController: UIViewController {
     
     func setupDetailTableView() {
         
-        self.detailTableView.register(PersonBiographyTableViewCell.self)
+        let cells: [Registrable.Type] = [PersonBiographyTableViewCell.self, MediaTableViewCell.self]
+        self.detailTableView.register(cells)
         
         self.detailTableView.delegate = self
         self.detailTableView.dataSource = self
@@ -55,6 +57,12 @@ class MovieDetailViewController: UIViewController {
         } onError: { error in
             #warning("Handle this error")
         }
+        TMDB.getMovieSimilar(id: movie.id) { response in
+            self.similar = response.results
+        } onError: { error in
+            #warning("Handle this error")
+        }
+
 
     }
     
@@ -73,6 +81,8 @@ extension MovieDetailViewController: UITableViewDataSource {
         switch self.tabSegment.selectedSegmentIndex {
         case 0:
             return 1
+        case 1:
+            return self.similar?.count ?? 0
         default:
             return 0
         }
@@ -83,7 +93,7 @@ extension MovieDetailViewController: UITableViewDataSource {
         case 0:
             return 3
         default:
-            return 0
+            return 1
         }
     }
     
@@ -104,10 +114,15 @@ extension MovieDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell else { return UITableViewCell() }
         switch self.tabSegment.selectedSegmentIndex {
         case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell else { return UITableViewCell() }
             return self.getGeneralIInformation(cell, at: indexPath)
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell,
+                  let media = self.similar?[indexPath.row] else { return UITableViewCell() }
+            cell.setupWith(media: media)
+            return cell
         default:
             return UITableViewCell()
         }

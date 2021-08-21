@@ -73,7 +73,7 @@ struct TMDB {
         } onError: { error in
             onError?(error)
         }
-
+        
         
     }
     
@@ -122,7 +122,7 @@ struct TMDB {
     }
     
     static func getUpcoming(language: String = "en-US", page: Int = 1, region: String = "US",
-                              onSuccess: ((UpcomingResponse) -> Void)?, onError: ((Error) -> Void)?) {
+                            onSuccess: ((UpcomingResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
         let urlString = "/movie/upcoming?language=\(language)&page=\(page)&region=\(region)"
         TMDB.request(string: urlString) { (response: UpcomingResponse) in
@@ -141,7 +141,7 @@ struct TMDB {
         } onError: { error in
             onError?(error)
         }
-
+        
     }
     
     static func getSerieDetails(id: Int, language: String = "en-US",
@@ -157,7 +157,7 @@ struct TMDB {
     }
     
     static func getPersonDetails(id: Int, language: String = "en-US",
-                                onSuccess: ((PersonDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
+                                 onSuccess: ((PersonDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
         let urlString = "/person/\(id)"
         TMDB.request(string: urlString) { person in
@@ -170,31 +170,43 @@ struct TMDB {
     
     static func getPersonCredits(id: Int, language: String = "en-US",
                                  onSuccess: ((PersonCreditResponse) -> Void)?, onError: ((Error) -> Void)?) {
-         
-         let urlString = "/person/\(id)/combined_credits"
-         TMDB.request(string: urlString) { credits in
-             onSuccess?(credits)
-         } onError: { error in
-             onError?(error)
-         }
-         
-     }
+        
+        let urlString = "/person/\(id)/combined_credits"
+        TMDB.request(string: urlString) { credits in
+            onSuccess?(credits)
+        } onError: { error in
+            onError?(error)
+        }
+        
+    }
     
     static func getTVSimilar(id: Int, language: String = "en-US",
-                                 onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
-         
-         let urlString = "/tv/\(id)/similar"
-         TMDB.request(string: urlString) { credits in
-             onSuccess?(credits)
-         } onError: { error in
-             onError?(error)
-         }
-         
-     }
+                             onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
+        
+        let urlString = "/tv/\(id)/similar"
+        TMDB.request(string: urlString) { credits in
+            onSuccess?(credits)
+        } onError: { error in
+            onError?(error)
+        }
+        
+    }
+    
+    static func getMovieSimilar(id: Int, language: String = "en-US",
+                                onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
+        
+        let urlString = "/movie/\(id)/similar"
+        TMDB.request(string: urlString) { credits in
+            onSuccess?(credits)
+        } onError: { error in
+            onError?(error)
+        }
+        
+    }
     
     static func getTVSeason(id: Int, season: Int, language: String = "en-US",
                             onSuccess: ((SerieSeasonResponse) -> Void)?, onError: ((Error) -> Void)?) {
-
+        
         let urlString = "/tv/\(id)/season/\(season)"
         TMDB.request(string: urlString) { credits in
             onSuccess?(credits)
