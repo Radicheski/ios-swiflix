@@ -18,6 +18,7 @@ class SerieDetailViewController: UIViewController {
     var detail: SerieDetailResponse?
     var similar: [Media]?
     var episodes: [Episode]? = []
+    var reviews: [Review]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,12 @@ class SerieDetailViewController: UIViewController {
         } onError: { error in
             #warning("Handle this error")
         }
+        TMDB.getTVReviews(id: serie.id) { response in
+            self.reviews = response.results
+        } onError: { error in
+            #warning("Handle this error")
+        }
+
         
         
     }
@@ -95,6 +102,8 @@ extension SerieDetailViewController: UITableViewDataSource {
             return self.episodes?.filter({ $0.seasonNumber == section + 1 }).count ?? 0
         case 2:
             return self.similar?.count ?? 0
+        case 3:
+            return self.reviews?.count ?? 0
         default:
             return 0
         }
@@ -143,6 +152,11 @@ extension SerieDetailViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell,
                   let media = self.similar?[indexPath.row] else { return UITableViewCell() }
             cell.setupWith(media: media)
+            return cell
+        case 3:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell,
+                  let review = self.reviews?[indexPath.row] else { return UITableViewCell() }
+            cell.setup(with: review.content)
             return cell
         default:
             return UITableViewCell()
