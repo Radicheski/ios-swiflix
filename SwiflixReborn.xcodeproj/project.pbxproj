@@ -29,6 +29,8 @@
 		AD91606026D2E5E6002A6969 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605F26D2E5E6002A6969 /* Language.swift */; };
 		AD91606226D2E624002A6969 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606126D2E624002A6969 /* RequestParameter.swift */; };
 		AD91606426D2E697002A6969 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606326D2E697002A6969 /* Movie.swift */; };
+		AD91606626D2EEC5002A6969 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606526D2EEC5002A6969 /* People.swift */; };
+		AD91606826D2F1D9002A6969 /* PopularPeopleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606726D2F1D9002A6969 /* PopularPeopleResponse.swift */; };
 		ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB666A426C2FE74008938D7 /* AppDelegate.swift */; };
 		ADB666A726C2FE74008938D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB666A626C2FE74008938D7 /* SceneDelegate.swift */; };
 		ADB666AC26C2FE74008938D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AA26C2FE74008938D7 /* Main.storyboard */; };
@@ -84,6 +86,8 @@
 		AD91605F26D2E5E6002A6969 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		AD91606126D2E624002A6969 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
 		AD91606326D2E697002A6969 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		AD91606526D2EEC5002A6969 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		AD91606726D2F1D9002A6969 /* PopularPeopleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPeopleResponse.swift; sourceTree = "<group>"; };
 		ADB666A126C2FE74008938D7 /* SwiflixReborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiflixReborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB666A426C2FE74008938D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB666A626C2FE74008938D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				AD36AF4726CC5FA800C7EE44 /* PersonCreditResponse.swift */,
 				ADCD0B8526CF04E4002D8F52 /* SerieSeasonResponse.swift */,
 				ADE0962926D1970500F932F2 /* MovieReviewResponse.swift */,
+				AD91606726D2F1D9002A6969 /* PopularPeopleResponse.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				EBDF3DB32DEE53744D69F09C /* TMDB.swift */,
 				AD91606126D2E624002A6969 /* RequestParameter.swift */,
 				AD91606326D2E697002A6969 /* Movie.swift */,
+				AD91606526D2EEC5002A6969 /* People.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 				ADF664DB26C4672E00511E36 /* WelcomeViewController.swift in Sources */,
 				ADF664DF26C46A0200511E36 /* SignupViewController.swift in Sources */,
 				AD60AAB626C5966800C501B8 /* SerieDetailViewController.swift in Sources */,
+				AD91606826D2F1D9002A6969 /* PopularPeopleResponse.swift in Sources */,
 				AD36AF4826CC5FA800C7EE44 /* PersonCreditResponse.swift in Sources */,
 				ADCD0B8926CF053E002D8F52 /* EpisodeTableViewCell.swift in Sources */,
 				AD0484BF26C70B2D00318AAD /* PersonController.swift in Sources */,
@@ -363,6 +370,7 @@
 				ADF664E826C4790400511E36 /* MovieDetailViewController.swift in Sources */,
 				ADF0DC4326C9B21100080AE6 /* UpcomingResponse.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
+				AD91606626D2EEC5002A6969 /* People.swift in Sources */,
 				AD91606026D2E5E6002A6969 /* Language.swift in Sources */,
 				ADF664E326C46F7000511E36 /* MediaTableViewCell.swift in Sources */,
 				ADF0DC4126C9AF3E00080AE6 /* NowPlayingController.swift in Sources */,

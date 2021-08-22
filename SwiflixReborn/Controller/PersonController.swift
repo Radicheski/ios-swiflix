@@ -18,8 +18,10 @@ class PersonController {
     }
 
     func loadPeopleList(onCompletion: (() -> Void)?) {
+        
+        let request: People = .popular(parameters: [TMDB.newApiKey])
 
-        TMDB.getTrending(mediaType: .person, timeWindow: .day) { response in
+        TMDB.request (url: request.url) { (response: PopularPeopleResponse) in
             self.trendingPeople = response.results
             onCompletion?()
         } onError: { error in

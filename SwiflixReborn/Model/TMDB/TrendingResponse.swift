@@ -81,7 +81,7 @@ struct KnownFor: Codable {
     let title: String?
     let releaseDate: String?
     let mediaType: String
-    let popularity: Double
+    let popularity: Double?
     let adult: Bool?
     let backdropPath: String?
     let overview: String
