@@ -19,7 +19,7 @@ class SerieController {
 
     func loadSerieList(onCompletion: (() -> Void)?) {
         
-        let request: TV = .popular(parameters: [])
+        let request: TV = .popular()
 
         TMDB.request(url: request.url) { (response: TrendingResponse) in
             self.trendingPeople = response.results

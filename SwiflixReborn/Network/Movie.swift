@@ -9,12 +9,12 @@ import Foundation
 
 enum Movie {
     
-    case popular(parameters: [RequestParameter])
-    case nowPlaying(parameters: [RequestParameter])
-    case upcoming(parameters: [RequestParameter])
-    case details(id: RequestParameter, parameters: [RequestParameter])
-    case similar(id: RequestParameter, parameters: [RequestParameter])
-    case reviews(id: RequestParameter, parameters: [RequestParameter])
+    case popular(parameters: [RequestParameter] = [])
+    case nowPlaying(parameters: [RequestParameter] = [])
+    case upcoming(parameters: [RequestParameter] = [])
+    case details(id: RequestParameter, parameters: [RequestParameter] = [])
+    case similar(id: RequestParameter, parameters: [RequestParameter] = [])
+    case reviews(id: RequestParameter, parameters: [RequestParameter] = [])
     
 }
 

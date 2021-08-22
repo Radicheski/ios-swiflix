@@ -69,7 +69,7 @@ class PersonDetailViewController: UIViewController {
         
         self.person = person
         
-        let request: People = .details(id: .id(person.id), parameters: [])
+        let request: People = .details(id: .id(person.id))
         
         TMDB.request(url: request.url) { (response: PersonDetailResponse) in
             self.detail = response
@@ -80,7 +80,7 @@ class PersonDetailViewController: UIViewController {
             #warning("Handle this error")
         }
         
-        let requestCredits: People = .combineCredits(id: .id(person.id), parameters: [])
+        let requestCredits: People = .combineCredits(id: .id(person.id))
         
         TMDB.request(url: requestCredits.url) { (response: PersonCreditResponse) in
             self.credits = response.cast

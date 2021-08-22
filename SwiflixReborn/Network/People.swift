@@ -9,9 +9,9 @@ import Foundation
 
 enum People {
     
-    case popular(parameters: [RequestParameter])
-    case details(id: RequestParameter, parameters: [RequestParameter])
-    case combineCredits(id: RequestParameter, parameters: [RequestParameter])
+    case popular(parameters: [RequestParameter] = [])
+    case details(id: RequestParameter, parameters: [RequestParameter] = [])
+    case combineCredits(id: RequestParameter, parameters: [RequestParameter] = [])
     
 }
 

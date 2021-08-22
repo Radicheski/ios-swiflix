@@ -19,7 +19,7 @@ class NowPlayingController {
 
     func loadNowPlayingList(onCompletion: (() -> Void)?) {
         
-        let request: Movie = .nowPlaying(parameters: [])
+        let request: Movie = .nowPlaying()
 
         TMDB.request(url: request.url) { (response: NowPlayingResponse) in
             self.trendingPeople = response.results
