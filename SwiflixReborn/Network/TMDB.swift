@@ -132,17 +132,6 @@ struct TMDB {
         
     }
     
-    static func getMovieDetails(id: Int, language: String = Self.defaultLanguage,
-                                onSuccess: ((MovieDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
-        let urlString = "/movie/\(id)?language=\(language)"
-        TMDB.request(string: urlString) { movie in
-            onSuccess?(movie)
-        } onError: { error in
-            onError?(error)
-        }
-        
-    }
-    
     static func getSerieDetails(id: Int, language: String = Self.defaultLanguage,
                                 onSuccess: ((SerieDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
         

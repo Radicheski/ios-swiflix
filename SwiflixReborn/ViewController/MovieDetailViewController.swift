@@ -50,7 +50,8 @@ class MovieDetailViewController: UIViewController {
     
     func setup(with movie: Media) {
         self.media = movie
-        TMDB.getMovieDetails(id: movie.id) { response in
+        let request: Movie = .details(id: .id(movie.id), parameters: [.apiKey(TMDB.apiKey)])
+        TMDB.request(url: request.url) { (response: MovieDetailResponse) in
             self.detail = response
             DispatchQueue.main.async {
                 self.viewDidLoad()

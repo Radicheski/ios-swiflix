@@ -12,6 +12,7 @@ enum RequestParameter {
     case language(Language, Region)
     case page(Int)
     case region(Region)
+    case appendToResponse(String)
     
 }
 
@@ -29,6 +30,7 @@ extension RequestParameter {
             case .id(let id): return id.description
             case .page(let page): return page.description
             case .region(let region): return region.rawValue
+            case .appendToResponse(let string): return string
             }
         }
     }
@@ -43,6 +45,7 @@ extension RequestParameter {
             case .id(_): return "id"
             case .page(_): return "page"
             case .region(_): return "region"
+            case .appendToResponse(_): return "append_to_response"
             }
         }
     }

@@ -12,6 +12,7 @@ enum Movie {
     case popular(parameters: [RequestParameter])
     case nowPlaying(parameters: [RequestParameter])
     case upcoming(parameters: [RequestParameter])
+    case details(id: RequestParameter, parameters: [RequestParameter])
     
 }
 
@@ -27,6 +28,7 @@ extension Movie {
             case .popular(_): return "/movie/popular"
             case .nowPlaying(_): return "/movie/now_playing"
             case .upcoming(_): return "/movie/upcoming"
+            case .details(let id, _): return "/movie/\(id.value)"
             }
         }
     }
@@ -38,7 +40,8 @@ extension Movie {
             switch self {
             case .popular(let parameters),
                  .nowPlaying(let parameters),
-                 .upcoming(let parameters):
+                 .upcoming(let parameters),
+                 .details(_, let parameters):
                 return parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
             }
         }
