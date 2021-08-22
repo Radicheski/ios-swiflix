@@ -16,7 +16,7 @@ class MovieController {
 
     func loadMovieList(onCompletion: (() -> Void)?) {
         
-        let request: Movie = .popular(parameters: [.apiKey(TMDB.apiKey)])
+        let request: Movie = .popular(parameters: [TMDB.apiKey])
 
         TMDB.request(url: request.url) { (response: TrendingResponse) in
             self.trendingMovies = response.results

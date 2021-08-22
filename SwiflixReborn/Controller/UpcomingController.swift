@@ -21,7 +21,7 @@ class UpcomingController {
     
     func loadUpcomingList(onCompletion: (() -> Void)?) {
         
-        let request: Movie = .upcoming(parameters: [.apiKey(TMDB.apiKey)])
+        let request: Movie = .upcoming(parameters: [TMDB.apiKey])
         
         TMDB.request(url: request.url) { (response: UpcomingResponse) in
             self.upcoming = response.results

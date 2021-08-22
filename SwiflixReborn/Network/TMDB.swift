@@ -9,17 +9,12 @@ import Foundation
 
 struct TMDB {
     
-    static var apiKey: String = ""
-    
     static let baseUrl = "https://api.themoviedb.org/3"
     
     static var defaultLanguage: String = "pt-BR"
     
-    static var newApiKey: RequestParameter {
-        get {
-            .apiKey(Self.apiKey)
-        }
-    }
+    static var apiKey: RequestParameter = .apiKey("")
+    
     static var newDefaultLanguage: RequestParameter = .language(.en, .US)
     
     static var urlSession: URLSession {
@@ -32,29 +27,8 @@ struct TMDB {
         if let path = Bundle.main.path(forResource: plist, ofType: "plist"),
            let keys = NSDictionary(contentsOfFile: path),
            let key = keys.value(forKey: plistKey) as? String {
-            TMDB.apiKey = key
+            TMDB.apiKey = .apiKey(key)
         }
-    }
-    
-    static func request<T: Codable>(string: String, onSuccess: ((T) -> Void)?, onError: ((Error) -> Void)?) {
-        
-        let stringUrl: String
-        if string.contains("?") {
-            stringUrl = "\(Self.baseUrl)\(string)&api_key=\(Self.apiKey)"
-        } else {
-            stringUrl = "\(Self.baseUrl)\(string)?api_key=\(Self.apiKey)"
-        }
-        
-        if let url = URL(string: stringUrl) {
-            
-            Self.request(url: url) { result in
-                onSuccess?(result)
-            } onError: { error in
-                onError?(error)
-            }
-
-        }
-        
     }
     
     static func request<T: Codable>(url: URL?, onSuccess: ((T) -> Void)?, onError: ((Error) -> Void)?) {
