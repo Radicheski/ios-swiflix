@@ -69,7 +69,9 @@ class SerieDetailViewController: UIViewController {
         } onError: { error in
             #warning("Handle this error")
         }
-        TMDB.getTVSimilar(id: serie.id) { response in
+        
+        let requestSimilar: TV = .similar(id: .id(serie.id), parameters: [TMDB.newApiKey])
+        TMDB.request(url: requestSimilar.url) { (response: TrendingResponse) in
             self.similar = response.results as [Media]
         } onError: { error in
             #warning("Handle this error")
