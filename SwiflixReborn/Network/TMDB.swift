@@ -142,17 +142,6 @@ struct TMDB {
         
     }
     
-    static func getTVSeason(id: Int, season: Int, language: String = Self.defaultLanguage,
-                            onSuccess: ((SerieSeasonResponse) -> Void)?, onError: ((Error) -> Void)?) {
-        
-        let urlString = "/tv/\(id)/season/\(season)?language=\(language)"
-        TMDB.request(string: urlString) { credits in
-            onSuccess?(credits)
-        } onError: { error in
-            onError?(error)
-        }
-    }
-    
 }
 
 

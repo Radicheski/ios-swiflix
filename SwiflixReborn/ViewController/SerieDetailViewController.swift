@@ -56,7 +56,8 @@ class SerieDetailViewController: UIViewController {
             self.detail = response
             if let seasons = self.detail?.numberOfSeasons, seasons > 0{
                 for season in 1...(self.detail?.numberOfSeasons ?? 0) {
-                    TMDB.getTVSeason(id: serie.id, season: season) { season in
+                    let requestSeason: TV = .season(id: .id(serie.id), season: .season(season), parameters: [TMDB.newApiKey])
+                    TMDB.request(url: requestSeason.url) { (season: SerieSeasonResponse) in
                         self.episodes?.append(contentsOf: season.episodes)
                     } onError: { error in
                         #warning("Handle this error")

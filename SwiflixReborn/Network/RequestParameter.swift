@@ -13,6 +13,7 @@ enum RequestParameter {
     case page(Int)
     case region(Region)
     case appendToResponse(String)
+    case season(Int)
     
 }
 
@@ -31,6 +32,7 @@ extension RequestParameter {
             case .page(let page): return page.description
             case .region(let region): return region.rawValue
             case .appendToResponse(let string): return string
+            case .season(let season): return season.description
             }
         }
     }
@@ -46,6 +48,7 @@ extension RequestParameter {
             case .page(_): return "page"
             case .region(_): return "region"
             case .appendToResponse(_): return "append_to_response"
+            case .season(_): return "season"
             }
         }
     }
