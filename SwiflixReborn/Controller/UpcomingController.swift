@@ -18,16 +18,27 @@ class UpcomingController {
             return self.upcoming.count
         }
     }
-
+    
     func loadUpcomingList(onCompletion: (() -> Void)?) {
-
-        TMDB.getUpcoming { response in
+        
+        let request: Movie = .upcoming(parameters: [.apiKey(TMDB.apiKey)])
+        
+        TMDB.request(url: request.url) { (response: UpcomingResponse) in
             self.upcoming = response.results
             onCompletion?()
         } onError: { error in
             #warning("Handle error")
             print(error)
         }
+        
+        
+        //        TMDB.getUpcoming { response in
+        //            self.upcoming = response.results
+        //            onCompletion?()
+        //        } onError: { error in
+        //            #warning("Handle error")
+        //            print(error)
+        //        }
         
     }
     

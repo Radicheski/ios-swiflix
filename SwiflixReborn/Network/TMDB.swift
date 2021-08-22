@@ -15,6 +15,13 @@ struct TMDB {
     
     static var defaultLanguage: String = "pt-BR"
     
+    static var newApiKey: RequestParameter {
+        get {
+            .apiKey(Self.apiKey)
+        }
+    }
+    static var newDefaultLanguage: RequestParameter = .language(.en, .US)
+    
     static var urlSession: URLSession {
         get {
             return URLSession.shared
@@ -39,6 +46,20 @@ struct TMDB {
         }
         
         if let url = URL(string: stringUrl) {
+            
+            Self.request(url: url) { result in
+                onSuccess?(result)
+            } onError: { error in
+                onError?(error)
+            }
+
+        }
+        
+    }
+    
+    static func request<T: Codable>(url: URL?, onSuccess: ((T) -> Void)?, onError: ((Error) -> Void)?) {
+        
+        if let url = url {
             
             let dataTask = Self.urlSession.dataTask(with: url) { _data, _response, _error in
                 
@@ -116,18 +137,6 @@ struct TMDB {
         
         let urlString = "/movie/now_playing?language=\(language)&page=\(page)&region=\(region)"
         TMDB.request(string: urlString) { (response: NowPlayingResponse) in
-            onSuccess?(response)
-        } onError: { error in
-            onError?(error)
-        }
-        
-    }
-    
-    static func getUpcoming(language: String = Self.defaultLanguage, page: Int = 1, region: String = "US",
-                            onSuccess: ((UpcomingResponse) -> Void)?, onError: ((Error) -> Void)?) {
-        
-        let urlString = "/movie/upcoming?language=\(language)&page=\(page)&region=\(region)"
-        TMDB.request(string: urlString) { (response: UpcomingResponse) in
             onSuccess?(response)
         } onError: { error in
             onError?(error)
