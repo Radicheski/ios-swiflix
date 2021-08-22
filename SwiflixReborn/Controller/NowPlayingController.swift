@@ -18,8 +18,10 @@ class NowPlayingController {
     }
 
     func loadNowPlayingList(onCompletion: (() -> Void)?) {
+        
+        let request: Movie = .nowPlaying(parameters: [.apiKey(TMDB.apiKey)])
 
-        TMDB.getNowPlaying { response in
+        TMDB.request(url: request.url) { (response: NowPlayingResponse) in
             self.trendingPeople = response.results
             onCompletion?()
         } onError: { error in
