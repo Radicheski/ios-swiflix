@@ -21,7 +21,7 @@ class UpcomingController {
     
     func loadUpcomingList(onCompletion: (() -> Void)?) {
         
-        let request: Movie = .upcoming(parameters: [TMDB.apiKey])
+        let request: Movie = .upcoming(parameters: [])
         
         TMDB.request(url: request.url) { (response: UpcomingResponse) in
             self.upcoming = response.results
@@ -30,15 +30,6 @@ class UpcomingController {
             #warning("Handle error")
             print(error)
         }
-        
-        
-        //        TMDB.getUpcoming { response in
-        //            self.upcoming = response.results
-        //            onCompletion?()
-        //        } onError: { error in
-        //            #warning("Handle error")
-        //            print(error)
-        //        }
         
     }
     

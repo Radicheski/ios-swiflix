@@ -51,12 +51,12 @@ class SerieDetailViewController: UIViewController {
     
     func setup(with serie: Media) {
         self.serie = serie
-        let request: TV = .details(id: .id(serie.id), parameters: [TMDB.apiKey])
+        let request: TV = .details(id: .id(serie.id), parameters: [])
         TMDB.request(url: request.url) { (response: SerieDetailResponse) in
             self.detail = response
             if let seasons = self.detail?.numberOfSeasons, seasons > 0{
                 for season in 1...(self.detail?.numberOfSeasons ?? 0) {
-                    let requestSeason: TV = .season(id: .id(serie.id), season: .season(season), parameters: [TMDB.apiKey])
+                    let requestSeason: TV = .season(id: .id(serie.id), season: .season(season), parameters: [])
                     TMDB.request(url: requestSeason.url) { (season: SerieSeasonResponse) in
                         self.episodes?.append(contentsOf: season.episodes)
                     } onError: { error in
@@ -71,13 +71,13 @@ class SerieDetailViewController: UIViewController {
             #warning("Handle this error")
         }
         
-        let requestSimilar: TV = .similar(id: .id(serie.id), parameters: [TMDB.apiKey])
+        let requestSimilar: TV = .similar(id: .id(serie.id), parameters: [])
         TMDB.request(url: requestSimilar.url) { (response: TrendingResponse) in
             self.similar = response.results as [Media]
         } onError: { error in
             #warning("Handle this error")
         }
-        let requestReviews: TV = .reviews(id: .id(serie.id), parameters: [TMDB.apiKey])
+        let requestReviews: TV = .reviews(id: .id(serie.id), parameters: [])
         TMDB.request(url: requestReviews.url) { (response: MovieReviewResponse) in
             self.reviews = response.results
         } onError: { error in

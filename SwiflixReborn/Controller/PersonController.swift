@@ -19,7 +19,7 @@ class PersonController {
 
     func loadPeopleList(onCompletion: (() -> Void)?) {
         
-        let request: People = .popular(parameters: [TMDB.apiKey])
+        let request: People = .popular(parameters: [])
 
         TMDB.request (url: request.url) { (response: PopularPeopleResponse) in
             self.trendingPeople = response.results
