@@ -144,18 +144,6 @@ struct TMDB {
         
     }
     
-    static func getPersonCredits(id: Int, language: String = Self.defaultLanguage,
-                                 onSuccess: ((PersonCreditResponse) -> Void)?, onError: ((Error) -> Void)?) {
-        
-        let urlString = "/person/\(id)/combined_credits?language=\(language)"
-        TMDB.request(string: urlString) { credits in
-            onSuccess?(credits)
-        } onError: { error in
-            onError?(error)
-        }
-        
-    }
-    
     static func getTVSimilar(id: Int, language: String = Self.defaultLanguage,
                              onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
         

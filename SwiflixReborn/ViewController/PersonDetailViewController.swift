@@ -80,7 +80,9 @@ class PersonDetailViewController: UIViewController {
             #warning("Handle this error")
         }
         
-        TMDB.getPersonCredits(id: person.id) { response in
+        let requestCredits: People = .combineCredits(id: .id(person.id), parameters: [TMDB.newApiKey])
+        
+        TMDB.request(url: requestCredits.url) { (response: PersonCreditResponse) in
             self.credits = response.cast
             self.credits.append(contentsOf: response.crew)
         } onError: { error in
