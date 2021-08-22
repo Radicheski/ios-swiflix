@@ -86,20 +86,6 @@ struct TMDB {
         
     }
     
-    static func getTrending(mediaType: MediaType, timeWindow: TimeWindow, language: String = Self.defaultLanguage,
-                            onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
-        
-        let stringUrl = "/trending/\(mediaType.rawValue)/\(timeWindow)?language=\(language)"
-        
-        TMDB.request(string: stringUrl) { (response: TrendingResponse) in
-            onSuccess?(response)
-        } onError: { error in
-            onError?(error)
-        }
-        
-        
-    }
-    
     static func getImage(string path: String, onCompletion: @escaping (Data?) -> Void)  {
         
         Self.getImage(size: "w92", string: path) { data in

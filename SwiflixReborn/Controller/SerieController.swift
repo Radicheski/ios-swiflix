@@ -18,8 +18,10 @@ class SerieController {
     }
 
     func loadSerieList(onCompletion: (() -> Void)?) {
+        
+        let request: TV = .popular(parameters: [TMDB.newApiKey])
 
-        TMDB.getTrending(mediaType: .tv, timeWindow: .day) { response in
+        TMDB.request(url: request.url) { (response: TrendingResponse) in
             self.trendingPeople = response.results
             onCompletion?()
         } onError: { error in
