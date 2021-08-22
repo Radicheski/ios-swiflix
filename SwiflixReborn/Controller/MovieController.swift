@@ -15,8 +15,10 @@ class MovieController {
     }
 
     func loadMovieList(onCompletion: (() -> Void)?) {
+        
+        let request: Movie = .popular(parameters: [.apiKey(TMDB.apiKey)])
 
-        TMDB.getTrending(mediaType: .movie, timeWindow: .day) { response in
+        TMDB.request(url: request.url) { (response: TrendingResponse) in
             self.trendingMovies = response.results
             onCompletion?()
         } onError: { error in
