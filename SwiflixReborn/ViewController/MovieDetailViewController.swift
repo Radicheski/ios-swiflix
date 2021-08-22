@@ -59,7 +59,8 @@ class MovieDetailViewController: UIViewController {
         } onError: { error in
             #warning("Handle this error")
         }
-        TMDB.getMovieSimilar(id: movie.id) { response in
+        let requestSimilar: Movie = .similar(id: .id(movie.id), parameters: [TMDB.newApiKey])
+        TMDB.request(url: requestSimilar.url) { (response: TrendingResponse) in
             self.similar = response.results
         } onError: { error in
             #warning("Handle this error")
