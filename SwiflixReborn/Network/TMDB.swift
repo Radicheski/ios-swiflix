@@ -13,7 +13,7 @@ struct TMDB {
     
     static let baseUrl = "https://api.themoviedb.org/3"
     
-    static var defaultLanguage: String = "en-US"
+    static var defaultLanguage: String = "pt-BR"
     
     static var urlSession: URLSession {
         get {
@@ -65,10 +65,10 @@ struct TMDB {
         
     }
     
-    static func getTrending(mediaType: MediaType, timeWindow: TimeWindow,
+    static func getTrending(mediaType: MediaType, timeWindow: TimeWindow, language: String = Self.defaultLanguage,
                             onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let stringUrl = "/trending/\(mediaType.rawValue)/\(timeWindow)"
+        let stringUrl = "/trending/\(mediaType.rawValue)/\(timeWindow)?language=\(language)"
         
         TMDB.request(string: stringUrl) { (response: TrendingResponse) in
             onSuccess?(response)
@@ -137,7 +137,7 @@ struct TMDB {
     
     static func getMovieDetails(id: Int, language: String = Self.defaultLanguage,
                                 onSuccess: ((MovieDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
-        let urlString = "/movie/\(id)"
+        let urlString = "/movie/\(id)?language=\(language)"
         TMDB.request(string: urlString) { movie in
             onSuccess?(movie)
         } onError: { error in
@@ -149,7 +149,7 @@ struct TMDB {
     static func getSerieDetails(id: Int, language: String = Self.defaultLanguage,
                                 onSuccess: ((SerieDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let urlString = "/tv/\(id)"
+        let urlString = "/tv/\(id)?language=\(language)"
         TMDB.request(string: urlString) { serie in
             onSuccess?(serie)
         } onError: { error in
@@ -161,7 +161,7 @@ struct TMDB {
     static func getPersonDetails(id: Int, language: String = Self.defaultLanguage,
                                  onSuccess: ((PersonDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let urlString = "/person/\(id)"
+        let urlString = "/person/\(id)?language=\(language)"
         TMDB.request(string: urlString) { person in
             onSuccess?(person)
         } onError: { error in
@@ -173,7 +173,7 @@ struct TMDB {
     static func getPersonCredits(id: Int, language: String = Self.defaultLanguage,
                                  onSuccess: ((PersonCreditResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let urlString = "/person/\(id)/combined_credits"
+        let urlString = "/person/\(id)/combined_credits?language=\(language)"
         TMDB.request(string: urlString) { credits in
             onSuccess?(credits)
         } onError: { error in
@@ -185,7 +185,7 @@ struct TMDB {
     static func getTVSimilar(id: Int, language: String = Self.defaultLanguage,
                              onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let urlString = "/tv/\(id)/similar"
+        let urlString = "/tv/\(id)/similar?language=\(language)"
         TMDB.request(string: urlString) { credits in
             onSuccess?(credits)
         } onError: { error in
@@ -197,7 +197,7 @@ struct TMDB {
     static func getMovieSimilar(id: Int, language: String = Self.defaultLanguage,
                                 onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let urlString = "/movie/\(id)/similar"
+        let urlString = "/movie/\(id)/similar?language=\(language)"
         TMDB.request(string: urlString) { credits in
             onSuccess?(credits)
         } onError: { error in
@@ -209,7 +209,7 @@ struct TMDB {
     static func getMovieReviews(id: Int, language: String = Self.defaultLanguage,
                                 onSuccess: ((MovieReviewResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let urlString = "/movie/\(id)/reviews"
+        let urlString = "/movie/\(id)/reviews?language=\(language)"
         TMDB.request(string: urlString) { credits in
             onSuccess?(credits)
         } onError: { error in
@@ -221,7 +221,7 @@ struct TMDB {
     static func getTVReviews(id: Int, language: String = Self.defaultLanguage,
                                 onSuccess: ((MovieReviewResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let urlString = "/TV/\(id)/reviews"
+        let urlString = "/TV/\(id)/reviews?language=\(language)"
         TMDB.request(string: urlString) { credits in
             onSuccess?(credits)
         } onError: { error in
@@ -233,7 +233,7 @@ struct TMDB {
     static func getTVSeason(id: Int, season: Int, language: String = Self.defaultLanguage,
                             onSuccess: ((SerieSeasonResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
-        let urlString = "/tv/\(id)/season/\(season)"
+        let urlString = "/tv/\(id)/season/\(season)?language=\(language)"
         TMDB.request(string: urlString) { credits in
             onSuccess?(credits)
         } onError: { error in
