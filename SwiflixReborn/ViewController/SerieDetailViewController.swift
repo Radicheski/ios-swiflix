@@ -76,7 +76,8 @@ class SerieDetailViewController: UIViewController {
         } onError: { error in
             #warning("Handle this error")
         }
-        TMDB.getTVReviews(id: serie.id) { response in
+        let requestReviews: TV = .reviews(id: .id(serie.id), parameters: [TMDB.newApiKey])
+        TMDB.request(url: requestReviews.url) { (response: MovieReviewResponse) in
             self.reviews = response.results
         } onError: { error in
             #warning("Handle this error")

@@ -12,6 +12,7 @@ enum TV {
     case popular(parameters: [RequestParameter])
     case details(id: RequestParameter, parameters: [RequestParameter])
     case similar(id: RequestParameter, parameters: [RequestParameter])
+    case reviews(id: RequestParameter, parameters: [RequestParameter])
     
 }
 
@@ -27,6 +28,7 @@ extension TV {
             case .popular(_): return "/tv/popular"
             case .details(let id, _): return "/tv/\(id.value)"
             case .similar(let id, _): return "/tv/\(id.value)/similar"
+            case .reviews(let id, _): return "/tv/\(id.value)/reviews"
             }
         }
     }
@@ -38,7 +40,8 @@ extension TV {
             switch self {
             case .popular(let parameters),
                  .details(_, let parameters),
-                 .similar(_, let parameters):
+                 .similar(_, let parameters),
+                 .reviews(_, let parameters):
                 return parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
             }
         }
