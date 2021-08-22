@@ -25,6 +25,10 @@
 		AD60AABA26C5996C00C501B8 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB926C5996C00C501B8 /* PersonDetailViewController.swift */; };
 		AD60AABD26C59CC200C501B8 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AABB26C59CC200C501B8 /* PersonTableViewCell.swift */; };
 		AD60AABE26C59CC200C501B8 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD60AABC26C59CC200C501B8 /* PersonTableViewCell.xib */; };
+		AD91605E26D2E5CE002A6969 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605D26D2E5CE002A6969 /* Region.swift */; };
+		AD91606026D2E5E6002A6969 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605F26D2E5E6002A6969 /* Language.swift */; };
+		AD91606226D2E624002A6969 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606126D2E624002A6969 /* RequestParameter.swift */; };
+		AD91606426D2E697002A6969 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606326D2E697002A6969 /* Movie.swift */; };
 		ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB666A426C2FE74008938D7 /* AppDelegate.swift */; };
 		ADB666A726C2FE74008938D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB666A626C2FE74008938D7 /* SceneDelegate.swift */; };
 		ADB666AC26C2FE74008938D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB666AA26C2FE74008938D7 /* Main.storyboard */; };
@@ -76,6 +80,10 @@
 		AD60AAB926C5996C00C501B8 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		AD60AABB26C59CC200C501B8 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		AD60AABC26C59CC200C501B8 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
+		AD91605D26D2E5CE002A6969 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		AD91605F26D2E5E6002A6969 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		AD91606126D2E624002A6969 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
+		AD91606326D2E697002A6969 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		ADB666A126C2FE74008938D7 /* SwiflixReborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiflixReborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB666A426C2FE74008938D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB666A626C2FE74008938D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +233,8 @@
 				EBDF31787088983ADD3134B1 /* Media.swift */,
 				ADD8205826CDB11C0097EDF5 /* Registrable.swift */,
 				ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */,
+				AD91605D26D2E5CE002A6969 /* Region.swift */,
+				AD91605F26D2E5E6002A6969 /* Language.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				EBDF3DB32DEE53744D69F09C /* TMDB.swift */,
+				AD91606126D2E624002A6969 /* RequestParameter.swift */,
+				AD91606326D2E697002A6969 /* Movie.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -325,9 +337,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD91606426D2E697002A6969 /* Movie.swift in Sources */,
 				AD0484C126C71C3900318AAD /* Person.swift in Sources */,
 				ADE0962A26D1970500F932F2 /* MovieReviewResponse.swift in Sources */,
 				ADF664DD26C4684500511E36 /* LoginViewController.swift in Sources */,
+				AD91605E26D2E5CE002A6969 /* Region.swift in Sources */,
 				AD0484BB26C704E800318AAD /* SerieController.swift in Sources */,
 				AD60AAB826C5994D00C501B8 /* PersonViewController.swift in Sources */,
 				ADF664E626C474E200511E36 /* MovieViewController.swift in Sources */,
@@ -349,6 +363,7 @@
 				ADF664E826C4790400511E36 /* MovieDetailViewController.swift in Sources */,
 				ADF0DC4326C9B21100080AE6 /* UpcomingResponse.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
+				AD91606026D2E5E6002A6969 /* Language.swift in Sources */,
 				ADF664E326C46F7000511E36 /* MediaTableViewCell.swift in Sources */,
 				ADF0DC4126C9AF3E00080AE6 /* NowPlayingController.swift in Sources */,
 				AD60AABA26C5996C00C501B8 /* PersonDetailViewController.swift in Sources */,
@@ -356,6 +371,7 @@
 				AD20626C26CB1140006CB33F /* MovieDetailResponse.swift in Sources */,
 				ADB666A726C2FE74008938D7 /* SceneDelegate.swift in Sources */,
 				ADD8205B26CDB2110097EDF5 /* UITableView+extension.swift in Sources */,
+				AD91606226D2E624002A6969 /* RequestParameter.swift in Sources */,
 				EBDF3D9711AA1EC1A2241790 /* TMDBError.swift in Sources */,
 				EBDF349D23FACAF28B8F77C4 /* MediaType.swift in Sources */,
 				EBDF3D1C4C7458F49686D95F /* TimeWindow.swift in Sources */,
