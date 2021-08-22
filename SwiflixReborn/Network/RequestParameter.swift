@@ -5,6 +5,8 @@
 //  Created by Erik Radicheski da Silva on 22/08/21.
 //
 
+import Foundation
+
 enum RequestParameter {
     
     case apiKey(String)
@@ -50,6 +52,12 @@ extension RequestParameter {
             case .appendToResponse(_): return "append_to_response"
             case .season(_): return "season"
             }
+        }
+    }
+    
+    var queryItem: URLQueryItem {
+        get {
+            URLQueryItem.init(name: self.key, value: self.value)
         }
     }
     

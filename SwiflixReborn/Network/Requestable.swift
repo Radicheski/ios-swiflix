@@ -10,12 +10,19 @@ import Foundation
 protocol Requestable {
     
     var path: String { get }
+    var parameters: [RequestParameter] { get }
     var queryItems: [URLQueryItem] { get }
     var url: URL? { get }
     
 }
 
 extension Requestable {
+    
+    var queryItems: [URLQueryItem] {
+        get {
+            self.parameters.map( { $0.queryItem } )
+        }
+    }
     
     var url: URL? {
         get {

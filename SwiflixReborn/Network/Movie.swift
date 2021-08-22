@@ -37,9 +37,9 @@ extension Movie: Requestable {
         }
     }
     
-    // MARK: Query items property
+    // MARK: Parameters property
     
-    var queryItems: [URLQueryItem] {
+    var parameters: [RequestParameter] {
         get {
             switch self {
             case .popular(let parameters),
@@ -48,7 +48,7 @@ extension Movie: Requestable {
                  .details(_, let parameters),
                  .similar(_, let parameters),
                  .reviews(_, let parameters):
-                return parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
+                return parameters
             }
         }
     }

@@ -31,15 +31,15 @@ extension People: Requestable {
         }
     }
     
-    // MARK: Query items property
+    // MARK: Parameters property
     
-    var queryItems: [URLQueryItem] {
+    var parameters: [RequestParameter] {
         get {
             switch self {
             case .popular(let parameters),
                  .details(_, let parameters),
                  .combineCredits(_, let parameters):
-                return parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
+                return parameters
             }
         }
     }
