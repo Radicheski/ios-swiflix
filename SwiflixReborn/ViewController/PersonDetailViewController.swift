@@ -69,7 +69,9 @@ class PersonDetailViewController: UIViewController {
         
         self.person = person
         
-        TMDB.getPersonDetails(id: person.id) { response in
+        let request: People = .details(id: .id(person.id), parameters: [TMDB.newApiKey])
+        
+        TMDB.request(url: request.url) { (response: PersonDetailResponse) in
             self.detail = response
             DispatchQueue.main.async {
                 self.viewDidLoad()

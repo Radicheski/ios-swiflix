@@ -10,6 +10,7 @@ import Foundation
 enum People {
     
     case popular(parameters: [RequestParameter])
+    case details(id: RequestParameter, parameters: [RequestParameter])
     
 }
 
@@ -23,6 +24,7 @@ extension People {
         get {
             switch self {
             case .popular(_): return "/person/popular"
+            case .details(let id, _): return "/person/\(id.value)"
             }
         }
     }
@@ -32,7 +34,8 @@ extension People {
     var queryItems: [URLQueryItem] {
         get {
             switch self {
-            case .popular(let parameters):
+            case .popular(let parameters),
+                 .details(_, let parameters):
                 return parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
             }
         }

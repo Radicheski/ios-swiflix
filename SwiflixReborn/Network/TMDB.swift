@@ -144,18 +144,6 @@ struct TMDB {
         
     }
     
-    static func getPersonDetails(id: Int, language: String = Self.defaultLanguage,
-                                 onSuccess: ((PersonDetailResponse) -> Void)?, onError: ((Error) -> Void)?) {
-        
-        let urlString = "/person/\(id)?language=\(language)"
-        TMDB.request(string: urlString) { person in
-            onSuccess?(person)
-        } onError: { error in
-            onError?(error)
-        }
-        
-    }
-    
     static func getPersonCredits(id: Int, language: String = Self.defaultLanguage,
                                  onSuccess: ((PersonCreditResponse) -> Void)?, onError: ((Error) -> Void)?) {
         
