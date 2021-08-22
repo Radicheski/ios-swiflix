@@ -118,30 +118,6 @@ struct TMDB {
         
     }
     
-//    static func getMovieSimilar(id: Int, language: String = Self.defaultLanguage,
-//                                onSuccess: ((TrendingResponse) -> Void)?, onError: ((Error) -> Void)?) {
-//        
-//        let urlString = "/movie/\(id)/similar?language=\(language)"
-//        TMDB.request(string: urlString) { credits in
-//            onSuccess?(credits)
-//        } onError: { error in
-//            onError?(error)
-//        }
-//        
-//    }
-    
-    static func getMovieReviews(id: Int, language: String = Self.defaultLanguage,
-                                onSuccess: ((MovieReviewResponse) -> Void)?, onError: ((Error) -> Void)?) {
-        
-        let urlString = "/movie/\(id)/reviews?language=\(language)"
-        TMDB.request(string: urlString) { credits in
-            onSuccess?(credits)
-        } onError: { error in
-            onError?(error)
-        }
-        
-    }
-    
 }
 
 
