@@ -51,7 +51,8 @@ class SerieDetailViewController: UIViewController {
     
     func setup(with serie: Media) {
         self.serie = serie
-        TMDB.getSerieDetails(id: serie.id) { response in
+        let request: TV = .details(id: .id(serie.id), parameters: [TMDB.newApiKey])
+        TMDB.request(url: request.url) { (response: SerieDetailResponse) in
             self.detail = response
             if let seasons = self.detail?.numberOfSeasons, seasons > 0{
                 for season in 1...(self.detail?.numberOfSeasons ?? 0) {
