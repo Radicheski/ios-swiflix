@@ -18,6 +18,7 @@ class MovieDetailViewController: UIViewController {
     var detail: MovieDetailResponse?
     var similar: [Media]?
     var reviews: [Review]?
+    var videos: [Videos]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,13 @@ class MovieDetailViewController: UIViewController {
         } onError: { error in
             #warning("Handle this error")
         }
+        let requestVideos: Movie = .videos(id: .id(movie.id))
+        TMDB.request(url: requestVideos.url) { (response: MovieVideosResponse) in
+            self.videos = response.results
+        } onError: { error in
+            #warning("Handle this error")
+        }
+
 
     }
     
@@ -91,6 +99,8 @@ extension MovieDetailViewController: UITableViewDataSource {
             return 1
         case 1:
             return self.similar?.count ?? 0
+        case 2:
+            return self.videos?.count ?? 0
         case 3:
             return self.reviews?.count ?? 0
         default:
@@ -131,6 +141,11 @@ extension MovieDetailViewController: UITableViewDataSource {
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell,
                   let media = self.similar?[indexPath.row] else { return UITableViewCell() }
+            cell.setupWith(media: media)
+            return cell
+        case 2:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell,
+                  let media = self.videos?[indexPath.row] else { return UITableViewCell() }
             cell.setupWith(media: media)
             return cell
         case 3:
