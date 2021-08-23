@@ -20,6 +20,7 @@ class PersonDetailViewController: UIViewController {
     var person: Person?
     var detail: PersonDetailResponse?
     var credits: [Media] = []
+    var images: [Media] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +90,13 @@ class PersonDetailViewController: UIViewController {
             #warning("Handle this error")
         }
         
+        let requestImages: People = .images(id: .id(person.id))
+        TMDB.request(url: requestImages.url) { (response: PersonImagesResponse) in
+            self.images = response.profiles
+        } onError: { error in
+            #warning("Handle this error")
+        }
+
         
     }
     @IBAction func segmentDidSelect(_ sender: UISegmentedControl) {
@@ -108,6 +116,8 @@ extension PersonDetailViewController: UITableViewDataSource {
             return 1
         case 1:
             return self.credits.count
+        case 2:
+            return self.images.count
         default:
             return 0
         }
@@ -147,6 +157,12 @@ extension PersonDetailViewController: UITableViewDataSource {
         } else if self.tabSegment.selectedSegmentIndex == 1 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell {
                 return self.setCreditsViewCell(cell, at: indexPath)
+            }
+        } else if self.tabSegment.selectedSegmentIndex == 2 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell {
+                let media = self.images[indexPath.row]
+                cell.setupWith(media: media)
+                return cell
             }
         }
         
