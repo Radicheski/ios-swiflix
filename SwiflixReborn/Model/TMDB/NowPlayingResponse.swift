@@ -7,23 +7,6 @@
 
 import Foundation
 
-// MARK: - NowPlayingResponse
-struct NowPlayingResponse: Codable {
-    let dates: Dates
-    let page: Int
-    let results: [NowPlayingResult]
-    let totalPages: Int
-    let totalResults: Int
-
-    enum CodingKeys: String, CodingKey {
-        case dates = "dates"
-        case page = "page"
-        case results = "results"
-        case totalPages = "total_pages"
-        case totalResults = "total_results"
-    }
-}
-
 // MARK: - Dates
 struct Dates: Codable {
     let maximum: String

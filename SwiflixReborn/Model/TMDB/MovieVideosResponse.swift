@@ -7,17 +7,6 @@
 
 import Foundation
 
-// MARK: - MovieVideosResponse
-struct MovieVideosResponse: Codable {
-    let id: Int
-    let results: [Videos]
-
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case results = "results"
-    }
-}
-
 // MARK: - Result
 struct Videos: Codable {
     let iso639_1: String

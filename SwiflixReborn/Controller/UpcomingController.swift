@@ -23,7 +23,7 @@ class UpcomingController {
         
         let request: Movie = .upcoming()
         
-        TMDB.request(url: request.url) { (response: UpcomingResponse) in
+        TMDB.request(url: request.url) { (response: TMDBResponse<UpcomingResult>) in
             self.upcoming = response.results
             onCompletion?()
         } onError: { error in

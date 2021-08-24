@@ -21,7 +21,7 @@ class SerieController {
         
         let request: TV = .popular()
 
-        TMDB.request(url: request.url) { (response: TrendingResponse) in
+        TMDB.request(url: request.url) { (response: TMDBResponse<Result>) in
             self.trendingPeople = response.results
             onCompletion?()
         } onError: { error in

@@ -7,23 +7,6 @@
 
 import Foundation
 
-// MARK: - NowPlayingResponse
-struct UpcomingResponse: Codable {
-    let dates: Dates
-    let page: Int
-    let results: [UpcomingResult]
-    let totalPages: Int
-    let totalResults: Int
-
-    enum CodingKeys: String, CodingKey {
-        case dates = "dates"
-        case page = "page"
-        case results = "results"
-        case totalPages = "total_pages"
-        case totalResults = "total_results"
-    }
-}
-
 // MARK: - Result
 struct UpcomingResult: Codable {
     let adult: Bool

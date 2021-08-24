@@ -18,7 +18,7 @@ class MovieController {
         
         let request: Movie = .popular()
 
-        TMDB.request(url: request.url) { (response: TrendingResponse) in
+        TMDB.request(url: request.url) { (response: TMDBResponse<Result>) in
             self.trendingMovies = response.results
             onCompletion?()
         } onError: { error in

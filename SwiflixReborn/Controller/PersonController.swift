@@ -21,7 +21,7 @@ class PersonController {
         
         let request: People = .popular()
 
-        TMDB.request (url: request.url) { (response: PopularPeopleResponse) in
+        TMDB.request (url: request.url) { (response: TMDBResponse<PeopleResult>) in
             self.trendingPeople = response.results
             onCompletion?()
         } onError: { error in

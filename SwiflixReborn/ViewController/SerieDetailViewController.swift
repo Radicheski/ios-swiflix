@@ -72,13 +72,13 @@ class SerieDetailViewController: UIViewController {
         }
         
         let requestSimilar: TV = .similar(id: .id(serie.id))
-        TMDB.request(url: requestSimilar.url) { (response: TrendingResponse) in
+        TMDB.request(url: requestSimilar.url) { (response: TMDBResponse<Result>) in
             self.similar = response.results as [Media]
         } onError: { error in
             #warning("Handle this error")
         }
         let requestReviews: TV = .reviews(id: .id(serie.id))
-        TMDB.request(url: requestReviews.url) { (response: MovieReviewResponse) in
+        TMDB.request(url: requestReviews.url) { (response: TMDBResponse<Review>) in
             self.reviews = response.results
         } onError: { error in
             #warning("Handle this error")

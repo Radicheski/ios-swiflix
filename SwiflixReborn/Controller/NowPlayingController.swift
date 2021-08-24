@@ -21,7 +21,7 @@ class NowPlayingController {
         
         let request: Movie = .nowPlaying()
 
-        TMDB.request(url: request.url) { (response: NowPlayingResponse) in
+        TMDB.request(url: request.url) { (response: TMDBResponse<NowPlayingResult>) in
             self.trendingPeople = response.results
             onCompletion?()
         } onError: { error in

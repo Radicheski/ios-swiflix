@@ -7,21 +7,6 @@
 
 import Foundation
 
-// MARK: - PopularPeopleResponse
-struct PopularPeopleResponse: Codable {
-    let page: Int
-    let results: [PeopleResult]
-    let totalPages: Int
-    let totalResults: Int
-
-    enum CodingKeys: String, CodingKey {
-        case page = "page"
-        case results = "results"
-        case totalPages = "total_pages"
-        case totalResults = "total_results"
-    }
-}
-
 // MARK: - Result
 struct PeopleResult: Codable {
     let adult: Bool

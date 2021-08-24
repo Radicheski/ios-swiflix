@@ -61,19 +61,19 @@ class MovieDetailViewController: UIViewController {
             #warning("Handle this error")
         }
         let requestSimilar: Movie = .similar(id: .id(movie.id))
-        TMDB.request(url: requestSimilar.url) { (response: TrendingResponse) in
+        TMDB.request(url: requestSimilar.url) { (response: TMDBResponse<Result>) in
             self.similar = response.results
         } onError: { error in
             #warning("Handle this error")
         }
         let requestReviews: Movie = .reviews(id: .id(movie.id))
-        TMDB.request(url: requestReviews.url) { (response: MovieReviewResponse) in
+        TMDB.request(url: requestReviews.url) { (response: TMDBResponse<Review>) in
             self.reviews = response.results
         } onError: { error in
             #warning("Handle this error")
         }
         let requestVideos: Movie = .videos(id: .id(movie.id))
-        TMDB.request(url: requestVideos.url) { (response: MovieVideosResponse) in
+        TMDB.request(url: requestVideos.url) { (response: TMDBResponse<Videos>) in
             self.videos = response.results
         } onError: { error in
             #warning("Handle this error")
