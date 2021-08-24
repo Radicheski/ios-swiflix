@@ -11,14 +11,16 @@ class ComingViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
     
-    var controller = UpcomingController()
+    var controller = ListController<Result>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupMovieTableView()
         
-        self.controller.loadUpcomingList {
+        let listRequest: Movie = .upcoming()
+        
+        self.controller.loadList(request: listRequest) {
             DispatchQueue.main.async {
                 self.movieTableView.reloadData()
             }
@@ -65,7 +67,7 @@ extension ComingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
         
-        let media = self.controller.selectUpcomingMovie(at: indexPath)
+        let media = self.controller.getElement(at: indexPath.row)
         cell.setupWith(media: media)
         
         return cell

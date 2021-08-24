@@ -11,7 +11,7 @@ class MovieViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
 
-    var controller = MovieController()
+    var controller = ListController<Result>()
     
     override func viewDidLoad() {
         
@@ -19,7 +19,9 @@ class MovieViewController: UIViewController {
         
         self.setupMovieTableView()
         
-        self.controller.loadMovieList {
+        let listRequest: Movie = .popular()
+        
+        self.controller.loadList(request: listRequest) {
             DispatchQueue.main.async {
                 self.movieTableView.reloadData()
             }
@@ -82,7 +84,7 @@ extension MovieViewController: UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
         
-        let media = self.controller.selectMovie(at: indexPath)
+        let media = self.controller.getElement(at: indexPath.row)
         
         cell.setupWith(media: media)
         return cell

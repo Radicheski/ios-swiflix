@@ -11,14 +11,16 @@ class PersonViewController: UIViewController {
 
     @IBOutlet weak var personTableView: UITableView!
     
-    var controller = PersonController()
+    var controller = ListController<PeopleResult>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupPersonTableView()
         
-        self.controller.loadPeopleList {
+        let listRequest: People = .popular()
+        
+        self.controller.loadList(request: listRequest) {
             DispatchQueue.main.async {
                 self.personTableView.reloadData()
             }
@@ -65,7 +67,7 @@ extension PersonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.customIdentifier) as? PersonTableViewCell else { return UITableViewCell() }
         
-        let person = self.controller.selectPerson(at: indexPath)
+        let person = self.controller.getElement(at: indexPath.row)
         cell.setupWith(person: person)
         return cell
         

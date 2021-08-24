@@ -11,13 +11,16 @@ class OnTheatersViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
     
-    var controller = NowPlayingController()
+    var controller = ListController<Result>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupMovieTableView()
-        self.controller.loadNowPlayingList {
+        
+        let listRequest: Movie = .nowPlaying()
+        
+        self.controller.loadList(request: listRequest) {
             DispatchQueue.main.async {
                 self.movieTableView.reloadData()
             }
@@ -64,7 +67,7 @@ extension OnTheatersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
         
-        let media = self.controller.selectPerson(at: indexPath)
+        let media = self.controller.getElement(at: indexPath.row)
         cell.setupWith(media: media)
         
         return cell
