@@ -1,12 +1,3 @@
-//
-//  TMDBResponse.swift
-//  SwiflixReborn
-//
-//  Created by Erik Radicheski da Silva on 24/08/21.
-//
-
-import Foundation
-
 struct TMDBResponse<T>: Codable where T: Codable {
 
     var dates: Dates?

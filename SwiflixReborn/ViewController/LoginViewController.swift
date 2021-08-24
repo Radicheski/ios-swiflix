@@ -1,10 +1,3 @@
-//
-//  LoginViewController.swift
-//  SwiflixReborn
-//
-//  Created by Erik Radicheski da Silva on 11/08/21.
-//
-
 import UIKit
 
 class LoginViewController: UIViewController {
@@ -34,6 +27,5 @@ class LoginViewController: UIViewController {
         #warning("Implement this method")
         print("Implement method \(#function)")
     }
-    
     
 }

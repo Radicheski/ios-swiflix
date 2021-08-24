@@ -1,10 +1,3 @@
-//
-//  SignupViewController.swift
-//  SwiflixReborn
-//
-//  Created by Erik Radicheski da Silva on 11/08/21.
-//
-
 import UIKit
 
 class SignupViewController: UIViewController {

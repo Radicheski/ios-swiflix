@@ -1,0 +1,2 @@
+struct GenreIdsClass: Codable {
+}

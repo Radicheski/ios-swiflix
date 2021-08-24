@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  SwiflixReborn
-//
-//  Created by Erik Radicheski da Silva on 10/08/21.
-//
-
 import UIKit
 
 @main

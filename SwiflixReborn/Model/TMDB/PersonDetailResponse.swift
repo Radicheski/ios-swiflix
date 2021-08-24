@@ -1,13 +1,3 @@
-//
-//  PersonDetailResponse.swift
-//  SwiflixReborn
-//
-//  Created by Erik Radicheski da Silva on 17/08/21.
-//
-
-import Foundation
-
-// MARK: - PersonDetailResponse
 struct PersonDetailResponse: Codable {
     let adult: Bool
     let alsoKnownAs: [JSONAny]
