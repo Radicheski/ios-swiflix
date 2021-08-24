@@ -13,6 +13,7 @@ enum People {
     case details(id: RequestParameter, parameters: [RequestParameter] = [])
     case combineCredits(id: RequestParameter, parameters: [RequestParameter] = [])
     case images(id: RequestParameter, parameters: [RequestParameter] = [])
+    case search(query: RequestParameter, parameters: [RequestParameter] = [])
     
 }
 
@@ -29,6 +30,7 @@ extension People: Requestable {
             case .details(let id, _): return "/person/\(id.value)"
             case .combineCredits(let id, _): return "/person/\(id.value)/combined_credits"
             case .images(let id, _): return "/person/\(id.value)/images"
+            case .search(_, _): return "/search/person"
             }
         }
     }
@@ -41,7 +43,8 @@ extension People: Requestable {
             case .popular(let parameters),
                  .details(_, let parameters),
                  .combineCredits(_, let parameters),
-                 .images(_, let parameters):
+                 .images(_, let parameters),
+                 .search(_, let parameters):
                 return parameters
             }
         }

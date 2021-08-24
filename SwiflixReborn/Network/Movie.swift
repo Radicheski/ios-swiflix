@@ -16,6 +16,7 @@ enum Movie {
     case similar(id: RequestParameter, parameters: [RequestParameter] = [])
     case reviews(id: RequestParameter, parameters: [RequestParameter] = [])
     case videos(id: RequestParameter, parameters: [RequestParameter] = [])
+    case search(query: RequestParameter, parameters: [RequestParameter] = [])
     
 }
 
@@ -35,6 +36,7 @@ extension Movie: Requestable {
             case .similar(let id, _): return "/movie/\(id.value)/similar"
             case .reviews(let id, _): return "/movie/\(id.value)/reviews"
             case .videos(let id, _): return "/movie/\(id.value)/videos"
+            case .search(_, _): return "/search/movie"
             }
         }
     }
@@ -50,7 +52,8 @@ extension Movie: Requestable {
                  .details(_, let parameters),
                  .similar(_, let parameters),
                  .reviews(_, let parameters),
-                 .videos(_, let parameters):
+                 .videos(_, let parameters),
+                 .search(_, let parameters):
                 return parameters
             }
         }
