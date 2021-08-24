@@ -51,9 +51,4 @@ class EpisodeTableViewCell: UITableViewCell {
     
 }
 
-extension EpisodeTableViewCell: Registrable {
-    
-    static var customIdentifier: String { "EpisodeTableViewCell" }
-    static var nib: UINib { UINib(nibName: "EpisodeTableViewCell", bundle: nil) }
-    
-}
+extension EpisodeTableViewCell: Registrable {}

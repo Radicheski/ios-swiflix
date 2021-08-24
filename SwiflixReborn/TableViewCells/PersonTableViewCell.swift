@@ -38,9 +38,4 @@ class PersonTableViewCell: UITableViewCell {
     
 }
 
-extension PersonTableViewCell: Registrable {
-    
-    static var customIdentifier: String { "PersonTableViewCell" }
-    static var nib: UINib { UINib(nibName: "PersonTableViewCell", bundle: nil) }
-    
-}
+extension PersonTableViewCell: Registrable {}

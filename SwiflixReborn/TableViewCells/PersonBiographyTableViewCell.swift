@@ -29,9 +29,4 @@ class PersonBiographyTableViewCell: UITableViewCell {
     
 }
 
-extension PersonBiographyTableViewCell: Registrable {
-    
-    static var customIdentifier: String { "PersonBiographyTableViewCell" }
-    static var nib: UINib { UINib(nibName: "PersonBiographyTableViewCell", bundle: nil) }
-    
-}
+extension PersonBiographyTableViewCell: Registrable {}

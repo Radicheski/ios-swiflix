@@ -39,9 +39,4 @@ class MediaTableViewCell: UITableViewCell {
     
 }
 
-extension MediaTableViewCell: Registrable {
-    
-    static var customIdentifier: String { "MediaTableViewCell" }
-    static var nib: UINib { UINib(nibName: "MediaTableViewCell", bundle: nil) }
-    
-}
+extension MediaTableViewCell: Registrable {}
