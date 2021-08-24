@@ -72,7 +72,7 @@ class PersonDetailViewController: UIViewController {
         
         let request: People = .details(id: .id(person.id))
         
-        TMDB.request(url: request.url) { (response: PersonDetailResponse) in
+        TMDB.request(request) { (response: PersonDetailResponse) in
             self.detail = response
             DispatchQueue.main.async {
                 self.viewDidLoad()
@@ -83,7 +83,7 @@ class PersonDetailViewController: UIViewController {
         
         let requestCredits: People = .combineCredits(id: .id(person.id))
         
-        TMDB.request(url: requestCredits.url) { (response: PersonCreditResponse) in
+        TMDB.request(requestCredits) { (response: PersonCreditResponse) in
             self.credits = response.cast
             self.credits.append(contentsOf: response.crew)
         } onError: { error in
@@ -91,7 +91,7 @@ class PersonDetailViewController: UIViewController {
         }
         
         let requestImages: People = .images(id: .id(person.id))
-        TMDB.request(url: requestImages.url) { (response: PersonImagesResponse) in
+        TMDB.request(requestImages) { (response: PersonImagesResponse) in
             self.images = response.profiles
         } onError: { error in
             #warning("Handle this error")

@@ -52,7 +52,7 @@ class MovieDetailViewController: UIViewController {
     func setup(with movie: Media) {
         self.media = movie
         let request: Movie = .details(id: .id(movie.id))
-        TMDB.request(url: request.url) { (response: MovieDetailResponse) in
+        TMDB.request(request) { (response: MovieDetailResponse) in
             self.detail = response
             DispatchQueue.main.async {
                 self.viewDidLoad()
@@ -61,19 +61,19 @@ class MovieDetailViewController: UIViewController {
             #warning("Handle this error")
         }
         let requestSimilar: Movie = .similar(id: .id(movie.id))
-        TMDB.request(url: requestSimilar.url) { (response: TMDBResponse<Result>) in
+        TMDB.request(requestSimilar) { (response: TMDBResponse<Result>) in
             self.similar = response.results
         } onError: { error in
             #warning("Handle this error")
         }
         let requestReviews: Movie = .reviews(id: .id(movie.id))
-        TMDB.request(url: requestReviews.url) { (response: TMDBResponse<Review>) in
+        TMDB.request(requestReviews) { (response: TMDBResponse<Review>) in
             self.reviews = response.results
         } onError: { error in
             #warning("Handle this error")
         }
         let requestVideos: Movie = .videos(id: .id(movie.id))
-        TMDB.request(url: requestVideos.url) { (response: TMDBResponse<Videos>) in
+        TMDB.request(requestVideos) { (response: TMDBResponse<Videos>) in
             self.videos = response.results
         } onError: { error in
             #warning("Handle this error")

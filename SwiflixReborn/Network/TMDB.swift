@@ -31,9 +31,9 @@ struct TMDB {
         }
     }
     
-    static func request<T: Codable>(url: URL?, onSuccess: ((T) -> Void)?, onError: ((Error) -> Void)?) {
+    static func request<T: Codable>(_ request: Requestable, onSuccess: ((T) -> Void)?, onError: ((Error) -> Void)?) {
         
-        if let url = url {
+        if let url = request.url {
             
             let dataTask = Self.urlSession.dataTask(with: url) { _data, _response, _error in
                 

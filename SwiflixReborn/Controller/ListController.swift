@@ -21,7 +21,7 @@ class ListController<T>: DataSource where T: Codable {
     
     func loadList(request: Requestable, completionHandler: (() -> Void)?) {
 
-        TMDB.request(url: request.url) { (response: TMDBResponse<T>) in
+        TMDB.request(request) { (response: TMDBResponse<T>) in
             self.data = response.results
             completionHandler?()
         } onError: { error in
