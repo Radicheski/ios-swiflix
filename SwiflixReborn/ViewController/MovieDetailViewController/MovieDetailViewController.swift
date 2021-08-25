@@ -16,9 +16,9 @@ class MovieDetailViewController: UIViewController {
     
     var media: Media?
     var detail: MovieDetailResponse?
-    var similar: [Media]?
-    var reviews: [Review]?
-    var videos: [Videos]?
+    var similar = DetailController<Result>()
+    var reviews = DetailController<Review>()
+    var videos = DetailController<Videos>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,32 +54,26 @@ class MovieDetailViewController: UIViewController {
         let request: Movie = .details(id: .id(movie.id))
         TMDB.request(request) { (response: MovieDetailResponse) in
             self.detail = response
-            DispatchQueue.main.async {
-                self.viewDidLoad()
-            }
+            self.reloadData()
         } onError: { error in
             #warning("Handle this error")
         }
+        
         let requestSimilar: Movie = .similar(id: .id(movie.id))
-        TMDB.request(requestSimilar) { (response: TMDBResponse<Result>) in
-            self.similar = response.results
-        } onError: { error in
-            #warning("Handle this error")
-        }
+        self.similar.loadDetails(request: requestSimilar)
+        
         let requestReviews: Movie = .reviews(id: .id(movie.id))
-        TMDB.request(requestReviews) { (response: TMDBResponse<Review>) in
-            self.reviews = response.results
-        } onError: { error in
-            #warning("Handle this error")
-        }
+        self.reviews.loadDetails(request: requestReviews)
+        
         let requestVideos: Movie = .videos(id: .id(movie.id))
-        TMDB.request(requestVideos) { (response: TMDBResponse<Videos>) in
-            self.videos = response.results
-        } onError: { error in
-            #warning("Handle this error")
+        self.videos.loadDetails(request: requestVideos)
+        
+    }
+    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.viewDidLoad()
         }
-
-
     }
     
     @IBAction func tabDidSelect(_ sender: UISegmentedControl) {

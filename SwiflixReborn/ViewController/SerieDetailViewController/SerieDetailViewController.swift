@@ -9,9 +9,10 @@ class SerieDetailViewController: UIViewController {
     
     var serie: Media?
     var detail: SerieDetailResponse?
-    var similar: [Media]?
+    var similar = DetailController<Result>()
     var episodes: [Episode]? = []
-    var reviews: [Review]?
+    var reviews = DetailController<Review>()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,20 +66,17 @@ class SerieDetailViewController: UIViewController {
         }
         
         let requestSimilar: TV = .similar(id: .id(serie.id))
-        TMDB.request(requestSimilar) { (response: TMDBResponse<Result>) in
-            self.similar = response.results as [Media]
-        } onError: { error in
-            #warning("Handle this error")
-        }
+        self.similar.loadDetails(request: requestSimilar)
+        
         let requestReviews: TV = .reviews(id: .id(serie.id))
-        TMDB.request(requestReviews) { (response: TMDBResponse<Review>) in
-            self.reviews = response.results
-        } onError: { error in
-            #warning("Handle this error")
-        }
+        self.reviews.loadDetails(request: requestReviews)
 
-        
-        
+    }
+    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.detailTableView.reloadData()
+        }
     }
     
     @IBAction func segmentDidSelect(_ sender: UISegmentedControl) {
