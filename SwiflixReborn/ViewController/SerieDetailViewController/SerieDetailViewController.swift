@@ -13,6 +13,9 @@ class SerieDetailViewController: UIViewController {
     var episodes: [Episode]? = []
     var reviews = DetailController<Review>()
     
+    var selectedSegment: SerieDetailSegment {
+        SerieDetailSegment(rawValue: self.tabSegment.selectedSegmentIndex)!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

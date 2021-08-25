@@ -2,29 +2,36 @@ import UIKit
 
 extension PersonDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch (self.tabSegment.selectedSegmentIndex) {
-        case 0:
+        switch self.selectedSegment {
+        
+        case .biography:
             return 1
-        case 1:
+            
+        case .credits:
             return self.credits.count
-        case 2:
+            
+        case .profiles:
             return self.images.count
-        default:
-            return 0
+            
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        switch self.tabSegment.selectedSegmentIndex {
-        case 0:
+        switch self.selectedSegment {
+        
+        case .biography:
             return 2
+            
         default:
             return 1
+            
         }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if self.tabSegment.selectedSegmentIndex == 0 {
+        switch self.selectedSegment {
+        
+        case .biography:
             switch section {
             case BiographySection.biography.rawValue:
                 return "Biography"
@@ -33,31 +40,34 @@ extension PersonDetailViewController: UITableViewDataSource {
             default:
                 return nil
             }
+            
+        default:
+            return nil
+            
         }
         
-        return nil
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        switch self.selectedSegment {
         
-        if self.tabSegment.selectedSegmentIndex == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell {
-                return self.setBiographyViewCell(cell, at: indexPath)
-            }
-        } else if self.tabSegment.selectedSegmentIndex == 1 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell {
-                return self.setCreditsViewCell(cell, at: indexPath)
-            }
-        } else if self.tabSegment.selectedSegmentIndex == 2 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell {
-                let media = self.images[indexPath.row]
-                cell.setupWith(media: media)
-                return cell
-            }
+        case .biography:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.customIdentifier) as? PersonBiographyTableViewCell else { return UITableViewCell() }
+            return self.setBiographyViewCell(cell, at: indexPath)
+            
+        case .credits:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
+            return self.setCreditsViewCell(cell, at: indexPath)
+            
+        case .profiles:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaTableViewCell.customIdentifier) as? MediaTableViewCell else { return UITableViewCell() }
+            let media = self.images[indexPath.row]
+            cell.setupWith(media: media)
+            return cell
+            
         }
         
-        return UITableViewCell()
     }
     
     func setBiographyViewCell(_ cell: PersonBiographyTableViewCell, at indexPath: IndexPath) -> PersonBiographyTableViewCell {

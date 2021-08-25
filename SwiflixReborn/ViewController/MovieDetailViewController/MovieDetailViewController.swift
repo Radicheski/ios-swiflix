@@ -1,10 +1,3 @@
-//
-//  MovieDetailViewController.swift
-//  SwiflixReborn
-//
-//  Created by Erik Radicheski da Silva on 11/08/21.
-//
-
 import UIKit
 
 class MovieDetailViewController: UIViewController {
@@ -19,6 +12,10 @@ class MovieDetailViewController: UIViewController {
     var similar = DetailController<Result>()
     var reviews = DetailController<Review>()
     var videos = DetailController<Videos>()
+    
+    var selectedSegment: MovieDetailSegment {
+        MovieDetailSegment(rawValue: self.tabSegment.selectedSegmentIndex)!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

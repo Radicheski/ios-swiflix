@@ -15,6 +15,10 @@ class PersonDetailViewController: UIViewController {
     var credits: [Media] = []
     var images: [Media] = []
     
+    var selectedSegment: PersonDetailSegment {
+        PersonDetailSegment(rawValue: self.tabSegment.selectedSegmentIndex)!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
