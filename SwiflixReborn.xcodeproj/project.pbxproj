@@ -13,6 +13,11 @@
 		AD09AA6426D6CDFF00B37066 /* SerieDetailSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09AA6326D6CDFF00B37066 /* SerieDetailSegment.swift */; };
 		AD09AA6626D6CFB900B37066 /* MovieDetailSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09AA6526D6CFB900B37066 /* MovieDetailSegment.swift */; };
 		AD09AA6826D6D11D00B37066 /* PersonDetailSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09AA6726D6D11D00B37066 /* PersonDetailSegment.swift */; };
+		AD1D94DB26D830EB00617137 /* MovieViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D94DA26D830EB00617137 /* MovieViewController+UISearchBarDelegate.swift */; };
+		AD1D94DD26D8311000617137 /* NowPlayingViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D94DC26D8311000617137 /* NowPlayingViewController+UISearchBarDelegate.swift */; };
+		AD1D94DF26D8315100617137 /* UpcomingViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D94DE26D8315100617137 /* UpcomingViewController+UISearchBarDelegate.swift */; };
+		AD1D94E126D8317600617137 /* SerieViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D94E026D8317600617137 /* SerieViewController+UISearchBarDelegate.swift */; };
+		AD1D94E326D831A100617137 /* PersonViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D94E226D831A100617137 /* PersonViewController+UISearchBarDelegate.swift */; };
 		AD20626C26CB1140006CB33F /* MovieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */; };
 		AD36AF4026CC4A2F00C7EE44 /* SerieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF3F26CC4A2F00C7EE44 /* SerieDetailResponse.swift */; };
 		AD36AF4226CC4DDE00C7EE44 /* PersonDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */; };
@@ -133,6 +138,11 @@
 		AD09AA6326D6CDFF00B37066 /* SerieDetailSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailSegment.swift; sourceTree = "<group>"; };
 		AD09AA6526D6CFB900B37066 /* MovieDetailSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailSegment.swift; sourceTree = "<group>"; };
 		AD09AA6726D6D11D00B37066 /* PersonDetailSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailSegment.swift; sourceTree = "<group>"; };
+		AD1D94DA26D830EB00617137 /* MovieViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		AD1D94DC26D8311000617137 /* NowPlayingViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NowPlayingViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		AD1D94DE26D8315100617137 /* UpcomingViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpcomingViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		AD1D94E026D8317600617137 /* SerieViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SerieViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		AD1D94E226D831A100617137 /* PersonViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		AD20626B26CB1140006CB33F /* MovieDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailResponse.swift; sourceTree = "<group>"; };
 		AD36AF3F26CC4A2F00C7EE44 /* SerieDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailResponse.swift; sourceTree = "<group>"; };
 		AD36AF4126CC4DDD00C7EE44 /* PersonDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailResponse.swift; sourceTree = "<group>"; };
@@ -432,6 +442,7 @@
 				AD60AAB726C5994D00C501B8 /* PersonViewController.swift */,
 				AD6D8D3526D5AB4D003CE245 /* PersonViewController+UITableViewDataSource.swift */,
 				AD6D8D3726D5AB64003CE245 /* PersonViewController+UITableViewDeletgate.swift */,
+				AD1D94E226D831A100617137 /* PersonViewController+UISearchBarDelegate.swift */,
 			);
 			path = PersonViewController;
 			sourceTree = "<group>";
@@ -453,6 +464,7 @@
 				AD60AAB326C5949000C501B8 /* SerieViewController.swift */,
 				AD6D8D3F26D5AC53003CE245 /* SerieViewController+UITableViiewDataSource.swift */,
 				AD6D8D4126D5AC75003CE245 /* SerieViewController+ UITableViewDelegate.swift */,
+				AD1D94E026D8317600617137 /* SerieViewController+UISearchBarDelegate.swift */,
 			);
 			path = SerieViewController;
 			sourceTree = "<group>";
@@ -463,6 +475,7 @@
 				AD60AAB126C4824200C501B8 /* UpcomingViewController.swift */,
 				AD6D8D4326D5ACE6003CE245 /* UpcomingViewController+UITableViewDelegate.swift */,
 				AD6D8D4526D5ACFC003CE245 /* UpcomingViewController+UITableViewDataSource.swift */,
+				AD1D94DE26D8315100617137 /* UpcomingViewController+UISearchBarDelegate.swift */,
 			);
 			path = UpcomingViewController;
 			sourceTree = "<group>";
@@ -473,6 +486,7 @@
 				AD60AAAF26C47F9500C501B8 /* NowPlayingViewController.swift */,
 				AD6D8D4726D5AD4B003CE245 /* NowPlayingViewController+UITableViewDataSource.swift */,
 				AD6D8D4926D5AD64003CE245 /* NowPlayingViewController+UITableViewDelegate.swift */,
+				AD1D94DC26D8311000617137 /* NowPlayingViewController+UISearchBarDelegate.swift */,
 			);
 			path = NowPlayingViewController;
 			sourceTree = "<group>";
@@ -494,6 +508,7 @@
 				ADF664E526C474E100511E36 /* MovieViewController.swift */,
 				AD6D8D5126D5AE17003CE245 /* MovieViewController+UITableViewDataSource.swift */,
 				AD6D8D5326D5AE3D003CE245 /* MovieViewController+UITableViewDelegate.swift */,
+				AD1D94DA26D830EB00617137 /* MovieViewController+UISearchBarDelegate.swift */,
 			);
 			path = MovieViewController;
 			sourceTree = "<group>";
@@ -775,6 +790,7 @@
 				AD91606426D2E697002A6969 /* Movie.swift in Sources */,
 				AD6D8D3826D5AB64003CE245 /* PersonViewController+UITableViewDeletgate.swift in Sources */,
 				AD6D8CD326D5A234003CE245 /* Network.swift in Sources */,
+				AD1D94DF26D8315100617137 /* UpcomingViewController+UISearchBarDelegate.swift in Sources */,
 				AD6D8D4226D5AC75003CE245 /* SerieViewController+ UITableViewDelegate.swift in Sources */,
 				AD6D8D5F26D5AF86003CE245 /* UITableViewCell+Registrable.swift in Sources */,
 				AD6D8CCD26D5A1C5003CE245 /* Episode.swift in Sources */,
@@ -785,6 +801,7 @@
 				AD6D8CF326D5A449003CE245 /* RequestParameter+extension.swift in Sources */,
 				ADF664DD26C4684500511E36 /* LoginViewController.swift in Sources */,
 				AD91605E26D2E5CE002A6969 /* Region.swift in Sources */,
+				AD1D94E126D8317600617137 /* SerieViewController+UISearchBarDelegate.swift in Sources */,
 				AD6D8CE126D5A2F9003CE245 /* ProductionCompany.swift in Sources */,
 				AD6D8D1E26D5A922003CE245 /* Profile+Media.swift in Sources */,
 				AD6D8D2826D5A9D0003CE245 /* UpcomingResult+Media.swift in Sources */,
@@ -851,6 +868,7 @@
 				AD6D8CFB26D5A4CE003CE245 /* TV+Requestable.swift in Sources */,
 				ADCD0B8626CF04E4002D8F52 /* SerieSeasonResponse.swift in Sources */,
 				AD6D8D4626D5ACFC003CE245 /* UpcomingViewController+UITableViewDataSource.swift in Sources */,
+				AD1D94DD26D8311000617137 /* NowPlayingViewController+UISearchBarDelegate.swift in Sources */,
 				AD6D8CDD26D5A2C5003CE245 /* SpokenLanguage.swift in Sources */,
 				AD6D8D2E26D5AA3B003CE245 /* Result+Person.swift in Sources */,
 				AD20626C26CB1140006CB33F /* MovieDetailResponse.swift in Sources */,
@@ -867,7 +885,9 @@
 				EBDF349D23FACAF28B8F77C4 /* MediaType.swift in Sources */,
 				AD6D8D2A26D5A9FE003CE245 /* NowPlayingResult+Media.swift in Sources */,
 				AD6D8CE526D5A325003CE245 /* BelongsToCollection.swift in Sources */,
+				AD1D94DB26D830EB00617137 /* MovieViewController+UISearchBarDelegate.swift in Sources */,
 				AD6D8D3026D5AAB0003CE245 /* BiographySection.swift in Sources */,
+				AD1D94E326D831A100617137 /* PersonViewController+UISearchBarDelegate.swift in Sources */,
 				EBDF3D1C4C7458F49686D95F /* TimeWindow.swift in Sources */,
 				AD6D8CE326D5A311003CE245 /* Genre.swift in Sources */,
 				AD6D8D3E26D5AC2C003CE245 /* SerieDetailViewController+UITableViewDelegate.swift in Sources */,

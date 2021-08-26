@@ -21,6 +21,8 @@ class SerieViewController: UIViewController {
                 self.serieTableView.reloadData()
             }
         }
+        
+        self.searchBar.delegate = self
 
     }
     

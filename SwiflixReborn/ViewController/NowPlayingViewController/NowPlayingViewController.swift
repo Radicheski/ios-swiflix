@@ -21,6 +21,9 @@ class NowPlayingViewController: UIViewController {
                 self.movieTableView.reloadData()
             }
         }
+        
+        self.searchBar.delegate = self
+        
     }
     
     func setupMovieTableView() {

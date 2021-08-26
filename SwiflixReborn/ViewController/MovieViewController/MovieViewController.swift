@@ -23,6 +23,8 @@ class MovieViewController: UIViewController {
             }
         }
         
+        self.searchBar.delegate = self
+        
     }
 
     func setupMovieTableView() {

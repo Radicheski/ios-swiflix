@@ -21,6 +21,9 @@ class PersonViewController: UIViewController {
                 self.personTableView.reloadData()
             }
         }
+        
+        self.searchBar.delegate = self
+        
     }
     
     func setupPersonTableView() {
