@@ -3,6 +3,7 @@ import UIKit
 class PersonViewController: UIViewController {
 
     @IBOutlet weak var personTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var controller = ListController<PeopleResult>()
     
@@ -10,6 +11,8 @@ class PersonViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupPersonTableView()
+        
+        self.searchBar.searchTextField.textColor = .gray
         
         let listRequest: People = .popular()
         

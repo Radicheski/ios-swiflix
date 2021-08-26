@@ -3,6 +3,7 @@ import UIKit
 class NowPlayingViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var controller = ListController<Result>()
     
@@ -10,6 +11,8 @@ class NowPlayingViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupMovieTableView()
+        
+        self.searchBar.searchTextField.textColor = .gray
         
         let listRequest: Movie = .nowPlaying()
         

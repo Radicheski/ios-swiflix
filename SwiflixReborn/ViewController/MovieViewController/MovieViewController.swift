@@ -3,7 +3,8 @@ import UIKit
 class MovieViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var controller = ListController<Result>()
     
     override func viewDidLoad() {
@@ -11,6 +12,8 @@ class MovieViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupMovieTableView()
+        
+        self.searchBar.searchTextField.textColor = .gray
         
         let listRequest: Movie = .popular()
         

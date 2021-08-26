@@ -3,6 +3,7 @@ import UIKit
 class SerieViewController: UIViewController {
 
     @IBOutlet weak var serieTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var controller = ListController<Result>()
     
@@ -10,6 +11,8 @@ class SerieViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupSerieTableView()
+        
+        self.searchBar.searchTextField.textColor = .gray
         
         let listRequest: TV = .popular()
         
