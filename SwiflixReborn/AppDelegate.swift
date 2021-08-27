@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         TMDB.setApiKey(plist: "apikey", plistKey: "TMDBKey")
+        FirebaseApp.configure()
 
         return true
     }
