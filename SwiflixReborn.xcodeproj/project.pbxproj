@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -92,6 +92,9 @@
 		AD6D8D5226D5AE17003CE245 /* MovieViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D8D5126D5AE17003CE245 /* MovieViewController+UITableViewDataSource.swift */; };
 		AD6D8D5426D5AE3D003CE245 /* MovieViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D8D5326D5AE3D003CE245 /* MovieViewController+UITableViewDelegate.swift */; };
 		AD6D8D5F26D5AF86003CE245 /* UITableViewCell+Registrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D8D5E26D5AF86003CE245 /* UITableViewCell+Registrable.swift */; };
+		AD70B32726D96E1C00A9F5F4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AD70B32626D96E1C00A9F5F4 /* FirebaseAuth */; };
+		AD70B32926D96E1C00A9F5F4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AD70B32826D96E1C00A9F5F4 /* FirebaseFirestore */; };
+		AD70B32B26D96E1C00A9F5F4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AD70B32A26D96E1C00A9F5F4 /* FirebaseStorage */; };
 		AD91605E26D2E5CE002A6969 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605D26D2E5CE002A6969 /* Region.swift */; };
 		AD91606026D2E5E6002A6969 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605F26D2E5E6002A6969 /* Language.swift */; };
 		AD91606226D2E624002A6969 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606126D2E624002A6969 /* RequestParameter.swift */; };
@@ -263,6 +266,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD70B32726D96E1C00A9F5F4 /* FirebaseAuth in Frameworks */,
+				AD70B32926D96E1C00A9F5F4 /* FirebaseFirestore in Frameworks */,
+				AD70B32B26D96E1C00A9F5F4 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +733,11 @@
 			dependencies = (
 			);
 			name = SwiflixReborn;
+			packageProductDependencies = (
+				AD70B32626D96E1C00A9F5F4 /* FirebaseAuth */,
+				AD70B32826D96E1C00A9F5F4 /* FirebaseFirestore */,
+				AD70B32A26D96E1C00A9F5F4 /* FirebaseStorage */,
+			);
 			productName = SwiflixReborn;
 			productReference = ADB666A126C2FE74008938D7 /* SwiflixReborn.app */;
 			productType = "com.apple.product-type.application";
@@ -754,6 +765,9 @@
 				Base,
 			);
 			mainGroup = ADB6669826C2FE74008938D7;
+			packageReferences = (
+				AD70B32526D96E1C00A9F5F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = ADB666A226C2FE74008938D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1101,6 +1115,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD70B32526D96E1C00A9F5F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD70B32626D96E1C00A9F5F4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD70B32526D96E1C00A9F5F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AD70B32826D96E1C00A9F5F4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD70B32526D96E1C00A9F5F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		AD70B32A26D96E1C00A9F5F4 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD70B32526D96E1C00A9F5F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADB6669926C2FE74008938D7 /* Project object */;
 }
