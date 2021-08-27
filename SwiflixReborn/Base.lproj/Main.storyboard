@@ -101,6 +101,53 @@
             </objects>
             <point key="canvasLocation" x="-587" y="106"/>
         </scene>
+        <!--Password Recovery View Controller-->
+        <scene sceneID="6xw-CL-b5n">
+            <objects>
+                <viewController id="8UN-t9-Hfc" customClass="PasswordRecoveryViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eqa-V8-ACu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9gV-SD-69H">
+                                <rect key="frame" x="20" y="20" width="374" height="84"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SEx-wk-sdC">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNZ-ru-q82">
+                                        <rect key="frame" x="0.0" y="54" width="374" height="30"/>
+                                        <state key="normal" title="Enviar e-mail">
+                                            <color key="titleColor" systemColor="systemGrayColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendEmail:" destination="8UN-t9-Hfc" eventType="touchUpInside" id="G5f-Oj-n6d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="slD-JO-P59"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="slD-JO-P59" firstAttribute="trailing" secondItem="9gV-SD-69H" secondAttribute="trailing" constant="20" id="FVr-F2-U75"/>
+                            <constraint firstItem="9gV-SD-69H" firstAttribute="leading" secondItem="slD-JO-P59" secondAttribute="leading" constant="20" id="GM3-Ei-9Xc"/>
+                            <constraint firstItem="9gV-SD-69H" firstAttribute="top" secondItem="slD-JO-P59" secondAttribute="top" constant="20" id="iqF-Qz-zRC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="SEx-wk-sdC" id="Ggy-b4-uOU"/>
+                        <outlet property="sendButton" destination="oNZ-ru-q82" id="cL5-ht-Pl6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RdO-3m-k61" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="163.768115942029" y="-658.25892857142856"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="kd0-v0-s62">
             <objects>
@@ -188,6 +235,7 @@
                         <outlet property="forgetPasswordButton" destination="ayo-J6-YAs" id="Vbw-I9-IVc"/>
                         <outlet property="passwordField" destination="bDY-3a-5Zh" id="uRV-w0-M2o"/>
                         <segue destination="NOc-DI-MkX" kind="presentation" identifier="LoginToMain" modalPresentationStyle="fullScreen" id="M6h-2A-P96"/>
+                        <segue destination="8UN-t9-Hfc" kind="presentation" identifier="LoginToPasswordRecovery" id="cvO-Oc-0PP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9Q-DX-sod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -510,7 +558,7 @@
                 <navigationController id="4n2-O6-LfR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Séries" image="list.and.film" catalog="system" id="fCJ-rO-AJ5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="4Vz-An-DTa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -578,7 +626,7 @@
                 <navigationController id="X17-RQ-Vrj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Em cartaz" image="video" catalog="system" id="XJZ-eY-gZ2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="c0h-T9-dGI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -646,7 +694,7 @@
                 <navigationController id="5Fe-Re-lbe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lançamentos" image="square.stack.3d.forward.dottedline" catalog="system" id="M3C-jq-Jbq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="wVI-5o-pxg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -950,7 +998,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ClP-2h-Qec"/>
+        <segue reference="M6h-2A-P96"/>
         <segue reference="Qt8-2b-ija"/>
     </inferredMetricsTieBreakers>
     <resources>

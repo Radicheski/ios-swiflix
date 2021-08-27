@@ -45,8 +45,7 @@ class LoginViewController: UIViewController {
     }
     
     func showPasswordRecoveryForm() {
-        #warning("Implement this method")
-        print("Implement method \(#function)")
+        self.performSegue(withIdentifier: "LoginToPasswordRecovery", sender: nil)
     }
     
 }

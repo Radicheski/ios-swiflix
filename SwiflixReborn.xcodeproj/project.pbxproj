@@ -95,7 +95,8 @@
 		AD70B32726D96E1C00A9F5F4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AD70B32626D96E1C00A9F5F4 /* FirebaseAuth */; };
 		AD70B32926D96E1C00A9F5F4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AD70B32826D96E1C00A9F5F4 /* FirebaseFirestore */; };
 		AD70B32B26D96E1C00A9F5F4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AD70B32A26D96E1C00A9F5F4 /* FirebaseStorage */; };
-		AD70B32D26D96FC700A9F5F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD70B32C26D96FC700A9F5F4 /* GoogleService-Info.plist */; };
+		AD70B33126D9742200A9F5F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD70B33026D9742200A9F5F4 /* GoogleService-Info.plist */; };
+		AD70B33326D9763A00A9F5F4 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70B33226D9763A00A9F5F4 /* PasswordRecoveryViewController.swift */; };
 		AD91605E26D2E5CE002A6969 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605D26D2E5CE002A6969 /* Region.swift */; };
 		AD91606026D2E5E6002A6969 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605F26D2E5E6002A6969 /* Language.swift */; };
 		AD91606226D2E624002A6969 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606126D2E624002A6969 /* RequestParameter.swift */; };
@@ -221,7 +222,8 @@
 		AD6D8D5126D5AE17003CE245 /* MovieViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		AD6D8D5326D5AE3D003CE245 /* MovieViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		AD6D8D5E26D5AF86003CE245 /* UITableViewCell+Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Registrable.swift"; sourceTree = "<group>"; };
-		AD70B32C26D96FC700A9F5F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD70B33026D9742200A9F5F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD70B33226D9763A00A9F5F4 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		AD91605D26D2E5CE002A6969 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		AD91605F26D2E5E6002A6969 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		AD91606126D2E624002A6969 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 				ADF664DA26C4672E00511E36 /* WelcomeViewController.swift */,
 				ADF664DC26C4684500511E36 /* LoginViewController.swift */,
 				ADF664DE26C46A0200511E36 /* SignupViewController.swift */,
+				AD70B33226D9763A00A9F5F4 /* PasswordRecoveryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -679,7 +682,7 @@
 		EBDF330B97858420EB9F470A /* SensitiveData */ = {
 			isa = PBXGroup;
 			children = (
-				AD70B32C26D96FC700A9F5F4 /* GoogleService-Info.plist */,
+				AD70B33026D9742200A9F5F4 /* GoogleService-Info.plist */,
 				AD0756A726C5B96800A53202 /* apikey.plist */,
 			);
 			path = SensitiveData;
@@ -785,6 +788,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD70B33126D9742200A9F5F4 /* GoogleService-Info.plist in Resources */,
 				AD36AF4626CC51E400C7EE44 /* PersonBiographyTableViewCell.xib in Resources */,
 				ADB666B126C2FE75008938D7 /* LaunchScreen.storyboard in Resources */,
 				AD0756A826C5B96800A53202 /* apikey.plist in Resources */,
@@ -792,7 +796,6 @@
 				ADCD0B8A26CF053E002D8F52 /* EpisodeTableViewCell.xib in Resources */,
 				AD60AABE26C59CC200C501B8 /* PersonTableViewCell.xib in Resources */,
 				ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */,
-				AD70B32D26D96FC700A9F5F4 /* GoogleService-Info.plist in Resources */,
 				ADF664E426C46F7000511E36 /* MediaTableViewCell.xib in Resources */,
 				ADB666AC26C2FE74008938D7 /* Main.storyboard in Resources */,
 			);
@@ -885,6 +888,7 @@
 				AD6D8D0326D5A543003CE245 /* DataSource.swift in Sources */,
 				AD6D8CFB26D5A4CE003CE245 /* TV+Requestable.swift in Sources */,
 				ADCD0B8626CF04E4002D8F52 /* SerieSeasonResponse.swift in Sources */,
+				AD70B33326D9763A00A9F5F4 /* PasswordRecoveryViewController.swift in Sources */,
 				AD6D8D4626D5ACFC003CE245 /* UpcomingViewController+UITableViewDataSource.swift in Sources */,
 				AD1D94DD26D8311000617137 /* NowPlayingViewController+UISearchBarDelegate.swift in Sources */,
 				AD6D8CDD26D5A2C5003CE245 /* SpokenLanguage.swift in Sources */,
