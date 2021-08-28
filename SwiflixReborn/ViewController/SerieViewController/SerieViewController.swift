@@ -1,9 +1,11 @@
 import UIKit
+import FirebaseAuth
 
 class SerieViewController: UIViewController {
 
     @IBOutlet weak var serieTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var profileButton: UIBarButtonItem!
     
     var controller = ListController<Result>()
     
@@ -45,6 +47,16 @@ class SerieViewController: UIViewController {
                   let serie = sender as? Media else { return }
             detail.setup(with: serie)
         }
+    }
+    
+    @IBAction func profileButtonnClicked(_ sender: UIBarButtonItem) {
+        self.navigationController?.dismiss(animated: true, completion: {
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                #warning("Handle this error")
+            }
+        })
     }
 
 }

@@ -1,9 +1,11 @@
 import UIKit
+import FirebaseAuth
 
 class PersonViewController: UIViewController {
 
     @IBOutlet weak var personTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var profileButton: UIBarButtonItem!
     
     var controller = ListController<PeopleResult>()
     
@@ -45,6 +47,16 @@ class PersonViewController: UIViewController {
                   let person = sender as? Person else { return }
             detail.setup(with: person)
         }
+    }
+    
+    @IBAction func profileButtonnClicked(_ sender: UIBarButtonItem) {
+        self.navigationController?.dismiss(animated: true, completion: {
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                #warning("Handle this error")
+            }
+        })
     }
 
 }

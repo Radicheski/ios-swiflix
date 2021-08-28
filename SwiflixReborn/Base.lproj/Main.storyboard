@@ -379,9 +379,17 @@
                             <constraint firstItem="Tfa-Io-yvf" firstAttribute="top" secondItem="6KY-dR-Fbn" secondAttribute="top" id="xzv-ur-OCp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Filmes" id="Fb9-c6-cJt"/>
+                    <navigationItem key="navigationItem" title="Filmes" id="Fb9-c6-cJt">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle" catalog="system" id="1c5-im-qcs">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="profileButtonnClicked:" destination="g6v-yp-lHp" id="io5-Mg-eXc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="movieTableView" destination="Tfa-Io-yvf" id="pFr-lt-hjA"/>
+                        <outlet property="profileButtton" destination="1c5-im-qcs" id="puv-VM-iQP"/>
                         <outlet property="searchBar" destination="kXA-88-blD" id="tnK-hv-ThR"/>
                         <segue destination="AcF-kx-CVb" kind="show" identifier="MovieToDetail" id="Qt8-2b-ija"/>
                     </connections>
@@ -427,7 +435,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oI6-1O-4Wc">
-                                <rect key="frame" x="0.0" y="447" width="414" height="366"/>
+                                <rect key="frame" x="0.0" y="447" width="414" height="317"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -520,7 +528,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="02R-gd-kbv">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.90737557410000003" green="0.41176470590000003" blue="0.40390366319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="7dd-ib-XTw">
@@ -541,9 +549,19 @@
                             <constraint firstItem="xiv-OZ-OoT" firstAttribute="bottom" secondItem="02R-gd-kbv" secondAttribute="bottom" id="z7K-UA-JCY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Pessoas" id="xuc-KS-zpP"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Pessoas" id="xuc-KS-zpP">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle" catalog="system" id="SnW-eq-c32">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="profileButtonnClicked:" destination="xXe-Z9-o94" id="QJi-Tb-OFj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="personTableView" destination="02R-gd-kbv" id="Bsy-eg-WdJ"/>
+                        <outlet property="profileButton" destination="SnW-eq-c32" id="pCh-jU-WFb"/>
                         <outlet property="searchBar" destination="7dd-ib-XTw" id="2Fn-MZ-fcQ"/>
                         <segue destination="hL8-vO-sV8" kind="show" identifier="PeopleToDetail" id="95P-Uc-8hw"/>
                     </connections>
@@ -558,7 +576,7 @@
                 <navigationController id="4n2-O6-LfR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Séries" image="list.and.film" catalog="system" id="fCJ-rO-AJ5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="4Vz-An-DTa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -588,7 +606,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7V0-8v-CkK">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="B7Z-7x-gGh">
@@ -609,8 +627,18 @@
                             <constraint firstItem="J1E-X7-grv" firstAttribute="bottom" secondItem="7V0-8v-CkK" secondAttribute="bottom" id="i6f-zu-aaH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Séries" id="u1W-RT-iQK"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Séries" id="u1W-RT-iQK">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle" catalog="system" id="Ynv-0O-PhW">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="profileButtonnClicked:" destination="06p-zV-F1q" id="CFZ-8C-EYm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="profileButton" destination="Ynv-0O-PhW" id="PRv-wS-u9q"/>
                         <outlet property="searchBar" destination="B7Z-7x-gGh" id="jfX-Dj-sDa"/>
                         <outlet property="serieTableView" destination="7V0-8v-CkK" id="max-TD-yf8"/>
                         <segue destination="oNo-7T-EJb" kind="show" identifier="SeriesToDetail" id="pRR-Uq-avn"/>
@@ -626,7 +654,7 @@
                 <navigationController id="X17-RQ-Vrj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Em cartaz" image="video" catalog="system" id="XJZ-eY-gZ2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="c0h-T9-dGI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -656,7 +684,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q4T-Ub-27C">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="dIW-bJ-abQ">
@@ -677,9 +705,19 @@
                             <constraint firstItem="Q4T-Ub-27C" firstAttribute="top" secondItem="AUX-ay-gBq" secondAttribute="top" id="uKd-VG-JxS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Em cartaz" id="wd7-OV-Fss"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Em cartaz" id="wd7-OV-Fss">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle" catalog="system" id="vlt-aX-A7c">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="profileButtonnClicked:" destination="OeY-TU-zbs" id="M5L-c8-M6T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="movieTableView" destination="Q4T-Ub-27C" id="cBg-QF-DDK"/>
+                        <outlet property="profileButton" destination="vlt-aX-A7c" id="VgH-PK-kjP"/>
                         <outlet property="searchBar" destination="dIW-bJ-abQ" id="u9v-Vf-QcS"/>
                         <segue destination="AcF-kx-CVb" kind="show" identifier="OnTheaterToDetail" id="0E7-NU-RIw"/>
                     </connections>
@@ -724,7 +762,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-75-KuQ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="URk-I9-6Ig">
@@ -745,9 +783,19 @@
                             <constraint firstItem="EeV-75-KuQ" firstAttribute="top" secondItem="A6I-kQ-CTd" secondAttribute="top" id="sBS-Kr-2VE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Lançamentos" id="nK7-mt-P8R"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Lançamentos" id="nK7-mt-P8R">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle" catalog="system" id="qh6-XI-jP7">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="profileButtonnClicked:" destination="OeF-Gr-asz" id="VmW-QV-5y6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="movieTableView" destination="EeV-75-KuQ" id="cbp-yq-o8H"/>
+                        <outlet property="profileButton" destination="qh6-XI-jP7" id="AMJ-rf-POO"/>
                         <outlet property="searchBar" destination="URk-I9-6Ig" id="srP-ko-xin"/>
                         <segue destination="AcF-kx-CVb" kind="show" identifier="ComingToDetail" id="LJp-NN-5Hh"/>
                     </connections>
@@ -855,7 +903,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oc0-6S-TXT">
-                                <rect key="frame" x="0.0" y="437" width="414" height="376"/>
+                                <rect key="frame" x="0.0" y="437" width="414" height="327"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -917,7 +965,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WXi-bk-d1I">
-                                <rect key="frame" x="0.0" y="437" width="414" height="376"/>
+                                <rect key="frame" x="0.0" y="437" width="414" height="327"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="vgC-1S-LOf">
@@ -999,11 +1047,13 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="M6h-2A-P96"/>
-        <segue reference="Qt8-2b-ija"/>
+        <segue reference="LJp-NN-5Hh"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" systemColor="systemRedColor"/>
     <resources>
         <image name="film.fill" catalog="system" width="128" height="93"/>
         <image name="list.and.film" catalog="system" width="128" height="86"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square.stack.3d.forward.dottedline" catalog="system" width="128" height="113"/>
         <image name="video" catalog="system" width="128" height="83"/>

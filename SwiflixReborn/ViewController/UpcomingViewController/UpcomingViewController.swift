@@ -1,9 +1,11 @@
 import UIKit
+import FirebaseAuth
 
 class UpcomingViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var profileButton: UIBarButtonItem!
     
     var controller = ListController<Result>()
     
@@ -45,6 +47,16 @@ class UpcomingViewController: UIViewController {
                   let movie = sender as? Media else { return }
             detail.setup(with: movie)
         }
+    }
+    
+    @IBAction func profileButtonnClicked(_ sender: UIBarButtonItem) {
+        self.navigationController?.dismiss(animated: true, completion: {
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                #warning("Handle this error")
+            }
+        })
     }
 
 }
