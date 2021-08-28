@@ -7,7 +7,6 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var tabSegment: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
     
-    var media: Media?
     var detail: MediaEntity?
     var similar = DetailController<Entity>()
     var reviews = DetailController<Review>()
@@ -22,7 +21,7 @@ class MovieDetailViewController: UIViewController {
         
         self.setupDetailTableView()
         
-        self.navigationItem.title = self.media?.mediaTitle ?? "(Unknown title)"
+        self.navigationItem.title = self.detail?.mediaTitle ?? "(Unknown title)"
         
         TMDB.getImage(size: "w780", string: self.detail?.backdropPath ?? "") { _data in
             if let data = _data,
@@ -47,7 +46,7 @@ class MovieDetailViewController: UIViewController {
     }
     
     func setup(with movie: Media) {
-        self.media = movie
+        
         let request: Movie = .details(id: .id(movie.id))
         TMDB.request(request) { (response: MediaEntity) in
             self.detail = response

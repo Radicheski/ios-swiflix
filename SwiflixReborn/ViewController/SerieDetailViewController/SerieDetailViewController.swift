@@ -7,7 +7,6 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var tabSegment: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
     
-    var serie: Media?
     var detail: SerieEntity?
     var similar = DetailController<Entity>()
     var episodes: [Episode]? = []
@@ -22,7 +21,7 @@ class SerieDetailViewController: UIViewController {
         
         self.setupDetailTableView()
         
-        self.navigationItem.title = self.serie?.mediaTitle ?? "(Unknown title)"
+        self.navigationItem.title = self.detail?.mediaTitle ?? "(Unknown title)"
         if let rate = self.detail?.voteAverage {
             self.rateLabel.text = "\(rate)"
         } else {
@@ -47,7 +46,7 @@ class SerieDetailViewController: UIViewController {
     }
     
     func setup(with serie: Media) {
-        self.serie = serie
+        
         let request: TV = .details(id: .id(serie.id))
         TMDB.request(request) { (response: SerieEntity) in
             self.detail = response
