@@ -97,6 +97,8 @@
 		AD70B32B26D96E1C00A9F5F4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AD70B32A26D96E1C00A9F5F4 /* FirebaseStorage */; };
 		AD70B33126D9742200A9F5F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD70B33026D9742200A9F5F4 /* GoogleService-Info.plist */; };
 		AD70B33326D9763A00A9F5F4 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70B33226D9763A00A9F5F4 /* PasswordRecoveryViewController.swift */; };
+		AD90B43F26DABA9500763883 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B43E26DABA9500763883 /* Entity.swift */; };
+		AD90B44126DAC21A00763883 /* KeyedDecodingContainer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */; };
 		AD91605E26D2E5CE002A6969 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605D26D2E5CE002A6969 /* Region.swift */; };
 		AD91606026D2E5E6002A6969 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605F26D2E5E6002A6969 /* Language.swift */; };
 		AD91606226D2E624002A6969 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606126D2E624002A6969 /* RequestParameter.swift */; };
@@ -224,6 +226,8 @@
 		AD6D8D5E26D5AF86003CE245 /* UITableViewCell+Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Registrable.swift"; sourceTree = "<group>"; };
 		AD70B33026D9742200A9F5F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD70B33226D9763A00A9F5F4 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		AD90B43E26DABA9500763883 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+extension.swift"; sourceTree = "<group>"; };
 		AD91605D26D2E5CE002A6969 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		AD91605F26D2E5E6002A6969 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		AD91606126D2E624002A6969 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
@@ -564,8 +568,17 @@
 			children = (
 				ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */,
 				AD6D8D5E26D5AF86003CE245 /* UITableViewCell+Registrable.swift */,
+				AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AD90B43D26DABA8900763883 /* V2 */ = {
+			isa = PBXGroup;
+			children = (
+				AD90B43E26DABA9500763883 /* Entity.swift */,
+			);
+			path = V2;
 			sourceTree = "<group>";
 		};
 		ADB6669826C2FE74008938D7 = {
@@ -691,6 +704,7 @@
 		EBDF37EA1D82BC320A24BAC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD90B43D26DABA8900763883 /* V2 */,
 				EBDF32D3D0594E35F7B187DE /* TMDB */,
 				AD91605D26D2E5CE002A6969 /* Region.swift */,
 				AD91605F26D2E5E6002A6969 /* Language.swift */,
@@ -864,12 +878,14 @@
 				AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */,
 				AD6D8CE926D5A37E003CE245 /* KnownFor.swift in Sources */,
 				AD6D8CCB26D5A1AA003CE245 /* Crew.swift in Sources */,
+				AD90B43F26DABA9500763883 /* Entity.swift in Sources */,
 				AD36AF4526CC51E400C7EE44 /* PersonBiographyTableViewCell.swift in Sources */,
 				AD6D8CD926D5A287003CE245 /* JSONCodingKey.swift in Sources */,
 				AD6D8CEF26D5A3F5003CE245 /* Registrable+extension.swift in Sources */,
 				ADD8205926CDB11C0097EDF5 /* Registrable.swift in Sources */,
 				ADF664E826C4790400511E36 /* MovieDetailViewController.swift in Sources */,
 				AD6D8D3226D5AAE1003CE245 /* PersonDetailViewController+UITableViewDataSource.swift in Sources */,
+				AD90B44126DAC21A00763883 /* KeyedDecodingContainer+extension.swift in Sources */,
 				ADF0DC4326C9B21100080AE6 /* UpcomingResult.swift in Sources */,
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
 				AD6D8D2026D5A946003CE245 /* Videos+Media.swift in Sources */,
