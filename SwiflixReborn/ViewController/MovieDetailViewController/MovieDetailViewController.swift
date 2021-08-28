@@ -9,7 +9,7 @@ class MovieDetailViewController: UIViewController {
     
     var media: Media?
     var detail: MovieDetailResponse?
-    var similar = DetailController<Result>()
+    var similar = DetailController<Entity>()
     var reviews = DetailController<Review>()
     var videos = DetailController<Videos>()
     

@@ -9,7 +9,7 @@ class SerieDetailViewController: UIViewController {
     
     var serie: Media?
     var detail: SerieDetailResponse?
-    var similar = DetailController<Result>()
+    var similar = DetailController<Entity>()
     var episodes: [Episode]? = []
     var reviews = DetailController<Review>()
     
