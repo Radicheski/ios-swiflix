@@ -7,7 +7,7 @@ class PersonViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var profileButton: UIBarButtonItem!
     
-    var controller = ListController<PeopleResult>()
+    var controller = ListController<Entity>()
     
     override func viewDidLoad() {
         super.viewDidLoad()

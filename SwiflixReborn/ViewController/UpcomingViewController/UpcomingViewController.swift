@@ -7,7 +7,7 @@ class UpcomingViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var profileButton: UIBarButtonItem!
     
-    var controller = ListController<Result>()
+    var controller = ListController<Entity>()
     
     override func viewDidLoad() {
         super.viewDidLoad()

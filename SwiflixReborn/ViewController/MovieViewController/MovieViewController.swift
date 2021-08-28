@@ -7,7 +7,7 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var profileButtton: UIBarButtonItem!
     
-    var controller = ListController<Result>()
+    var controller = ListController<Entity>()
     
     override func viewDidLoad() {
         

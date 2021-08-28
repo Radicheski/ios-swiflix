@@ -38,3 +38,11 @@ extension Entity: Media {
     }
     
 }
+
+extension Entity: Person {
+    
+    var profile: String {
+        self.posterPath
+    }
+    
+}
