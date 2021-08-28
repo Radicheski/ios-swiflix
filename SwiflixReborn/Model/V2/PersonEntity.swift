@@ -1,7 +1,7 @@
 class PersonEntity: Entity {
     
     let biography: String
-    let birthday: String
+    let birthday: String?
     let placeOfBirth: String
     let deathday: String?
     let knownForDepartment: String
@@ -11,7 +11,7 @@ class PersonEntity: Entity {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         self.biography = try container.decode(String.self, forKey: .biography)
-        self.birthday = try container.decode(String.self, forKey: .birthday)
+        self.birthday = try? container.decode(String.self, forKey: .birthday)
         self.placeOfBirth = try container.decode(String.self, forKey: .placeOfBirth)
         self.deathday = try? container.decode(String.self, forKey: .deathday)
         self.knownForDepartment = try container.decode(String.self, forKey: .knownForDepartment)

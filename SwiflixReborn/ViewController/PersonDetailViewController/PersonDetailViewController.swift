@@ -25,11 +25,18 @@ class PersonDetailViewController: UIViewController {
         
         self.navigationItem.title = self.detail?.name ?? "(Unknown name)"
         
-        if let name = self.detail?.name,
-           let birthday = self.detail?.birthday,
-           let department = self.detail?.knownForDepartment {
+        if let name = self.detail?.name {
             self.nameLabel.text = name
+        }
+        
+        if let birthday = self.detail?.birthday{
             self.birthdayLabel.text = birthday
+            self.birthdayLabel.isHidden = false
+        } else {
+            self.birthdayLabel.isHidden = true
+        }
+        
+        if let department = self.detail?.knownForDepartment {
             self.departmentLabel.text = department
         }
         
