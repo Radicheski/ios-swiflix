@@ -1,6 +1,6 @@
 struct PersonCreditResponse: Codable {
-    let cast: [Cast]
-    let crew: [Cast]
+    let cast: [Entity]
+    let crew: [Entity]
     let id: Int
 
     enum CodingKeys: String, CodingKey {

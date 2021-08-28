@@ -1,8 +1,8 @@
 struct Episode: Codable {
     let airDate: String
     let episodeNumber: Int
-    let crew: [Crew]
-    let guestStars: [Crew]
+    let crew: [Entity]
+    let guestStars: [Entity]
     let id: Int
     let name: String
     let overview: String
