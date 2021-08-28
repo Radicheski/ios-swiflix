@@ -82,7 +82,7 @@ extension MovieDetailViewController: UITableViewDataSource {
         case MovieGeneralSection.overview.rawValue:
             cell.setup(with: self.detail?.overview ?? "No overview available")
         case MovieGeneralSection.originalTitle.rawValue:
-            cell.setup(with: self.detail?.originalTitle ?? "No orginal title avilable")
+            cell.setup(with: self.detail?.originalName ?? "No orginal title avilable")
         case MovieGeneralSection.releaseDate.rawValue:
             cell.setup(with: self.detail?.releaseDate ?? "No release date available")
         default:

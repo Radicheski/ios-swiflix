@@ -8,7 +8,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var detailTableView: UITableView!
     
     var media: Media?
-    var detail: MovieDetailResponse?
+    var detail: MediaEntity?
     var similar = DetailController<Entity>()
     var reviews = DetailController<Review>()
     var videos = DetailController<Videos>()
@@ -49,7 +49,7 @@ class MovieDetailViewController: UIViewController {
     func setup(with movie: Media) {
         self.media = movie
         let request: Movie = .details(id: .id(movie.id))
-        TMDB.request(request) { (response: MovieDetailResponse) in
+        TMDB.request(request) { (response: MediaEntity) in
             self.detail = response
             self.reloadData()
         } onError: { error in

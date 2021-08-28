@@ -99,6 +99,7 @@
 		AD70B33326D9763A00A9F5F4 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70B33226D9763A00A9F5F4 /* PasswordRecoveryViewController.swift */; };
 		AD90B43F26DABA9500763883 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B43E26DABA9500763883 /* Entity.swift */; };
 		AD90B44126DAC21A00763883 /* KeyedDecodingContainer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */; };
+		AD90B44326DAC61D00763883 /* MediaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B44226DAC61D00763883 /* MediaEntity.swift */; };
 		AD91605E26D2E5CE002A6969 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605D26D2E5CE002A6969 /* Region.swift */; };
 		AD91606026D2E5E6002A6969 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605F26D2E5E6002A6969 /* Language.swift */; };
 		AD91606226D2E624002A6969 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606126D2E624002A6969 /* RequestParameter.swift */; };
@@ -228,6 +229,7 @@
 		AD70B33226D9763A00A9F5F4 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		AD90B43E26DABA9500763883 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+extension.swift"; sourceTree = "<group>"; };
+		AD90B44226DAC61D00763883 /* MediaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEntity.swift; sourceTree = "<group>"; };
 		AD91605D26D2E5CE002A6969 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		AD91605F26D2E5E6002A6969 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		AD91606126D2E624002A6969 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				AD90B43E26DABA9500763883 /* Entity.swift */,
+				AD90B44226DAC61D00763883 /* MediaEntity.swift */,
 			);
 			path = V2;
 			sourceTree = "<group>";
@@ -882,6 +885,7 @@
 				AD36AF4526CC51E400C7EE44 /* PersonBiographyTableViewCell.swift in Sources */,
 				AD6D8CD926D5A287003CE245 /* JSONCodingKey.swift in Sources */,
 				AD6D8CEF26D5A3F5003CE245 /* Registrable+extension.swift in Sources */,
+				AD90B44326DAC61D00763883 /* MediaEntity.swift in Sources */,
 				ADD8205926CDB11C0097EDF5 /* Registrable.swift in Sources */,
 				ADF664E826C4790400511E36 /* MovieDetailViewController.swift in Sources */,
 				AD6D8D3226D5AAE1003CE245 /* PersonDetailViewController+UITableViewDataSource.swift in Sources */,

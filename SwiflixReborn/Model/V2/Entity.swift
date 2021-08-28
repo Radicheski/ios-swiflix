@@ -1,15 +1,20 @@
 class Entity: Codable {
     
-    var id: Int
-    var name: String
-    var posterPath: String
+    let id: Int
+    let name: String
+    let posterPath: String
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodignKeys.self)
         
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: [.title, .name])
-        self.posterPath = try container.decode(String.self, forKey: .profilePath, .posterPath)
+        
+        if let poster = try? container.decode(String.self, forKey: .profilePath, .posterPath) {
+            self.posterPath = poster
+        } else {
+            self.posterPath = ""
+        }
         
     }
     
