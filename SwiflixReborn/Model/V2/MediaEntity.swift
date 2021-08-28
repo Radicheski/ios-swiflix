@@ -40,13 +40,20 @@ class SerieEntity: MediaEntity {
     
     let numberOfSeasons: Int
     let numberOfEpisodes: Int
+    let lastAirDate: String
+    var firstAirDate: String {
+        get {
+            return self.releaseDate
+        }
+    }
     
     required init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.numberOfSeasons = 1
-        self.numberOfEpisodes = 1
+        self.numberOfSeasons = try container.decode(Int.self, forKey: .numberOfSeasons)
+        self.numberOfEpisodes = try container.decode(Int.self, forKey: .numberOfEpisodes)
+        self.lastAirDate = try container.decode(String.self, forKey: .lastAirDate)
         
         try super.init(from: decoder)
         
@@ -56,6 +63,7 @@ class SerieEntity: MediaEntity {
         
         case numberOfSeasons = "number_of_seasons"
         case numberOfEpisodes = "number_of_episodes"
+        case lastAirDate = "last_air_date"
         
     }
     

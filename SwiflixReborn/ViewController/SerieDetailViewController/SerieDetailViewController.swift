@@ -8,7 +8,7 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var detailTableView: UITableView!
     
     var serie: Media?
-    var detail: SerieDetailResponse?
+    var detail: SerieEntity?
     var similar = DetailController<Entity>()
     var episodes: [Episode]? = []
     var reviews = DetailController<Review>()
@@ -49,7 +49,7 @@ class SerieDetailViewController: UIViewController {
     func setup(with serie: Media) {
         self.serie = serie
         let request: TV = .details(id: .id(serie.id))
-        TMDB.request(request) { (response: SerieDetailResponse) in
+        TMDB.request(request) { (response: SerieEntity) in
             self.detail = response
             if let seasons = self.detail?.numberOfSeasons, seasons > 0{
                 for season in 1...(self.detail?.numberOfSeasons ?? 0) {
