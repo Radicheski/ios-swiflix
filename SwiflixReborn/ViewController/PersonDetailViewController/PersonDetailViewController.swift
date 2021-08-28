@@ -10,8 +10,7 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var tabSegment: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
     
-    var person: Person?
-    var detail: PersonDetailResponse?
+    var detail: PersonEntity?
     var credits: [Media] = []
     var images: [Media] = []
     
@@ -24,7 +23,7 @@ class PersonDetailViewController: UIViewController {
         
         self.setupDetailTableView()
         
-        self.navigationItem.title = self.person?.name ?? "(Unknown name)"
+        self.navigationItem.title = self.detail?.name ?? "(Unknown name)"
         
         if let name = self.detail?.name,
            let birthday = self.detail?.birthday,
@@ -41,7 +40,7 @@ class PersonDetailViewController: UIViewController {
             self.deathdayLabel.isHidden = true
         }
         
-        TMDB.getImage(size: "h632", string: person?.profile ?? "") { _data in
+        TMDB.getImage(size: "h632", string: detail?.posterPath ?? "") { _data in
             if let data = _data,
                let image = UIImage(data: data){
                 DispatchQueue.main.async {
@@ -63,11 +62,9 @@ class PersonDetailViewController: UIViewController {
     
     func setup(with person: Person) {
         
-        self.person = person
-        
         let request: People = .details(id: .id(person.id))
         
-        TMDB.request(request) { (response: PersonDetailResponse) in
+        TMDB.request(request) { (response: PersonEntity) in
             self.detail = response
             DispatchQueue.main.async {
                 self.viewDidLoad()

@@ -91,6 +91,7 @@
 		AD90B43F26DABA9500763883 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B43E26DABA9500763883 /* Entity.swift */; };
 		AD90B44126DAC21A00763883 /* KeyedDecodingContainer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */; };
 		AD90B44326DAC61D00763883 /* MediaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B44226DAC61D00763883 /* MediaEntity.swift */; };
+		AD90B44526DAD2E500763883 /* PersonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B44426DAD2E500763883 /* PersonEntity.swift */; };
 		AD91605E26D2E5CE002A6969 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605D26D2E5CE002A6969 /* Region.swift */; };
 		AD91606026D2E5E6002A6969 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91605F26D2E5E6002A6969 /* Language.swift */; };
 		AD91606226D2E624002A6969 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91606126D2E624002A6969 /* RequestParameter.swift */; };
@@ -208,6 +209,7 @@
 		AD90B43E26DABA9500763883 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+extension.swift"; sourceTree = "<group>"; };
 		AD90B44226DAC61D00763883 /* MediaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEntity.swift; sourceTree = "<group>"; };
+		AD90B44426DAD2E500763883 /* PersonEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonEntity.swift; sourceTree = "<group>"; };
 		AD91605D26D2E5CE002A6969 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		AD91605F26D2E5E6002A6969 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		AD91606126D2E624002A6969 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 			children = (
 				AD90B43E26DABA9500763883 /* Entity.swift */,
 				AD90B44226DAC61D00763883 /* MediaEntity.swift */,
+				AD90B44426DAD2E500763883 /* PersonEntity.swift */,
 			);
 			path = V2;
 			sourceTree = "<group>";
@@ -757,6 +760,7 @@
 				AD6D8D1E26D5A922003CE245 /* Profile+Media.swift in Sources */,
 				AD60AAB826C5994D00C501B8 /* PersonViewController.swift in Sources */,
 				ADC8714126D439A4001C35B4 /* PersonImagesResponse.swift in Sources */,
+				AD90B44526DAD2E500763883 /* PersonEntity.swift in Sources */,
 				AD6D8D4426D5ACE6003CE245 /* UpcomingViewController+UITableViewDelegate.swift in Sources */,
 				AD6D8CED26D5A3BD003CE245 /* GenreIdsClass.swift in Sources */,
 				AD6D8CC926D5A17C003CE245 /* AuthorDetails.swift in Sources */,
