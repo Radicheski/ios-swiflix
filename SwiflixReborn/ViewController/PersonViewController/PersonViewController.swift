@@ -4,7 +4,6 @@ import FirebaseAuth
 class PersonViewController: UIViewController {
 
     @IBOutlet weak var personTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var profileButton: UIBarButtonItem!
     
     var controller = ListController<Entity>()
@@ -14,8 +13,6 @@ class PersonViewController: UIViewController {
         
         self.setupPersonTableView()
         
-        self.searchBar.searchTextField.textColor = .gray
-        
         let listRequest: People = .popular()
         
         self.controller.loadList(request: listRequest) {
@@ -24,7 +21,16 @@ class PersonViewController: UIViewController {
             }
         }
         
-        self.searchBar.delegate = self
+        self.setupSearchController()
+        
+    }
+    
+    func setupSearchController() {
+        
+        let searchController = PersonSearchController()
+        self.navigationItem.searchController = UISearchController(searchResultsController: searchController)
+        self.navigationItem.searchController?.delegate = searchController
+        self.navigationItem.searchController?.searchBar.delegate = searchController
         
     }
     

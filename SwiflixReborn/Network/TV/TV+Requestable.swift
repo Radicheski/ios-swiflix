@@ -20,9 +20,12 @@ extension TV: Requestable {
                  .details(_, let parameters),
                  .similar(_, let parameters),
                  .reviews(_, let parameters),
-                 .season(_, _, let parameters),
-                 .search(_, let parameters):
+                 .season(_, _, let parameters):
                 return parameters
+            case .search(let query, let parameters):
+                var newParameters = parameters
+                newParameters.append(query)
+                return newParameters
             }
         }
     }

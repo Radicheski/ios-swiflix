@@ -2,9 +2,8 @@ import UIKit
 import FirebaseAuth
 
 class MovieViewController: UIViewController {
-
+    
     @IBOutlet weak var movieTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var profileButtton: UIBarButtonItem!
     
     var controller = ListController<Entity>()
@@ -15,8 +14,6 @@ class MovieViewController: UIViewController {
         
         self.setupMovieTableView()
         
-        self.searchBar.searchTextField.textColor = .gray
-        
         let listRequest: Movie = .popular()
         
         self.controller.loadList(request: listRequest) {
@@ -25,10 +22,19 @@ class MovieViewController: UIViewController {
             }
         }
         
-        self.searchBar.delegate = self
+        self.setupSearchController()
         
     }
-
+    
+    func setupSearchController() {
+        
+        let searchController = MovieSearchController()
+        self.navigationItem.searchController = UISearchController(searchResultsController: searchController)
+        self.navigationItem.searchController?.delegate = searchController
+        self.navigationItem.searchController?.searchBar.delegate = searchController
+        
+    }
+    
     func setupMovieTableView() {
         
         self.movieTableView.register(MediaTableViewCell.self)

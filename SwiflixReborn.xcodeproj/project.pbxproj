@@ -91,6 +91,9 @@
 		ADCD0B8626CF04E4002D8F52 /* SerieSeasonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0B8526CF04E4002D8F52 /* SerieSeasonResponse.swift */; };
 		ADCD0B8926CF053E002D8F52 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0B8726CF053E002D8F52 /* EpisodeTableViewCell.swift */; };
 		ADCD0B8A26CF053E002D8F52 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCD0B8826CF053E002D8F52 /* EpisodeTableViewCell.xib */; };
+		ADCFC7C826DC0B90003460FA /* MovieSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCFC7C726DC0B90003460FA /* MovieSearchController.swift */; };
+		ADCFC7CA26DC0C57003460FA /* SerieSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCFC7C926DC0C57003460FA /* SerieSearchController.swift */; };
+		ADCFC7CC26DC0C61003460FA /* PersonSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCFC7CB26DC0C61003460FA /* PersonSearchController.swift */; };
 		ADD0D09926C3021500565EA5 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */; };
 		ADD8205926CDB11C0097EDF5 /* Registrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8205826CDB11C0097EDF5 /* Registrable.swift */; };
 		ADD8205B26CDB2110097EDF5 /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */; };
@@ -191,6 +194,9 @@
 		ADCD0B8526CF04E4002D8F52 /* SerieSeasonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieSeasonResponse.swift; sourceTree = "<group>"; };
 		ADCD0B8726CF053E002D8F52 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		ADCD0B8826CF053E002D8F52 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
+		ADCFC7C726DC0B90003460FA /* MovieSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchController.swift; sourceTree = "<group>"; };
+		ADCFC7C926DC0C57003460FA /* SerieSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieSearchController.swift; sourceTree = "<group>"; };
+		ADCFC7CB26DC0C61003460FA /* PersonSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSearchController.swift; sourceTree = "<group>"; };
 		ADD0D09826C3021500565EA5 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
 		ADD8205826CDB11C0097EDF5 /* Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registrable.swift; sourceTree = "<group>"; };
 		ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
@@ -571,6 +577,9 @@
 			children = (
 				AD6D8CC426D578EF003CE245 /* ListController.swift */,
 				AD09AA6126D6CAE000B37066 /* DetailController.swift */,
+				ADCFC7C726DC0B90003460FA /* MovieSearchController.swift */,
+				ADCFC7C926DC0C57003460FA /* SerieSearchController.swift */,
+				ADCFC7CB26DC0C61003460FA /* PersonSearchController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -689,6 +698,7 @@
 				AD6D8D1E26D5A922003CE245 /* Profile+Media.swift in Sources */,
 				AD60AAB826C5994D00C501B8 /* PersonViewController.swift in Sources */,
 				ADC8714126D439A4001C35B4 /* PersonImagesResponse.swift in Sources */,
+				ADCFC7CC26DC0C61003460FA /* PersonSearchController.swift in Sources */,
 				AD90B44526DAD2E500763883 /* PersonEntity.swift in Sources */,
 				AD6D8D4426D5ACE6003CE245 /* UpcomingViewController+UITableViewDelegate.swift in Sources */,
 				AD6D8CC926D5A17C003CE245 /* AuthorDetails.swift in Sources */,
@@ -711,6 +721,7 @@
 				AD09AA6626D6CFB900B37066 /* MovieDetailSegment.swift in Sources */,
 				AD09AA6226D6CAE000B37066 /* DetailController.swift in Sources */,
 				AD60AAB226C4824200C501B8 /* UpcomingViewController.swift in Sources */,
+				ADCFC7CA26DC0C57003460FA /* SerieSearchController.swift in Sources */,
 				AD6D8D5426D5AE3D003CE245 /* MovieViewController+UITableViewDelegate.swift in Sources */,
 				AD9B52BD26D3034400DCF4CD /* Requestable.swift in Sources */,
 				AD91606A26D2F643002A6969 /* TV.swift in Sources */,
@@ -748,6 +759,7 @@
 				AD91606226D2E624002A6969 /* RequestParameter.swift in Sources */,
 				AD6D8D5026D5ADF2003CE245 /* MovieGeneralSection.swift in Sources */,
 				EBDF349D23FACAF28B8F77C4 /* MediaType.swift in Sources */,
+				ADCFC7C826DC0B90003460FA /* MovieSearchController.swift in Sources */,
 				AD1D94DB26D830EB00617137 /* MovieViewController+UISearchBarDelegate.swift in Sources */,
 				AD6D8D3026D5AAB0003CE245 /* BiographySection.swift in Sources */,
 				AD1D94E326D831A100617137 /* PersonViewController+UISearchBarDelegate.swift in Sources */,

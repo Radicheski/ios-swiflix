@@ -4,7 +4,6 @@ import FirebaseAuth
 class UpcomingViewController: UIViewController {
 
     @IBOutlet weak var movieTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var profileButton: UIBarButtonItem!
     
     var controller = ListController<Entity>()
@@ -14,8 +13,6 @@ class UpcomingViewController: UIViewController {
         
         self.setupMovieTableView()
         
-        self.searchBar.searchTextField.textColor = .gray
-        
         let listRequest: Movie = .upcoming()
         
         self.controller.loadList(request: listRequest) {
@@ -24,7 +21,16 @@ class UpcomingViewController: UIViewController {
             }
         }
         
-        self.searchBar.delegate = self
+        self.setupSearchController()
+        
+    }
+    
+    func setupSearchController() {
+        
+        let searchController = MovieSearchController()
+        self.navigationItem.searchController = UISearchController(searchResultsController: searchController)
+        self.navigationItem.searchController?.delegate = searchController
+        self.navigationItem.searchController?.searchBar.delegate = searchController
         
     }
     

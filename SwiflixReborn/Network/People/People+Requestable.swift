@@ -18,9 +18,12 @@ extension People: Requestable {
             case .popular(let parameters),
                  .details(_, let parameters),
                  .combineCredits(_, let parameters),
-                 .images(_, let parameters),
-                 .search(_, let parameters):
+                 .images(_, let parameters):
                 return parameters
+            case .search(let query, let parameters):
+                var newParameters = parameters
+                newParameters.append(query)
+                return newParameters
             }
         }
     }
