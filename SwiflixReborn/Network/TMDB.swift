@@ -4,11 +4,9 @@ struct TMDB {
     
     static let baseUrl = "https://api.themoviedb.org/3"
     
-    static var defaultLanguage: String = "pt-BR"
-    
     static var apiKey: RequestParameter = .apiKey("")
     
-    static var newDefaultLanguage: RequestParameter = .language(.en, .US)
+    static var defaultLanguage: RequestParameter = .language(.pt, .BR)
     
     static var urlSession: URLSession {
         get {
@@ -26,7 +24,25 @@ struct TMDB {
     
     static func request<T: Codable>(_ request: Requestable, onSuccess: ((T) -> Void)?, onError: ((Error) -> Void)?) {
         
-        if let url = request.url {
+        var url = URLComponents(string: Self.baseUrl)
+        
+        url?.path.append(request.path)
+        
+        url?.queryItems = request.queryItems
+        
+        if let items = url?.queryItems {
+           if !items.contains(where: { $0.name ==  "api_key" }) {
+                let key = URLQueryItem(name: Self.apiKey.key, value: Self.apiKey.value)
+                url?.queryItems?.append(key)
+           }
+            
+            if !items.contains(where: { $0.name ==  "language" }) {
+                 let key = URLQueryItem(name: Self.defaultLanguage.key, value: Self.defaultLanguage.value)
+                 url?.queryItems?.append(key)
+            }
+        }
+        
+        if let url = url?.url {
             
             let dataTask = Self.urlSession.dataTask(with: url) { _data, _response, _error in
                 
