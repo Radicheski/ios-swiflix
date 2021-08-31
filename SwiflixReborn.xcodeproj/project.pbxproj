@@ -21,6 +21,8 @@
 		AD36AF4526CC51E400C7EE44 /* PersonBiographyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */; };
 		AD36AF4626CC51E400C7EE44 /* PersonBiographyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */; };
 		AD36AF4826CC5FA800C7EE44 /* PersonCreditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4726CC5FA800C7EE44 /* PersonCreditResponse.swift */; };
+		AD57A11726DEA74E008D2B1D /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57A11626DEA74E008D2B1D /* PasswordTextField.swift */; };
+		AD57A11926DEB2E0008D2B1D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57A11826DEB2E0008D2B1D /* CustomTextField.swift */; };
 		AD60AAB026C47F9500C501B8 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAAF26C47F9500C501B8 /* NowPlayingViewController.swift */; };
 		AD60AAB226C4824200C501B8 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB126C4824200C501B8 /* UpcomingViewController.swift */; };
 		AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AAB326C5949000C501B8 /* SerieViewController.swift */; };
@@ -125,6 +127,8 @@
 		AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBiographyTableViewCell.swift; sourceTree = "<group>"; };
 		AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonBiographyTableViewCell.xib; sourceTree = "<group>"; };
 		AD36AF4726CC5FA800C7EE44 /* PersonCreditResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCreditResponse.swift; sourceTree = "<group>"; };
+		AD57A11626DEA74E008D2B1D /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		AD57A11826DEB2E0008D2B1D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		AD60AAAF26C47F9500C501B8 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		AD60AAB126C4824200C501B8 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		AD60AAB326C5949000C501B8 /* SerieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +231,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD57A11526DEA735008D2B1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD57A11626DEA74E008D2B1D /* PasswordTextField.swift */,
+				AD57A11826DEB2E0008D2B1D /* CustomTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AD6D8CF026D5A408003CE245 /* Registrable */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +495,7 @@
 		ADB666A326C2FE74008938D7 /* SwiflixReborn */ = {
 			isa = PBXGroup;
 			children = (
+				AD57A11526DEA735008D2B1D /* Views */,
 				EBDF37EA1D82BC320A24BAC4 /* Model */,
 				EBDF330B97858420EB9F470A /* SensitiveData */,
 				EBDF3BE751EB1D3DA7689D88 /* Network */,
@@ -724,7 +738,9 @@
 				ADCFC7CA26DC0C57003460FA /* SerieSearchController.swift in Sources */,
 				AD6D8D5426D5AE3D003CE245 /* MovieViewController+UITableViewDelegate.swift in Sources */,
 				AD9B52BD26D3034400DCF4CD /* Requestable.swift in Sources */,
+				AD57A11726DEA74E008D2B1D /* PasswordTextField.swift in Sources */,
 				AD91606A26D2F643002A6969 /* TV.swift in Sources */,
+				AD57A11926DEB2E0008D2B1D /* CustomTextField.swift in Sources */,
 				AD60AAB426C5949000C501B8 /* SerieViewController.swift in Sources */,
 				AD90B43F26DABA9500763883 /* Entity.swift in Sources */,
 				AD36AF4526CC51E400C7EE44 /* PersonBiographyTableViewCell.swift in Sources */,
