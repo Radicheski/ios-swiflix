@@ -10,11 +10,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if let _ = Auth.auth().currentUser {
             self.showMainScreen()
         }
-        
     }
     
     @IBAction func enterClicked(_ sender: UIButton) {
