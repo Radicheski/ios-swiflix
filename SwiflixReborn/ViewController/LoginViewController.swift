@@ -32,8 +32,12 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
                 if let _ = result {
                     self.showMainScreen()
-                } else if let _ = error {
-                    #warning("Handle authentication error")
+                } else if let error = error as NSError? {
+                    let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                        alert.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true)
                 }
             }
         }

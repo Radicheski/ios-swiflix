@@ -22,8 +22,12 @@ class SignupViewController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if let _ = result {
                     self.performSegue(withIdentifier: "SignupToMain", sender: nil)
-                } else if let _ = error {
-                    #warning("Handle authentication error")
+                }  else if let error = error as NSError? {
+                    let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                        alert.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true)
                 }
             }
         
