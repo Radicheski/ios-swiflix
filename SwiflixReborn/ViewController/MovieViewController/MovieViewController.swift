@@ -65,13 +65,7 @@ class MovieViewController: UIViewController {
     }
 
     @IBAction func profileButtonnClicked(_ sender: UIBarButtonItem) {
-        self.navigationController?.dismiss(animated: true, completion: {
-            do {
-                try Auth.auth().signOut()
-            } catch {
-                #warning("Handle this error")
-            }
-        })
+        self.performSegue(withIdentifier: "ToProfile", sender: nil)
     }
     
 }

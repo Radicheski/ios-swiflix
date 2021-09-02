@@ -162,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiflix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ck0-nR-K9t">
-                                <rect key="frame" x="62.5" y="390" width="289" height="116.5"/>
+                                <rect key="frame" x="63" y="386" width="288.5" height="124.5"/>
                                 <fontDescription key="fontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="100"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -266,13 +266,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiflix" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NH-uM-DIU">
-                                <rect key="frame" x="62.5" y="94" width="289" height="116.5"/>
+                                <rect key="frame" x="63" y="94" width="288.5" height="124.5"/>
                                 <fontDescription key="fontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="100"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="e0e-Nj-7NK">
-                                <rect key="frame" x="20" y="260.5" width="374" height="142"/>
+                                <rect key="frame" x="20" y="268.5" width="374" height="142"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0DF-uv-Yux" customClass="CustomTextField" customModule="SwiflixReborn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
@@ -344,6 +344,71 @@
             </objects>
             <point key="canvasLocation" x="165" y="832"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="hZw-zl-DEn">
+            <objects>
+                <viewController id="87Y-3L-R6R" customClass="ProfileViewController" customModule="SwiflixReborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gvv-e8-kPL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xzS-CJ-dIK">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T27-0a-WLg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="tQe-fZ-map"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="aON-ic-tqT">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="GNL-zC-ZD4">
+                                            <rect key="frame" x="101" y="11.5" width="212" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Filmes"/>
+                                                <segment title="Séries"/>
+                                                <segment title="Pessoas"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentDidSelect:" destination="87Y-3L-R6R" eventType="valueChanged" id="0Cx-A4-QIn"/>
+                                            </connections>
+                                        </segmentedControl>
+                                        <barButtonItem key="rightBarButtonItem" title="Sair" id="pyW-gb-sfY">
+                                            <connections>
+                                                <action selector="exitButtonAction:" destination="87Y-3L-R6R" id="5Jx-JZ-QYB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9ZC-O6-qVu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xzS-CJ-dIK" firstAttribute="leading" secondItem="9ZC-O6-qVu" secondAttribute="leading" id="3Kd-ki-e9F"/>
+                            <constraint firstItem="T27-0a-WLg" firstAttribute="leading" secondItem="9ZC-O6-qVu" secondAttribute="leading" id="4d1-Rv-Lg1"/>
+                            <constraint firstItem="T27-0a-WLg" firstAttribute="trailing" secondItem="9ZC-O6-qVu" secondAttribute="trailing" id="CMY-fZ-TQw"/>
+                            <constraint firstItem="xzS-CJ-dIK" firstAttribute="bottom" secondItem="9ZC-O6-qVu" secondAttribute="bottom" id="OAa-PZ-UMd"/>
+                            <constraint firstItem="xzS-CJ-dIK" firstAttribute="trailing" secondItem="9ZC-O6-qVu" secondAttribute="trailing" id="WnP-nL-AIg"/>
+                            <constraint firstItem="xzS-CJ-dIK" firstAttribute="top" secondItem="T27-0a-WLg" secondAttribute="bottom" constant="12" id="XPA-kc-Stj"/>
+                            <constraint firstItem="T27-0a-WLg" firstAttribute="top" secondItem="9ZC-O6-qVu" secondAttribute="top" id="ZNN-Sp-MZI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="r7K-bJ-bJK"/>
+                    <connections>
+                        <outlet property="exitButton" destination="pyW-gb-sfY" id="vNn-rD-I5d"/>
+                        <outlet property="selectorSegment" destination="GNL-zC-ZD4" id="Evv-hh-r3e"/>
+                        <outlet property="tableView" destination="xzS-CJ-dIK" id="8i4-D2-Q6y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQ9-zS-Fi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5257.971014492754" y="1208.7053571428571"/>
+        </scene>
         <!--Filmes-->
         <scene sceneID="xnc-fE-KDq">
             <objects>
@@ -409,6 +474,7 @@
                         <outlet property="movieTableView" destination="Tfa-Io-yvf" id="pFr-lt-hjA"/>
                         <outlet property="profileButtton" destination="1c5-im-qcs" id="puv-VM-iQP"/>
                         <segue destination="AcF-kx-CVb" kind="show" identifier="MovieToDetail" id="Qt8-2b-ija"/>
+                        <segue destination="87Y-3L-R6R" kind="presentation" identifier="ToProfile" id="nQQ-tn-lPc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T57-mB-YPV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -424,13 +490,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="48j-wd-cgc">
-                                <rect key="frame" x="0.0" y="153" width="414" height="233"/>
+                                <rect key="frame" x="0.0" y="163" width="414" height="233"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="48j-wd-cgc" secondAttribute="height" multiplier="414:233" id="qPP-Dt-TSr"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-ZN-62c">
-                                <rect key="frame" x="354" y="346" width="50" height="30"/>
+                                <rect key="frame" x="354" y="356" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="dN8-8r-2dX"/>
                                 </constraints>
@@ -439,7 +505,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dnb-2f-QkT">
-                                <rect key="frame" x="10" y="396" width="394" height="32"/>
+                                <rect key="frame" x="10" y="406" width="394" height="32"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Geral"/>
@@ -452,7 +518,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oI6-1O-4Wc">
-                                <rect key="frame" x="0.0" y="437" width="414" height="376"/>
+                                <rect key="frame" x="0.0" y="447" width="414" height="317"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -515,7 +581,7 @@
                 <navigationController id="LWF-nh-fm8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pessoas" image="person.fill" catalog="system" id="Dp5-7A-O0Q"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="0bo-3r-ziI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -573,6 +639,7 @@
                         <outlet property="personTableView" destination="02R-gd-kbv" id="Bsy-eg-WdJ"/>
                         <outlet property="profileButton" destination="SnW-eq-c32" id="pCh-jU-WFb"/>
                         <segue destination="hL8-vO-sV8" kind="show" identifier="PeopleToDetail" id="95P-Uc-8hw"/>
+                        <segue destination="87Y-3L-R6R" kind="presentation" identifier="ToProfile" id="hD8-Qf-Dsi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1g-ca-cG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -585,7 +652,7 @@
                 <navigationController id="4n2-O6-LfR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Séries" image="list.and.film" catalog="system" id="fCJ-rO-AJ5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="4Vz-An-DTa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -643,6 +710,7 @@
                         <outlet property="profileButton" destination="Ynv-0O-PhW" id="PRv-wS-u9q"/>
                         <outlet property="serieTableView" destination="7V0-8v-CkK" id="max-TD-yf8"/>
                         <segue destination="oNo-7T-EJb" kind="show" identifier="SeriesToDetail" id="pRR-Uq-avn"/>
+                        <segue destination="87Y-3L-R6R" kind="presentation" identifier="ToProfile" id="GiW-1a-hqt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Anl-Ls-he9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -655,7 +723,7 @@
                 <navigationController id="X17-RQ-Vrj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Em cartaz" image="video" catalog="system" id="XJZ-eY-gZ2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="c0h-T9-dGI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="109"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="119"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -713,6 +781,7 @@
                         <outlet property="movieTableView" destination="Q4T-Ub-27C" id="cBg-QF-DDK"/>
                         <outlet property="profileButton" destination="vlt-aX-A7c" id="VgH-PK-kjP"/>
                         <segue destination="AcF-kx-CVb" kind="show" identifier="OnTheaterToDetail" id="0E7-NU-RIw"/>
+                        <segue destination="87Y-3L-R6R" kind="presentation" identifier="ToProfile" id="QR9-UE-JGB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QrU-B4-R5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -783,6 +852,7 @@
                         <outlet property="movieTableView" destination="EeV-75-KuQ" id="cbp-yq-o8H"/>
                         <outlet property="profileButton" destination="qh6-XI-jP7" id="AMJ-rf-POO"/>
                         <segue destination="AcF-kx-CVb" kind="show" identifier="ComingToDetail" id="LJp-NN-5Hh"/>
+                        <segue destination="87Y-3L-R6R" kind="presentation" identifier="ToProfile" id="hs1-jP-CAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abg-Nn-WSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1032,7 +1102,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="M6h-2A-P96"/>
-        <segue reference="Qt8-2b-ija"/>
+        <segue reference="LJp-NN-5Hh"/>
+        <segue reference="hs1-jP-CAr"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemRedColor"/>
     <resources>
@@ -1042,6 +1113,9 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square.stack.3d.forward.dottedline" catalog="system" width="128" height="113"/>
         <image name="video" catalog="system" width="128" height="83"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
