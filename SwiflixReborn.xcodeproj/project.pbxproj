@@ -18,6 +18,7 @@
 		AD1D94DF26D8315100617137 /* UpcomingViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D94DE26D8315100617137 /* UpcomingViewController+UISearchBarDelegate.swift */; };
 		AD1D94E126D8317600617137 /* SerieViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D94E026D8317600617137 /* SerieViewController+UISearchBarDelegate.swift */; };
 		AD1D94E326D831A100617137 /* PersonViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D94E226D831A100617137 /* PersonViewController+UISearchBarDelegate.swift */; };
+		AD337FFE2721E9C90091861A /* UIAlertController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD337FFD2721E9C80091861A /* UIAlertController+extension.swift */; };
 		AD36AF4526CC51E400C7EE44 /* PersonBiographyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */; };
 		AD36AF4626CC51E400C7EE44 /* PersonBiographyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */; };
 		AD36AF4826CC5FA800C7EE44 /* PersonCreditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36AF4726CC5FA800C7EE44 /* PersonCreditResponse.swift */; };
@@ -125,6 +126,7 @@
 		AD1D94DE26D8315100617137 /* UpcomingViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpcomingViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		AD1D94E026D8317600617137 /* SerieViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SerieViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		AD1D94E226D831A100617137 /* PersonViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		AD337FFD2721E9C80091861A /* UIAlertController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+extension.swift"; sourceTree = "<group>"; };
 		AD36AF4326CC51E400C7EE44 /* PersonBiographyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBiographyTableViewCell.swift; sourceTree = "<group>"; };
 		AD36AF4426CC51E400C7EE44 /* PersonBiographyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonBiographyTableViewCell.xib; sourceTree = "<group>"; };
 		AD36AF4726CC5FA800C7EE44 /* PersonCreditResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCreditResponse.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 				ADD8205A26CDB2110097EDF5 /* UITableView+extension.swift */,
 				AD6D8D5E26D5AF86003CE245 /* UITableViewCell+Registrable.swift */,
 				AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */,
+				AD337FFD2721E9C80091861A /* UIAlertController+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -757,6 +760,7 @@
 				AD6D8D2026D5A946003CE245 /* Videos+Media.swift in Sources */,
 				AD09AA6426D6CDFF00B37066 /* SerieDetailSegment.swift in Sources */,
 				ADC8713F26D4368F001C35B4 /* Videos.swift in Sources */,
+				AD337FFE2721E9C90091861A /* UIAlertController+extension.swift in Sources */,
 				AD91606626D2EEC5002A6969 /* People.swift in Sources */,
 				AD91606026D2E5E6002A6969 /* Language.swift in Sources */,
 				AD6D8CF926D5A4AF003CE245 /* Requestable+extension.swift in Sources */,
