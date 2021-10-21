@@ -34,12 +34,19 @@ extension MovieSearchController: UISearchControllerDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let key = searchBar.text {
            let request: Movie = .search(query: .query(key))
-            TMDB.request(request) { (response: TMDBResponse<Entity>) in
-                self.results = response.results
-                self.reloadData()
-            } onError: { error in
-                #warning("Handle this error")
-            }
+            TMDB.request(request, onSuccess: responseConsumer(response:), onError: presentError(error:))
+        }
+    }
+    
+    func responseConsumer(response: TMDBResponse<Entity>) {
+        self.results = response.results
+        self.reloadData()
+    }
+    
+    func presentError(error: Error) {
+        let alert: UIAlertController = UIAlertController.buildSimpleInfoAlert(title: "Error", message: error.localizedDescription)
+        self.present(alert, animated: true) {
+            alert.dismiss(animated: true, completion: nil)
         }
     }
     
