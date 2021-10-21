@@ -28,7 +28,14 @@ class ProfileViewController: UIViewController {
         do {
             try Auth.auth().signOut()
         } catch {
-            #warning("Handle this error")
+            self.presentError(error: error)
+        }
+    }
+    
+    func presentError(error: Error) {
+        let alert: UIAlertController = UIAlertController.buildSimpleInfoAlert(title: "Error", message: error.localizedDescription)
+        self.present(alert, animated: true) {
+            alert.dismiss(animated: true, completion: nil)
         }
     }
     
