@@ -48,31 +48,40 @@ class SerieDetailViewController: UIViewController {
     func setup(with serie: Media) {
         
         let request: TV = .details(id: .id(serie.id))
-        TMDB.request(request) { (response: SerieEntity) in
-            self.detail = response
-            if let seasons = self.detail?.numberOfSeasons, seasons > 0{
-                for season in 1...(self.detail?.numberOfSeasons ?? 0) {
-                    let requestSeason: TV = .season(id: .id(serie.id), season: .season(season))
-                    TMDB.request(requestSeason) { (season: SerieSeasonResponse) in
-                        self.episodes?.append(contentsOf: season.episodes)
-                    } onError: { error in
-                        #warning("Handle this error")
-                    }
-                }
-            }
-            DispatchQueue.main.async {
-                self.viewDidLoad()
-            }
-        } onError: { error in
-            #warning("Handle this error")
-        }
+        TMDB.request(request, onSuccess: consumeRequest(response:), onError: presentError(error:))
         
         let requestSimilar: TV = .similar(id: .id(serie.id))
-        self.similar.loadDetails(request: requestSimilar)
+        self.similar.loadDetails(request: requestSimilar, onError: presentError(error:))
         
         let requestReviews: TV = .reviews(id: .id(serie.id))
-        self.reviews.loadDetails(request: requestReviews)
-
+        self.reviews.loadDetails(request: requestReviews, onError: presentError(error:))
+        
+    }
+    
+    func presentError(error: Error) {
+        let alert: UIAlertController = UIAlertController.buildSimpleInfoAlert(title: "Error", message: error.localizedDescription)
+        self.present(alert, animated: true) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func consumeRequest(response: SerieEntity) {
+        self.detail = response
+        if let seasons = self.detail?.numberOfSeasons, seasons > 0{
+            for season in 1...(self.detail?.numberOfSeasons ?? 0) {
+                if let serie = self.detail {
+                    let requestSeason: TV = .season(id: .id(serie.id), season: .season(season))
+                    TMDB.request(requestSeason, onSuccess: loadEpisodes(season:), onError: presentError(error:))
+                }
+            }
+        }
+        DispatchQueue.main.async {
+            self.viewDidLoad()
+        }
+    }
+    
+    func loadEpisodes(season: SerieSeasonResponse) {
+        self.episodes?.append(contentsOf: season.episodes)
     }
     
     func reloadData() {

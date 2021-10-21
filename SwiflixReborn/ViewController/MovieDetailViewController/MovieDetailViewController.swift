@@ -48,22 +48,29 @@ class MovieDetailViewController: UIViewController {
     func setup(with movie: Media) {
         
         let request: Movie = .details(id: .id(movie.id))
-        TMDB.request(request) { (response: MediaEntity) in
-            self.detail = response
-            self.reloadData()
-        } onError: { error in
-            #warning("Handle this error")
-        }
+        TMDB.request(request,onSuccess: consumeRequest(response:), onError: presentError(error:))
         
         let requestSimilar: Movie = .similar(id: .id(movie.id))
-        self.similar.loadDetails(request: requestSimilar)
+        self.similar.loadDetails(request: requestSimilar, onError: presentError(error:))
         
         let requestReviews: Movie = .reviews(id: .id(movie.id))
-        self.reviews.loadDetails(request: requestReviews)
+        self.reviews.loadDetails(request: requestReviews, onError: presentError(error:))
         
         let requestVideos: Movie = .videos(id: .id(movie.id))
-        self.videos.loadDetails(request: requestVideos)
+        self.videos.loadDetails(request: requestVideos, onError: presentError(error:))
         
+    }
+    
+   func presentError(error: Error) {
+        let alert: UIAlertController = UIAlertController.buildSimpleInfoAlert(title: "Error", message: error.localizedDescription)
+        self.present(alert, animated: true) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func consumeRequest(response: MediaEntity) {
+        self.detail = response
+        self.reloadData()
     }
     
     func reloadData() {

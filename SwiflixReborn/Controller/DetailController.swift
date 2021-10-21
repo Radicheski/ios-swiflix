@@ -10,7 +10,7 @@ class DetailController<T> where T: Codable {
     
     private(set) var lastPageLoaded: Int = 0
     
-    func loadDetails(request: Requestable, completionHandler: (() -> Void)? = nil) {
+    func loadDetails(request: Requestable, completionHandler: (() -> Void)? = nil, onError: ((Error) -> Void)? = nil) {
         TMDB.request(request) { (response: TMDBResponse<T>) in
             self.data = response.results
             if let page = response.page {
@@ -18,7 +18,7 @@ class DetailController<T> where T: Codable {
             }
             completionHandler?()
         } onError: { error in
-            #warning("Handle this error")
+            onError?(error)
         }
     }
     
