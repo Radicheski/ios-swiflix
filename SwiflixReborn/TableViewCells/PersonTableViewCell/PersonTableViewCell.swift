@@ -26,7 +26,7 @@ class PersonTableViewCell: UITableViewCell {
         self.person = person
         self.nameLabel.text = person.name
         self.posterImage.image = UIImage(systemName: "person")
-        TMDB.getImage(string: person.profile ?? "") { _data in
+        TMDB.getImage(string: person.profile) { _data in
             if let data = _data,
                let image = UIImage(data: data){
                 DispatchQueue.main.async {

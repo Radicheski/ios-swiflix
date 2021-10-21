@@ -71,33 +71,40 @@ class PersonDetailViewController: UIViewController {
         
         let request: People = .details(id: .id(person.id))
         
-        TMDB.request(request) { (response: PersonEntity) in
-            self.detail = response
-            DispatchQueue.main.async {
-                self.viewDidLoad()
-            }
-        } onError: { error in
-            #warning("Handle this error")
-        }
+        TMDB.request(request, onSuccess: responseConsumer(entity:), onError: presentError(error:))
         
         let requestCredits: People = .combineCredits(id: .id(person.id))
         
-        TMDB.request(requestCredits) { (response: PersonCreditResponse) in
-            self.credits = response.cast
-            self.credits.append(contentsOf: response.crew)
-        } onError: { error in
-            #warning("Handle this error")
-        }
+        TMDB.request(requestCredits, onSuccess: responseConsumer(credit:), onError: presentError(error:))
         
         let requestImages: People = .images(id: .id(person.id))
-        TMDB.request(requestImages) { (response: PersonImagesResponse) in
-            self.images = response.profiles
-        } onError: { error in
-            #warning("Handle this error")
-        }
+        TMDB.request(requestImages, onSuccess: responseConsumer(image:), onError: presentError(error:))
 
-        
     }
+    
+    func presentError(error: Error) {
+        let alert: UIAlertController = UIAlertController.buildSimpleInfoAlert(title: "Error", message: error.localizedDescription)
+        self.present(alert, animated: true) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func responseConsumer(entity: PersonEntity) {
+        self.detail = entity
+        DispatchQueue.main.async {
+            self.viewDidLoad()
+        }
+    }
+    
+    func responseConsumer(credit: PersonCreditResponse) {
+        self.credits = credit.cast
+        self.credits.append(contentsOf: credit.crew)
+    }
+    
+    func responseConsumer(image: PersonImagesResponse) {
+        self.images = image.profiles
+    }
+    
     @IBAction func segmentDidSelect(_ sender: UISegmentedControl) {
         self.detailTableView.reloadData()
     }
