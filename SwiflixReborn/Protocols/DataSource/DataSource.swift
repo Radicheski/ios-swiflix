@@ -6,6 +6,6 @@ protocol DataSource {
     var count: Int { get }
     
     func getElement(at position: Int) -> T
-    func loadList(request: Requestable, completionHandler: (() -> Void)?)
+    func loadList(request: Requestable, completionHandler: (() -> Void)?, onError: ((Error) -> Void)?)
     
 }

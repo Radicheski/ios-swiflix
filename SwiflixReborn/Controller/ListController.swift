@@ -10,13 +10,13 @@ class ListController<T>: DataSource where T: Codable {
         get { self.data.count }
     }
     
-    func loadList(request: Requestable, completionHandler: (() -> Void)?, onError: (() -> Void)?) {
+    func loadList(request: Requestable, completionHandler: (() -> Void)?, onError: ((Error) -> Void)?) {
 
         TMDB.request(request) { (response: TMDBResponse<T>) in
             self.data = response.results
             completionHandler?()
         } onError: { error in
-            onError?()
+            onError?(error)
         }
         
     }
