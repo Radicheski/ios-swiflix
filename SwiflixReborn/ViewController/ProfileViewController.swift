@@ -43,13 +43,13 @@ class ProfileViewController: UIViewController {
         switch self.segmentSelected {
         case .movie:
             let request: Movie = .popular()
-            self.controller.loadList(request: request, completionHandler: self.relaodData)
+            self.controller.loadList(request: request, completionHandler: self.relaodData, onError: presentError(error:))
         case .tv:
             let request: TV = .popular()
-            self.controller.loadList(request: request, completionHandler: self.relaodData)
+            self.controller.loadList(request: request, completionHandler: self.relaodData, onError: presentError(error:))
         case .person:
             let request: People = .popular()
-            self.controller.loadList(request: request, completionHandler: self.relaodData)
+            self.controller.loadList(request: request, completionHandler: self.relaodData, onError: presentError(error:))
         }
     }
     

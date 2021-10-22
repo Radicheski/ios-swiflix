@@ -15,14 +15,23 @@ class SerieViewController: UIViewController {
         
         let listRequest: TV = .popular()
         
-        self.controller.loadList(request: listRequest) {
-            DispatchQueue.main.async {
-                self.serieTableView.reloadData()
-            }
-        }
+        self.controller.loadList(request: listRequest, completionHandler: responseConsumer, onError: presentError(error:))
         
         self.setupSearchController()
         
+    }
+    
+    func responseConsumer() {
+        DispatchQueue.main.async {
+            self.serieTableView.reloadData()
+        }
+    }
+    
+    func presentError(error: Error) {
+        let alert: UIAlertController = UIAlertController.buildSimpleInfoAlert(title: "Error", message: error.localizedDescription)
+        self.present(alert, animated: true) {
+            alert.dismiss(animated: true, completion: nil)
+        }
     }
     
     func setupSearchController() {
