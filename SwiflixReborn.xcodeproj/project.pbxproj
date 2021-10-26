@@ -73,6 +73,7 @@
 		AD70B32B26D96E1C00A9F5F4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AD70B32A26D96E1C00A9F5F4 /* FirebaseStorage */; };
 		AD70B33126D9742200A9F5F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD70B33026D9742200A9F5F4 /* GoogleService-Info.plist */; };
 		AD70B33326D9763A00A9F5F4 /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70B33226D9763A00A9F5F4 /* PasswordRecoveryViewController.swift */; };
+		AD756E692728A80300992AE2 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD756E682728A80300992AE2 /* Database.swift */; };
 		AD90B43F26DABA9500763883 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B43E26DABA9500763883 /* Entity.swift */; };
 		AD90B44126DAC21A00763883 /* KeyedDecodingContainer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */; };
 		AD90B44326DAC61D00763883 /* MediaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD90B44226DAC61D00763883 /* MediaEntity.swift */; };
@@ -178,6 +179,7 @@
 		AD6D8D5E26D5AF86003CE245 /* UITableViewCell+Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Registrable.swift"; sourceTree = "<group>"; };
 		AD70B33026D9742200A9F5F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD70B33226D9763A00A9F5F4 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		AD756E682728A80300992AE2 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		AD90B43E26DABA9500763883 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		AD90B44026DAC21A00763883 /* KeyedDecodingContainer+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+extension.swift"; sourceTree = "<group>"; };
 		AD90B44226DAC61D00763883 /* MediaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEntity.swift; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 				AD6D8CF426D5A467003CE245 /* Movie */,
 				AD6D8CF126D5A436003CE245 /* RequestParameter */,
 				EBDF3DB32DEE53744D69F09C /* TMDB.swift */,
+				AD756E682728A80300992AE2 /* Database.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				ADB666A526C2FE74008938D7 /* AppDelegate.swift in Sources */,
 				AD6D8D2026D5A946003CE245 /* Videos+Media.swift in Sources */,
 				AD09AA6426D6CDFF00B37066 /* SerieDetailSegment.swift in Sources */,
+				AD756E692728A80300992AE2 /* Database.swift in Sources */,
 				ADC8713F26D4368F001C35B4 /* Videos.swift in Sources */,
 				AD337FFE2721E9C90091861A /* UIAlertController+extension.swift in Sources */,
 				AD91606626D2EEC5002A6969 /* People.swift in Sources */,
