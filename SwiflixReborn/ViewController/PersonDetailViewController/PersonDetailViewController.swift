@@ -111,6 +111,13 @@ class PersonDetailViewController: UIViewController {
     }
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+        if let detail = self.detail {
+            Database.shared.setFavorite(type: "person", data: detail) {
+                self.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            } onError: { error in
+                self.presentError(error: error)
+            }
+        }
     }
     
 }
