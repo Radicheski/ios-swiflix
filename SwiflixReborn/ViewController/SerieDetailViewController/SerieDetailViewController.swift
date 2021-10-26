@@ -6,6 +6,7 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var tabSegment: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     var detail: SerieEntity?
     var similar = DetailController<Entity>()
@@ -92,6 +93,9 @@ class SerieDetailViewController: UIViewController {
     
     @IBAction func segmentDidSelect(_ sender: UISegmentedControl) {
         self.detailTableView.reloadData()
+    }
+    
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
     }
     
 }

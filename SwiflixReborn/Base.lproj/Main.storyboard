@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -496,15 +496,6 @@
                                     <constraint firstAttribute="width" secondItem="48j-wd-cgc" secondAttribute="height" multiplier="414:233" id="qPP-Dt-TSr"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-ZN-62c">
-                                <rect key="frame" x="354" y="356" width="50" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="dN8-8r-2dX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dnb-2f-QkT">
                                 <rect key="frame" x="10" y="406" width="394" height="32"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -518,20 +509,39 @@
                                     <action selector="tabDidSelect:" destination="AcF-kx-CVb" eventType="valueChanged" id="G8c-pe-4jj"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-ZN-62c">
+                                <rect key="frame" x="354" y="356" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="dN8-8r-2dX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oI6-1O-4Wc">
                                 <rect key="frame" x="0.0" y="447" width="414" height="317"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDX-Ck-VE9">
+                                <rect key="frame" x="382" y="324" width="22" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="star" catalog="system"/>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="AcF-kx-CVb" eventType="touchUpInside" id="eOU-Ow-on2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1hv-Rh-UxM"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oI6-1O-4Wc" firstAttribute="top" secondItem="dnb-2f-QkT" secondAttribute="bottom" constant="10" id="DVX-fr-4ga"/>
                             <constraint firstItem="1hv-Rh-UxM" firstAttribute="bottom" secondItem="oI6-1O-4Wc" secondAttribute="bottom" id="NJ8-NA-JcC"/>
+                            <constraint firstItem="1hv-Rh-UxM" firstAttribute="trailing" secondItem="eDX-Ck-VE9" secondAttribute="trailing" constant="10" id="P1U-xR-U2H"/>
                             <constraint firstItem="pKH-ZN-62c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1hv-Rh-UxM" secondAttribute="leading" symbolic="YES" id="RWa-Nt-NOl"/>
                             <constraint firstItem="oI6-1O-4Wc" firstAttribute="leading" secondItem="1hv-Rh-UxM" secondAttribute="leading" id="VG8-3z-A6D"/>
                             <constraint firstItem="dnb-2f-QkT" firstAttribute="top" secondItem="48j-wd-cgc" secondAttribute="bottom" constant="10" id="bm8-7w-3I9"/>
                             <constraint firstItem="48j-wd-cgc" firstAttribute="top" secondItem="1hv-Rh-UxM" secondAttribute="top" id="fTv-3v-w8t"/>
+                            <constraint firstItem="pKH-ZN-62c" firstAttribute="top" secondItem="eDX-Ck-VE9" secondAttribute="bottom" constant="10" id="oSt-Ft-pyC"/>
                             <constraint firstItem="48j-wd-cgc" firstAttribute="leading" secondItem="1hv-Rh-UxM" secondAttribute="leading" id="s2f-jG-25z"/>
                             <constraint firstItem="1hv-Rh-UxM" firstAttribute="trailing" secondItem="oI6-1O-4Wc" secondAttribute="trailing" id="t8y-Fa-ZYn"/>
                             <constraint firstItem="pKH-ZN-62c" firstAttribute="trailing" secondItem="48j-wd-cgc" secondAttribute="trailing" constant="-10" id="uRL-Ca-6bK"/>
@@ -545,6 +555,7 @@
                     <connections>
                         <outlet property="backdropImage" destination="48j-wd-cgc" id="0Q8-od-ZX7"/>
                         <outlet property="detailTableView" destination="oI6-1O-4Wc" id="G9T-18-RM3"/>
+                        <outlet property="favoriteButton" destination="eDX-Ck-VE9" id="fo4-ZH-qKd"/>
                         <outlet property="rateLabel" destination="pKH-ZN-62c" id="QCl-Lm-hWc"/>
                         <outlet property="tabSegment" destination="dnb-2f-QkT" id="FeY-ox-uKI"/>
                     </connections>
@@ -612,7 +623,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="02R-gd-kbv">
-                                <rect key="frame" x="0.0" y="153" width="414" height="611"/>
+                                <rect key="frame" x="0.0" y="163" width="414" height="601"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.90737557410000003" green="0.41176470590000003" blue="0.40390366319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
@@ -900,6 +911,14 @@
                                 <rect key="frame" x="0.0" y="437" width="414" height="327"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm5-os-2Kf">
+                                <rect key="frame" x="382" y="314" width="22" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="star" catalog="system"/>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="oNo-7T-EJb" eventType="touchUpInside" id="tx1-AA-ag0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hRV-8o-t43"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -914,8 +933,10 @@
                             <constraint firstItem="hRV-8o-t43" firstAttribute="trailing" secondItem="Oc0-6S-TXT" secondAttribute="trailing" id="a16-Z1-74h"/>
                             <constraint firstItem="Oc0-6S-TXT" firstAttribute="leading" secondItem="hRV-8o-t43" secondAttribute="leading" id="e3n-hp-OAW"/>
                             <constraint firstItem="ssU-8W-xM0" firstAttribute="trailing" secondItem="XAw-yz-fcT" secondAttribute="trailing" constant="-10" id="gCj-My-oJw"/>
+                            <constraint firstItem="Tm5-os-2Kf" firstAttribute="trailing" secondItem="hRV-8o-t43" secondAttribute="trailing" constant="-10" id="iOd-zu-pto"/>
                             <constraint firstItem="PvV-cd-Ctb" firstAttribute="leading" secondItem="hRV-8o-t43" secondAttribute="leading" constant="10" id="n3v-tI-utc"/>
                             <constraint firstItem="XAw-yz-fcT" firstAttribute="leading" secondItem="hRV-8o-t43" secondAttribute="leading" id="rF7-my-iSy"/>
+                            <constraint firstItem="ssU-8W-xM0" firstAttribute="top" secondItem="Tm5-os-2Kf" secondAttribute="bottom" constant="10" id="tS0-Mf-1rn"/>
                             <constraint firstItem="PvV-cd-Ctb" firstAttribute="top" secondItem="XAw-yz-fcT" secondAttribute="bottom" constant="10" id="v3D-iU-Ids"/>
                         </constraints>
                     </view>
@@ -923,6 +944,7 @@
                     <connections>
                         <outlet property="backdropImage" destination="XAw-yz-fcT" id="i0V-15-arC"/>
                         <outlet property="detailTableView" destination="Oc0-6S-TXT" id="EAu-zt-zY0"/>
+                        <outlet property="favoriteButton" destination="Tm5-os-2Kf" id="Lko-5Q-K7S"/>
                         <outlet property="rateLabel" destination="ssU-8W-xM0" id="NCc-fl-avX"/>
                         <outlet property="tabSegment" destination="PvV-cd-Ctb" id="6yp-wn-4zr"/>
                     </connections>
@@ -1005,11 +1027,21 @@
                                     <constraint firstItem="QLC-w1-dHx" firstAttribute="leading" secondItem="vgC-1S-LOf" secondAttribute="leading" id="tV8-XB-c82"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPj-Ic-fBI">
+                                <rect key="frame" x="382" y="364" width="22" height="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="star" catalog="system"/>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="hL8-vO-sV8" eventType="touchUpInside" id="MZT-Cg-pYf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lm6-Dt-GwK"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cbO-MW-uzi" firstAttribute="leading" secondItem="lm6-Dt-GwK" secondAttribute="leading" id="482-rS-Dfp"/>
+                            <constraint firstItem="2gu-Iq-2NX" firstAttribute="top" secondItem="mPj-Ic-fBI" secondAttribute="bottom" constant="10" id="5d7-5X-CRs"/>
+                            <constraint firstItem="mPj-Ic-fBI" firstAttribute="trailing" secondItem="lm6-Dt-GwK" secondAttribute="trailing" constant="-10" id="669-2y-AnH"/>
                             <constraint firstItem="cbO-MW-uzi" firstAttribute="top" secondItem="lm6-Dt-GwK" secondAttribute="top" id="6dc-Je-A0c"/>
                             <constraint firstItem="vgC-1S-LOf" firstAttribute="top" secondItem="lm6-Dt-GwK" secondAttribute="top" constant="10" id="EfX-V3-YLO"/>
                             <constraint firstItem="vgC-1S-LOf" firstAttribute="leading" secondItem="cbO-MW-uzi" secondAttribute="trailing" constant="10" id="GqV-YT-0b3"/>
@@ -1029,6 +1061,7 @@
                         <outlet property="deathdayLabel" destination="Yqm-wN-SAY" id="nE6-px-RMP"/>
                         <outlet property="departmentLabel" destination="QLC-w1-dHx" id="TQZ-MA-VwQ"/>
                         <outlet property="detailTableView" destination="WXi-bk-d1I" id="nOZ-Kv-q9r"/>
+                        <outlet property="favoriteButton" destination="mPj-Ic-fBI" id="n1z-7A-cdh"/>
                         <outlet property="nameLabel" destination="lEf-v8-NfY" id="k3d-t5-sUc"/>
                         <outlet property="posterImage" destination="cbO-MW-uzi" id="Xj5-Tu-1rU"/>
                         <outlet property="tabSegment" destination="2gu-Iq-2NX" id="hu1-sc-rLi"/>
@@ -1051,6 +1084,7 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square.stack.3d.forward.dottedline" catalog="system" width="128" height="113"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="video" catalog="system" width="128" height="83"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

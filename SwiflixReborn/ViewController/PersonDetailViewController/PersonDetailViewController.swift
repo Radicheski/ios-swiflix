@@ -9,6 +9,7 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var deathdayLabel: UILabel!
     @IBOutlet weak var tabSegment: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     var detail: PersonEntity?
     var credits: [Media] = []
@@ -107,6 +108,9 @@ class PersonDetailViewController: UIViewController {
     
     @IBAction func segmentDidSelect(_ sender: UISegmentedControl) {
         self.detailTableView.reloadData()
+    }
+    
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
     }
     
 }

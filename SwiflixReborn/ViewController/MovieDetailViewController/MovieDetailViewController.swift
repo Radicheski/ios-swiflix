@@ -6,6 +6,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var tabSegment: UISegmentedControl!
     @IBOutlet weak var detailTableView: UITableView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     var detail: MediaEntity?
     var similar = DetailController<Entity>()
@@ -81,6 +82,9 @@ class MovieDetailViewController: UIViewController {
     
     @IBAction func tabDidSelect(_ sender: UISegmentedControl) {
         self.detailTableView.reloadData()
+    }
+    
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
     }
     
 }
